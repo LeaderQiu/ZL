@@ -1,0 +1,532 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7A1B1A5C1B17225D009C49E2 /* PXMainCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1B1A5A1B17225D009C49E2 /* PXMainCell.m */; };
+		7AA145DA1B13332F0034E373 /* PXRunameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA145D91B13332F0034E373 /* PXRunameViewController.m */; };
+		FD1178841B185A2D00DAE956 /* PXSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1178831B185A2D00DAE956 /* PXSearchViewController.m */; };
+		FD3E260A1B12C6B200901E42 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD3E26091B12C6B200901E42 /* Images.xcassets */; };
+		FD3E260D1B12EF1B00901E42 /* PXMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3E260C1B12EF1B00901E42 /* PXMainViewController.m */; };
+		FD74078B1B1884F400C6A14C /* PXMainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD74078A1B1884F400C6A14C /* PXMainCell.xib */; };
+		FDEAECDC1B134AB200D48EBE /* PXAlerayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDEAECDB1B134AB200D48EBE /* PXAlerayViewController.m */; };
+		FDEAECDF1B134AD100D48EBE /* PXUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDEAECDE1B134AD100D48EBE /* PXUserViewController.m */; };
+		FDF0616E1B0EFC6E0075A5CB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FDF0616D1B0EFC6E0075A5CB /* main.m */; };
+		FDF061711B0EFC6E0075A5CB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FDF061701B0EFC6E0075A5CB /* AppDelegate.m */; };
+		FDF061771B0EFC6E0075A5CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDF061751B0EFC6E0075A5CB /* Main.storyboard */; };
+		FDF0617C1B0EFC6E0075A5CB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDF0617A1B0EFC6E0075A5CB /* LaunchScreen.xib */; };
+		FDF061881B0EFC6E0075A5CB /* ZhonglieAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FDF061871B0EFC6E0075A5CB /* ZhonglieAppTests.m */; };
+		FDF061971B0EFEAF0075A5CB /* PXMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDF061961B0EFEAF0075A5CB /* PXMain.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FDF061821B0EFC6E0075A5CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FDF061601B0EFC6E0075A5CB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FDF061671B0EFC6E0075A5CB;
+			remoteInfo = ZhonglieApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7A1B1A591B17225D009C49E2 /* PXMainCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXMainCell.h; sourceTree = "<group>"; };
+		7A1B1A5A1B17225D009C49E2 /* PXMainCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXMainCell.m; sourceTree = "<group>"; };
+		7AA145D81B13332F0034E373 /* PXRunameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXRunameViewController.h; sourceTree = "<group>"; };
+		7AA145D91B13332F0034E373 /* PXRunameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXRunameViewController.m; sourceTree = "<group>"; };
+		FD1178821B185A2D00DAE956 /* PXSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PXSearchViewController.h; path = View/PXSearchViewController.h; sourceTree = "<group>"; };
+		FD1178831B185A2D00DAE956 /* PXSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PXSearchViewController.m; path = View/PXSearchViewController.m; sourceTree = "<group>"; };
+		FD3E26091B12C6B200901E42 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FD3E260B1B12EF1B00901E42 /* PXMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXMainViewController.h; sourceTree = "<group>"; };
+		FD3E260C1B12EF1B00901E42 /* PXMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXMainViewController.m; sourceTree = "<group>"; };
+		FD74078A1B1884F400C6A14C /* PXMainCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PXMainCell.xib; sourceTree = "<group>"; };
+		FDEAECDA1B134AB200D48EBE /* PXAlerayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXAlerayViewController.h; sourceTree = "<group>"; };
+		FDEAECDB1B134AB200D48EBE /* PXAlerayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXAlerayViewController.m; sourceTree = "<group>"; };
+		FDEAECDD1B134AD100D48EBE /* PXUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXUserViewController.h; sourceTree = "<group>"; };
+		FDEAECDE1B134AD100D48EBE /* PXUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXUserViewController.m; sourceTree = "<group>"; };
+		FDF061681B0EFC6E0075A5CB /* ZhonglieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZhonglieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDF0616C1B0EFC6E0075A5CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FDF0616D1B0EFC6E0075A5CB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FDF0616F1B0EFC6E0075A5CB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FDF061701B0EFC6E0075A5CB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FDF061761B0EFC6E0075A5CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FDF0617B1B0EFC6E0075A5CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		FDF061811B0EFC6E0075A5CB /* ZhonglieAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZhonglieAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDF061861B0EFC6E0075A5CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FDF061871B0EFC6E0075A5CB /* ZhonglieAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZhonglieAppTests.m; sourceTree = "<group>"; };
+		FDF061961B0EFEAF0075A5CB /* PXMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = PXMain.storyboard; path = ../PXMain.storyboard; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FDF061651B0EFC6E0075A5CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDF0617E1B0EFC6E0075A5CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7A1B1A581B17223D009C49E2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7A1B1A591B17225D009C49E2 /* PXMainCell.h */,
+				7A1B1A5A1B17225D009C49E2 /* PXMainCell.m */,
+				FDF061961B0EFEAF0075A5CB /* PXMain.storyboard */,
+				FD74078A1B1884F400C6A14C /* PXMainCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FD7407871B1883AF00C6A14C /* Runame(简历) */ = {
+			isa = PBXGroup;
+			children = (
+				7AA145D81B13332F0034E373 /* PXRunameViewController.h */,
+				7AA145D91B13332F0034E373 /* PXRunameViewController.m */,
+			);
+			name = "Runame(简历)";
+			sourceTree = "<group>";
+		};
+		FD7407881B1883DB00C6A14C /* Aleray(推荐) */ = {
+			isa = PBXGroup;
+			children = (
+				FDEAECDA1B134AB200D48EBE /* PXAlerayViewController.h */,
+				FDEAECDB1B134AB200D48EBE /* PXAlerayViewController.m */,
+			);
+			name = "Aleray(推荐)";
+			sourceTree = "<group>";
+		};
+		FD7407891B1883FA00C6A14C /* User(我的) */ = {
+			isa = PBXGroup;
+			children = (
+				FDEAECDD1B134AD100D48EBE /* PXUserViewController.h */,
+				FDEAECDE1B134AD100D48EBE /* PXUserViewController.m */,
+			);
+			name = "User(我的)";
+			sourceTree = "<group>";
+		};
+		FDF0615F1B0EFC6E0075A5CB = {
+			isa = PBXGroup;
+			children = (
+				FDF0616A1B0EFC6E0075A5CB /* ZhonglieApp */,
+				FDF061841B0EFC6E0075A5CB /* ZhonglieAppTests */,
+				FDF061691B0EFC6E0075A5CB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FDF061691B0EFC6E0075A5CB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FDF061681B0EFC6E0075A5CB /* ZhonglieApp.app */,
+				FDF061811B0EFC6E0075A5CB /* ZhonglieAppTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FDF0616A1B0EFC6E0075A5CB /* ZhonglieApp */ = {
+			isa = PBXGroup;
+			children = (
+				FDF061911B0EFCF20075A5CB /* Classes */,
+				FDF061921B0EFCFB0075A5CB /* Others */,
+				FDF0616B1B0EFC6E0075A5CB /* Supporting Files */,
+			);
+			path = ZhonglieApp;
+			sourceTree = "<group>";
+		};
+		FDF0616B1B0EFC6E0075A5CB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FD3E26091B12C6B200901E42 /* Images.xcassets */,
+				FDF0616C1B0EFC6E0075A5CB /* Info.plist */,
+				FDF0616D1B0EFC6E0075A5CB /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FDF061841B0EFC6E0075A5CB /* ZhonglieAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				FDF061871B0EFC6E0075A5CB /* ZhonglieAppTests.m */,
+				FDF061851B0EFC6E0075A5CB /* Supporting Files */,
+			);
+			path = ZhonglieAppTests;
+			sourceTree = "<group>";
+		};
+		FDF061851B0EFC6E0075A5CB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FDF061861B0EFC6E0075A5CB /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FDF061911B0EFCF20075A5CB /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				FDF061931B0EFDB00075A5CB /* Main(首页) */,
+				FD7407891B1883FA00C6A14C /* User(我的) */,
+				FD7407881B1883DB00C6A14C /* Aleray(推荐) */,
+				FD7407871B1883AF00C6A14C /* Runame(简历) */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		FDF061921B0EFCFB0075A5CB /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				FDF061751B0EFC6E0075A5CB /* Main.storyboard */,
+				FDF0616F1B0EFC6E0075A5CB /* AppDelegate.h */,
+				FDF061701B0EFC6E0075A5CB /* AppDelegate.m */,
+				FDF0617A1B0EFC6E0075A5CB /* LaunchScreen.xib */,
+			);
+			name = Others;
+			sourceTree = "<group>";
+		};
+		FDF061931B0EFDB00075A5CB /* Main(首页) */ = {
+			isa = PBXGroup;
+			children = (
+				FD3E260B1B12EF1B00901E42 /* PXMainViewController.h */,
+				FD3E260C1B12EF1B00901E42 /* PXMainViewController.m */,
+				FD1178821B185A2D00DAE956 /* PXSearchViewController.h */,
+				FD1178831B185A2D00DAE956 /* PXSearchViewController.m */,
+				7A1B1A581B17223D009C49E2 /* View */,
+			);
+			name = "Main(首页)";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FDF061671B0EFC6E0075A5CB /* ZhonglieApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FDF0618B1B0EFC6E0075A5CB /* Build configuration list for PBXNativeTarget "ZhonglieApp" */;
+			buildPhases = (
+				FDF061641B0EFC6E0075A5CB /* Sources */,
+				FDF061651B0EFC6E0075A5CB /* Frameworks */,
+				FDF061661B0EFC6E0075A5CB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZhonglieApp;
+			productName = ZhonglieApp;
+			productReference = FDF061681B0EFC6E0075A5CB /* ZhonglieApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FDF061801B0EFC6E0075A5CB /* ZhonglieAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FDF0618E1B0EFC6E0075A5CB /* Build configuration list for PBXNativeTarget "ZhonglieAppTests" */;
+			buildPhases = (
+				FDF0617D1B0EFC6E0075A5CB /* Sources */,
+				FDF0617E1B0EFC6E0075A5CB /* Frameworks */,
+				FDF0617F1B0EFC6E0075A5CB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FDF061831B0EFC6E0075A5CB /* PBXTargetDependency */,
+			);
+			name = ZhonglieAppTests;
+			productName = ZhonglieAppTests;
+			productReference = FDF061811B0EFC6E0075A5CB /* ZhonglieAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FDF061601B0EFC6E0075A5CB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = PX;
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = PX;
+				TargetAttributes = {
+					FDF061671B0EFC6E0075A5CB = {
+						CreatedOnToolsVersion = 6.3;
+					};
+					FDF061801B0EFC6E0075A5CB = {
+						CreatedOnToolsVersion = 6.3;
+						TestTargetID = FDF061671B0EFC6E0075A5CB;
+					};
+				};
+			};
+			buildConfigurationList = FDF061631B0EFC6E0075A5CB /* Build configuration list for PBXProject "ZhonglieApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FDF0615F1B0EFC6E0075A5CB;
+			productRefGroup = FDF061691B0EFC6E0075A5CB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FDF061671B0EFC6E0075A5CB /* ZhonglieApp */,
+				FDF061801B0EFC6E0075A5CB /* ZhonglieAppTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FDF061661B0EFC6E0075A5CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDF061771B0EFC6E0075A5CB /* Main.storyboard in Resources */,
+				FD3E260A1B12C6B200901E42 /* Images.xcassets in Resources */,
+				FDF0617C1B0EFC6E0075A5CB /* LaunchScreen.xib in Resources */,
+				FDF061971B0EFEAF0075A5CB /* PXMain.storyboard in Resources */,
+				FD74078B1B1884F400C6A14C /* PXMainCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDF0617F1B0EFC6E0075A5CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FDF061641B0EFC6E0075A5CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD1178841B185A2D00DAE956 /* PXSearchViewController.m in Sources */,
+				FDF061711B0EFC6E0075A5CB /* AppDelegate.m in Sources */,
+				7AA145DA1B13332F0034E373 /* PXRunameViewController.m in Sources */,
+				FDF0616E1B0EFC6E0075A5CB /* main.m in Sources */,
+				7A1B1A5C1B17225D009C49E2 /* PXMainCell.m in Sources */,
+				FDEAECDF1B134AD100D48EBE /* PXUserViewController.m in Sources */,
+				FDEAECDC1B134AB200D48EBE /* PXAlerayViewController.m in Sources */,
+				FD3E260D1B12EF1B00901E42 /* PXMainViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDF0617D1B0EFC6E0075A5CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDF061881B0EFC6E0075A5CB /* ZhonglieAppTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FDF061831B0EFC6E0075A5CB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FDF061671B0EFC6E0075A5CB /* ZhonglieApp */;
+			targetProxy = FDF061821B0EFC6E0075A5CB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FDF061751B0EFC6E0075A5CB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FDF061761B0EFC6E0075A5CB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FDF0617A1B0EFC6E0075A5CB /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FDF0617B1B0EFC6E0075A5CB /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FDF061891B0EFC6E0075A5CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FDF0618A1B0EFC6E0075A5CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FDF0618C1B0EFC6E0075A5CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ZhonglieApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FDF0618D1B0EFC6E0075A5CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ZhonglieApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		FDF0618F1B0EFC6E0075A5CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ZhonglieAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZhonglieApp.app/ZhonglieApp";
+			};
+			name = Debug;
+		};
+		FDF061901B0EFC6E0075A5CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ZhonglieAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZhonglieApp.app/ZhonglieApp";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FDF061631B0EFC6E0075A5CB /* Build configuration list for PBXProject "ZhonglieApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDF061891B0EFC6E0075A5CB /* Debug */,
+				FDF0618A1B0EFC6E0075A5CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FDF0618B1B0EFC6E0075A5CB /* Build configuration list for PBXNativeTarget "ZhonglieApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDF0618C1B0EFC6E0075A5CB /* Debug */,
+				FDF0618D1B0EFC6E0075A5CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FDF0618E1B0EFC6E0075A5CB /* Build configuration list for PBXNativeTarget "ZhonglieAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDF0618F1B0EFC6E0075A5CB /* Debug */,
+				FDF061901B0EFC6E0075A5CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FDF061601B0EFC6E0075A5CB /* Project object */;
+}
