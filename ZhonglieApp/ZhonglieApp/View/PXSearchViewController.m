@@ -32,11 +32,37 @@
     [self setupTableV];
 }
 
+//加载头部视图
 -(void)setupFirstV
 {
-    UIView *FirstV = [[UIView alloc]initWithFrame:CGRectMake(0, 64, [UIScreen mainScreen].bounds.size.width, 50)];
+    UIView *FirstV = [[UIView alloc]initWithFrame:CGRectMake(0, 64, [UIScreen mainScreen].bounds.size.width, 49)];
     
-    FirstV.backgroundColor = [UIColor blueColor];
+    FirstV.backgroundColor = [UIColor blackColor];
+    
+    UIImageView *searchBackImage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"SearchHeaderV"]];
+    
+    [FirstV addSubview:searchBackImage];
+    
+    //加载搜索栏
+    UITextField *searchBar = [[UITextField alloc]initWithFrame:CGRectMake(55, 12, 252, 33)];
+    
+    searchBar.background = [UIImage imageNamed:@"searchBarBack"];
+    
+    [FirstV addSubview:searchBar];
+    
+    //加载地区选择Btn
+    UIButton *Diqu = [[UIButton alloc]initWithFrame:CGRectMake(10, 12, 40,25 )];
+    
+    
+    [Diqu setTitle:@"北京" forState:UIControlStateNormal];
+    [Diqu setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    
+//    [Diqu setBackgroundColor:[UIColor grayColor]];
+    
+    [FirstV addSubview:Diqu];
+    
+    
+    
     
     [self.view addSubview:FirstV];
     
@@ -49,7 +75,7 @@
 {
     
     //创建tableView
-    UITableView *SearchV = [[UITableView alloc]initWithFrame:CGRectMake(0, 50, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
+    UITableView *SearchV = [[UITableView alloc]initWithFrame:CGRectMake(0, 116, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
     
     [self.view addSubview:SearchV];
     
