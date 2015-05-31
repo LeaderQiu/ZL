@@ -51,7 +51,7 @@
     [FirstV addSubview:searchBar];
     
     //加载地区选择Btn
-    UIButton *Diqu = [[UIButton alloc]initWithFrame:CGRectMake(10, 12, 40,25 )];
+    UIButton *Diqu = [[UIButton alloc]initWithFrame:CGRectMake(10, 14, 40,25 )];
     
     
     [Diqu setTitle:@"北京" forState:UIControlStateNormal];
