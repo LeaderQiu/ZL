@@ -27,7 +27,7 @@
     
     self.navigationItem.title = @"职位搜索";
     
-//    [self setupFirstV];
+    [self setupFirstV];
     
     [self setupTableV];
 }
