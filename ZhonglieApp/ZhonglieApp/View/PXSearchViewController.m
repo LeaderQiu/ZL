@@ -9,9 +9,9 @@
 #import "PXSearchViewController.h"
 #import "PXMainCell.h"
 
-@interface PXSearchViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface PXSearchViewController ()<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate>
 @property(nonatomic,strong) UITableView *SearchV;
-
+@property(nonatomic,strong) UITextField *TextField;
 @end
 
 @implementation PXSearchViewController
@@ -26,8 +26,11 @@
     self.navigationController.navigationItem.title = @"";
     
     self.navigationItem.title = @"职位搜索";
+   
     
     [self setupFirstV];
+
+   
     
     [self setupTableV];
 }
@@ -37,18 +40,25 @@
 {
     UIView *FirstV = [[UIView alloc]initWithFrame:CGRectMake(0, 64, [UIScreen mainScreen].bounds.size.width, 49)];
     
-    FirstV.backgroundColor = [UIColor blackColor];
+//    UIImageView *searchBackImage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"SearchHeaderV"]];
     
-    UIImageView *searchBackImage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"SearchHeaderV"]];
+    UIImageView *searchBackImage = [[UIImageView alloc]init];
+    
+    searchBackImage.backgroundColor = [UIColor yellowColor];
+
     
     [FirstV addSubview:searchBackImage];
     
     //加载搜索栏
-    UITextField *searchBar = [[UITextField alloc]initWithFrame:CGRectMake(55, 12, 252, 33)];
+    UITextField *TextField = [[UITextField alloc]initWithFrame:CGRectMake(55, 12, 252, 33)];
     
-    searchBar.background = [UIImage imageNamed:@"searchBarBack"];
+    _TextField = TextField;
     
-    [FirstV addSubview:searchBar];
+    TextField.background = [UIImage imageNamed:@"searchBarBack"];
+    
+    [self setupTextFiel];
+    
+    [FirstV addSubview:TextField];
     
     //加载地区选择Btn
     UIButton *Diqu = [[UIButton alloc]initWithFrame:CGRectMake(10, 14, 40,25 )];
@@ -68,6 +78,33 @@
     
     
 }
+
+//#pragma mark - 自定义NavBarItem
+//-(void)loadNavBarItem {
+//        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+//        titleLabel.backgroundColor = [UIColor clearColor];
+////        titleLabel.font = CLNNCommonBigTextSize;
+//        titleLabel.text = self.title;
+//        titleLabel.textColor = [UIColor whiteColor];
+////        titleLabel.textColor = CLNNCommonDarkGrayColor;
+//        [titleLabel sizeToFit];
+//        self.navigationItem.titleView = titleLabel;
+//        
+//        UIButton *btnReturn = [UIButton buttonWithType:UIButtonTypeCustom];
+//        [btnReturn setBackgroundImage:[UIImage imageNamed:@"返回键"] forState:UIControlStateNormal];
+//        [btnReturn sizeToFit];
+//        btnReturn.exclusiveTouch = YES;
+//        btnReturn.backgroundColor = [UIColor clearColor];
+//        [btnReturn addTarget:self action:@selector(btnReturnClicked) forControlEvents:UIControlEventTouchUpInside];
+//        
+//        UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithCustomView:btnReturn];
+//        self.navigationItem.leftBarButtonItem = leftItem;
+//    }
+//
+//-(void)btnReturnClicked
+//{
+//    
+//}
 
 
 //加载tableView数据
@@ -165,7 +202,83 @@
     [headerV addSubview:ShaiXuan];
     
     return headerV;
+    
+    
 }
+
+
+//设置TextField细节
+-(void)setupTextFiel
+{
+    
+    self.TextField.borderStyle = UITextBorderStyleNone;
+    self.TextField.keyboardType = UIKeyboardTypeDefault;
+    self.TextField.delegate = self;
+    
+    self.TextField.autocorrectionType = UITextAutocorrectionTypeNo;
+    self.TextField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+    self.TextField.returnKeyType = UIReturnKeySearch;
+    
+    self.TextField.background = [UIImage imageNamed:@"searchBarBack"];
+    
+    
+    UIImageView *Searchimage=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"查找职位"]];
+    self.TextField.leftView=Searchimage;
+    self.TextField.leftViewMode = UITextFieldViewModeUnlessEditing;
+    
+    self.TextField.userInteractionEnabled = YES;
+    
+    self.TextField.textColor = [UIColor whiteColor];
+    
+    self.TextField.clearsOnBeginEditing = YES;
+    
+    self.TextField.font = [UIFont fontWithName:@"Helvetica-Bold"size:16];
+    
+    
+}
+
+#pragma mark - TextField代理方法
+
+//开始编辑时隐藏查找职位图片
+-(void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    
+    self.TextField.leftViewMode = UITextFieldViewModeNever;
+}
+//
+//-(BOOL)textFieldShouldClear:(UITextField *)textField
+//{
+//    return YES;
+//}
+
+//点击键盘搜索键，收回键盘.***跳转页面****
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    
+    [textField resignFirstResponder];
+    
+    textField.text = @" ";
+    
+//    PXSearchViewController *SearchVC = [[PXSearchViewController alloc] init] ;
+    
+    //    [self presentViewController:SearchVC animated:YES completion:nil];
+    
+//    [self.navigationController pushViewController:SearchVC animated:YES];
+    
+    [self updateViewConstraints];
+    
+    return YES;
+    
+}
+
+//结束编辑时显示查找职位图片
+-(void)textFieldDidEndEditing:(UITextField *)textField
+{
+    self.TextField.leftViewMode = UITextFieldViewModeUnlessEditing;
+    
+}
+
+
 //- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
 //    
 //    //创建一个视图（v_headerView）

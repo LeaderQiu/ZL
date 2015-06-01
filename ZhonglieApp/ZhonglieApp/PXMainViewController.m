@@ -162,6 +162,8 @@
 
     [textField resignFirstResponder];
     
+    textField.text = @" ";
+    
     PXSearchViewController *SearchVC = [[PXSearchViewController alloc] init] ;
     
 //    [self presentViewController:SearchVC animated:YES completion:nil];
