@@ -8,6 +8,7 @@
 
 #import "PXSearchViewController.h"
 #import "PXMainCell.h"
+#import "UIBarButtonItem+Extension.h"
 
 @interface PXSearchViewController ()<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate>
 @property(nonatomic,strong) UITableView *SearchV;
@@ -23,7 +24,10 @@
     
     self.view.backgroundColor = [UIColor grayColor];
     
+    //优化导航栏
     self.navigationController.navigationItem.title = @"";
+    
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:@"返回键" highImage:@"返回键" target:self action:@selector(btnClickAction)];
     
     self.navigationItem.title = @"职位搜索";
    
@@ -33,6 +37,12 @@
    
     
     [self setupTableV];
+}
+
+//导航栏返回键
+-(void)btnClickAction
+{
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 //加载头部视图

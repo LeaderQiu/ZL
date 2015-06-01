@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7A1B1A5C1B17225D009C49E2 /* PXMainCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1B1A5A1B17225D009C49E2 /* PXMainCell.m */; };
 		7AA145DA1B13332F0034E373 /* PXRunameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA145D91B13332F0034E373 /* PXRunameViewController.m */; };
+		FD0DF1101B1C50EE00FF6BE1 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0DF10F1B1C50EE00FF6BE1 /* UIBarButtonItem+Extension.m */; };
 		FD1178841B185A2D00DAE956 /* PXSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1178831B185A2D00DAE956 /* PXSearchViewController.m */; };
 		FD3E260A1B12C6B200901E42 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD3E26091B12C6B200901E42 /* Images.xcassets */; };
 		FD3E260D1B12EF1B00901E42 /* PXMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3E260C1B12EF1B00901E42 /* PXMainViewController.m */; };
@@ -38,6 +39,8 @@
 		7A1B1A5A1B17225D009C49E2 /* PXMainCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXMainCell.m; sourceTree = "<group>"; };
 		7AA145D81B13332F0034E373 /* PXRunameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXRunameViewController.h; sourceTree = "<group>"; };
 		7AA145D91B13332F0034E373 /* PXRunameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXRunameViewController.m; sourceTree = "<group>"; };
+		FD0DF10E1B1C50EE00FF6BE1 /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
+		FD0DF10F1B1C50EE00FF6BE1 /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
 		FD1178821B185A2D00DAE956 /* PXSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PXSearchViewController.h; path = View/PXSearchViewController.h; sourceTree = "<group>"; };
 		FD1178831B185A2D00DAE956 /* PXSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PXSearchViewController.m; path = View/PXSearchViewController.m; sourceTree = "<group>"; };
 		FD3E26091B12C6B200901E42 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -186,6 +189,8 @@
 		FDF061921B0EFCFB0075A5CB /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				FD0DF10E1B1C50EE00FF6BE1 /* UIBarButtonItem+Extension.h */,
+				FD0DF10F1B1C50EE00FF6BE1 /* UIBarButtonItem+Extension.m */,
 				FDF061751B0EFC6E0075A5CB /* Main.storyboard */,
 				FDF0616F1B0EFC6E0075A5CB /* AppDelegate.h */,
 				FDF061701B0EFC6E0075A5CB /* AppDelegate.m */,
@@ -315,6 +320,7 @@
 				FDF0616E1B0EFC6E0075A5CB /* main.m in Sources */,
 				7A1B1A5C1B17225D009C49E2 /* PXMainCell.m in Sources */,
 				FDEAECDF1B134AD100D48EBE /* PXUserViewController.m in Sources */,
+				FD0DF1101B1C50EE00FF6BE1 /* UIBarButtonItem+Extension.m in Sources */,
 				FDEAECDC1B134AB200D48EBE /* PXAlerayViewController.m in Sources */,
 				FD3E260D1B12EF1B00901E42 /* PXMainViewController.m in Sources */,
 			);
