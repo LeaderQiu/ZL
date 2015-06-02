@@ -13,6 +13,7 @@
 		FD1178841B185A2D00DAE956 /* PXSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1178831B185A2D00DAE956 /* PXSearchViewController.m */; };
 		FD3E260A1B12C6B200901E42 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD3E26091B12C6B200901E42 /* Images.xcassets */; };
 		FD3E260D1B12EF1B00901E42 /* PXMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3E260C1B12EF1B00901E42 /* PXMainViewController.m */; };
+		FD4518A41B1DC40300A49D88 /* PXNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4518A31B1DC40300A49D88 /* PXNavViewController.m */; };
 		FD50FAD31B1C9C29005BD6B8 /* AFNetworking in Resources */ = {isa = PBXBuildFile; fileRef = FD50FAD21B1C9C29005BD6B8 /* AFNetworking */; };
 		FD74078B1B1884F400C6A14C /* PXMainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD74078A1B1884F400C6A14C /* PXMainCell.xib */; };
 		FDEAECDC1B134AB200D48EBE /* PXAlerayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDEAECDB1B134AB200D48EBE /* PXAlerayViewController.m */; };
@@ -47,6 +48,8 @@
 		FD3E26091B12C6B200901E42 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FD3E260B1B12EF1B00901E42 /* PXMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXMainViewController.h; sourceTree = "<group>"; };
 		FD3E260C1B12EF1B00901E42 /* PXMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXMainViewController.m; sourceTree = "<group>"; };
+		FD4518A21B1DC40300A49D88 /* PXNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXNavViewController.h; sourceTree = "<group>"; };
+		FD4518A31B1DC40300A49D88 /* PXNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXNavViewController.m; sourceTree = "<group>"; };
 		FD50FAD21B1C9C29005BD6B8 /* AFNetworking */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AFNetworking; sourceTree = "<group>"; };
 		FD74078A1B1884F400C6A14C /* PXMainCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PXMainCell.xib; sourceTree = "<group>"; };
 		FDEAECDA1B134AB200D48EBE /* PXAlerayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXAlerayViewController.h; sourceTree = "<group>"; };
@@ -91,6 +94,8 @@
 				7A1B1A5A1B17225D009C49E2 /* PXMainCell.m */,
 				FDF061961B0EFEAF0075A5CB /* PXMain.storyboard */,
 				FD74078A1B1884F400C6A14C /* PXMainCell.xib */,
+				FD4518A21B1DC40300A49D88 /* PXNavViewController.h */,
+				FD4518A31B1DC40300A49D88 /* PXNavViewController.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -328,6 +333,7 @@
 			files = (
 				FD1178841B185A2D00DAE956 /* PXSearchViewController.m in Sources */,
 				FDF061711B0EFC6E0075A5CB /* AppDelegate.m in Sources */,
+				FD4518A41B1DC40300A49D88 /* PXNavViewController.m in Sources */,
 				7AA145DA1B13332F0034E373 /* PXRunameViewController.m in Sources */,
 				FDF0616E1B0EFC6E0075A5CB /* main.m in Sources */,
 				7A1B1A5C1B17225D009C49E2 /* PXMainCell.m in Sources */,
