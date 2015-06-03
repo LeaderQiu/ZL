@@ -41,6 +41,7 @@
     
     
     
+    
 }
 
 //导航栏返回键
@@ -66,7 +67,7 @@
     return group.cities.count;
 }
 //
-//
+//每个cell的内容
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     
@@ -111,13 +112,13 @@
 }
 
 
-#warning TODO 不显示底部
+
 //设置组底部
 -(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
     
     if (section == 0) {
-        UIView* view = [[UIView alloc] initWithFrame: CGRectMake(0.0f, 10.0f, 640.0f, 0.0f)];
+        UIView* view = [[UIView alloc] initWithFrame: CGRectMake(0.0f, 0.0f, 640.0f, 0.0f)];
         view.backgroundColor = [UIColor colorWithRGB:0xe3e3e3];
         
         UILabel *label = [[UILabel alloc] init];
@@ -126,19 +127,27 @@
                                  284.0,
                                  24.0);
         label.text = @"所有地区";
-        label.font = [UIFont systemFontOfSize:18.0];
+        label.font = [UIFont systemFontOfSize:16.0];
         
         [view addSubview:label];
         
         return view;
     }else{
-        
-         return nil;
+        UIView* view = [[UIView alloc] init];
+       
+         return view;
     }
 
 }
-
-
+//设置底部高度
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    
+    if (section == 0) {
+        return 44;
+    }
+    return 0;
+}
 
 
 //自定义标头视图
