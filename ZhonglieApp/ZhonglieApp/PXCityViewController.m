@@ -96,12 +96,9 @@
     
     PXCityGroup *cityGroup = [PXDataTools cityGroups][section];
     
-    NSString *title = cityGroup.title;
-    
-    
-    
     return cityGroup.title;
 }
+
 
 //检索栏
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
@@ -113,27 +110,35 @@
     return titles;
 }
 
+
+#warning TODO 不显示底部
 //设置组底部
-- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
+-(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
-        if (0 == section) {
-               return @"高端大气上档次";
-        }else{
-            return nil;
-   
-        }
+    
+    if (section == 0) {
+        UIView* view = [[UIView alloc] initWithFrame: CGRectMake(0.0f, 10.0f, 640.0f, 0.0f)];
+        view.backgroundColor = [UIColor colorWithRGB:0xe3e3e3];
+        
+        UILabel *label = [[UILabel alloc] init];
+        label.frame = CGRectMake(18.0,
+                                 15.0,
+                                 284.0,
+                                 24.0);
+        label.text = @"所有地区";
+        label.font = [UIFont systemFontOfSize:18.0];
+        
+        [view addSubview:label];
+        
+        return view;
+    }else{
+        
+         return nil;
+    }
+
 }
 
-//section头部视图
-- (UIView*) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    if (section == 1) {
-        UIView* view = [[UIView alloc] initWithFrame: CGRectMake(0.0f, 0.0f, 640.0f, 0.0f)];
-        view.backgroundColor = [UIColor whiteColor];
-        return view;
-    }
-    return nil;
-}
+
 
 
 //自定义标头视图
@@ -144,7 +149,22 @@
     
     NSString *sectionTitle = cityGroup.title;
     
-    sectionTitle
+    if (section == 0) {
+        UIView* view = [[UIView alloc] initWithFrame: CGRectMake(0.0f, 10.0f, 640.0f, 0.0f)];
+        view.backgroundColor = [UIColor colorWithRGB:0xe3e3e3];
+        
+        UILabel *label = [[UILabel alloc] init];
+        label.frame = CGRectMake(18.0,
+                                 15.0,
+                                 284.0,
+                                 24.0);
+        label.text = @"推荐地区";
+        label.font = [UIFont systemFontOfSize:18.0];
+        
+        [view addSubview:label];
+        
+        return view;
+    }
     
     
     
@@ -153,19 +173,19 @@
                                                             0.0,
                                                             320.0,
                                                             100.0)];
-    view.backgroundColor = [UIColor lightGrayColor];
+    view.backgroundColor = [UIColor whiteColor];
     
     
     // Create label with section title
     UILabel *label = [[UILabel alloc] init];
-    label.frame = CGRectMake(5.0,
+    label.frame = CGRectMake(20.0,
                              12.0,
                              284.0,
                              24.0);
-    label.textColor = [UIColor blackColor];
+    label.textColor = [UIColor blueColor];
     label.font = [UIFont systemFontOfSize:16.0];
     label.text = sectionTitle;
-    label.backgroundColor = [UIColor clearColor];
+//    label.backgroundColor = [UIColor colorWithRGB:0xe3e3e3];
     
     [view addSubview:label];
     
@@ -173,50 +193,5 @@
     
 }
 
-
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
