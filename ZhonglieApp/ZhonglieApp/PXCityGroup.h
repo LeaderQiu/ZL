@@ -10,4 +10,12 @@
 
 @interface PXCityGroup : NSObject
 
+/**
+ *  组名
+ */
+@property (nonatomic,copy) NSString *title;
+/**
+ *  组里城市的名称
+ */
+@property (nonatomic,strong) NSArray *cities;
 @end

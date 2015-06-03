@@ -14,12 +14,12 @@
 		FD3E260A1B12C6B200901E42 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD3E26091B12C6B200901E42 /* Images.xcassets */; };
 		FD3E260D1B12EF1B00901E42 /* PXMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3E260C1B12EF1B00901E42 /* PXMainViewController.m */; };
 		FD4518A41B1DC40300A49D88 /* PXNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4518A31B1DC40300A49D88 /* PXNavViewController.m */; };
-		FD4518A91B1E9E2700A49D88 /* cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD4518A71B1E9E2700A49D88 /* cities.plist */; };
-		FD4518AA1B1E9E2700A49D88 /* cityGroups.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD4518A81B1E9E2700A49D88 /* cityGroups.plist */; };
 		FD4518AD1B1EA15500A49D88 /* PXCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4518AC1B1EA15500A49D88 /* PXCityViewController.m */; };
-		FD4518B01B1EAE3700A49D88 /* PXTools.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4518AF1B1EAE3700A49D88 /* PXTools.m */; };
+		FD4518B01B1EAE3700A49D88 /* PXDataTools.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4518AF1B1EAE3700A49D88 /* PXDataTools.m */; };
 		FD4518B41B1EAFE600A49D88 /* PXCityGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4518B31B1EAFE600A49D88 /* PXCityGroup.m */; };
 		FD4518B71B1EAFF500A49D88 /* PXCity.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4518B61B1EAFF500A49D88 /* PXCity.m */; };
+		FD4518BB1B1EB72700A49D88 /* MJExtension in Resources */ = {isa = PBXBuildFile; fileRef = FD4518BA1B1EB72700A49D88 /* MJExtension */; };
+		FD4518BD1B1EBA4B00A49D88 /* Plist in Resources */ = {isa = PBXBuildFile; fileRef = FD4518BC1B1EBA4B00A49D88 /* Plist */; };
 		FD50FAD31B1C9C29005BD6B8 /* AFNetworking in Resources */ = {isa = PBXBuildFile; fileRef = FD50FAD21B1C9C29005BD6B8 /* AFNetworking */; };
 		FD74078B1B1884F400C6A14C /* PXMainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD74078A1B1884F400C6A14C /* PXMainCell.xib */; };
 		FDEAECDC1B134AB200D48EBE /* PXAlerayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDEAECDB1B134AB200D48EBE /* PXAlerayViewController.m */; };
@@ -56,16 +56,16 @@
 		FD3E260C1B12EF1B00901E42 /* PXMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXMainViewController.m; sourceTree = "<group>"; };
 		FD4518A21B1DC40300A49D88 /* PXNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXNavViewController.h; sourceTree = "<group>"; };
 		FD4518A31B1DC40300A49D88 /* PXNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXNavViewController.m; sourceTree = "<group>"; };
-		FD4518A71B1E9E2700A49D88 /* cities.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cities.plist; sourceTree = "<group>"; };
-		FD4518A81B1E9E2700A49D88 /* cityGroups.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cityGroups.plist; sourceTree = "<group>"; };
 		FD4518AB1B1EA15500A49D88 /* PXCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXCityViewController.h; sourceTree = "<group>"; };
 		FD4518AC1B1EA15500A49D88 /* PXCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXCityViewController.m; sourceTree = "<group>"; };
-		FD4518AE1B1EAE3700A49D88 /* PXTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXTools.h; sourceTree = "<group>"; };
-		FD4518AF1B1EAE3700A49D88 /* PXTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXTools.m; sourceTree = "<group>"; };
+		FD4518AE1B1EAE3700A49D88 /* PXDataTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXDataTools.h; sourceTree = "<group>"; };
+		FD4518AF1B1EAE3700A49D88 /* PXDataTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXDataTools.m; sourceTree = "<group>"; };
 		FD4518B21B1EAFE600A49D88 /* PXCityGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXCityGroup.h; sourceTree = "<group>"; };
 		FD4518B31B1EAFE600A49D88 /* PXCityGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXCityGroup.m; sourceTree = "<group>"; };
 		FD4518B51B1EAFF500A49D88 /* PXCity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXCity.h; sourceTree = "<group>"; };
 		FD4518B61B1EAFF500A49D88 /* PXCity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXCity.m; sourceTree = "<group>"; };
+		FD4518BA1B1EB72700A49D88 /* MJExtension */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MJExtension; sourceTree = "<group>"; };
+		FD4518BC1B1EBA4B00A49D88 /* Plist */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Plist; sourceTree = "<group>"; };
 		FD50FAD21B1C9C29005BD6B8 /* AFNetworking */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AFNetworking; sourceTree = "<group>"; };
 		FD74078A1B1884F400C6A14C /* PXMainCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PXMainCell.xib; sourceTree = "<group>"; };
 		FDEAECDA1B134AB200D48EBE /* PXAlerayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXAlerayViewController.h; sourceTree = "<group>"; };
@@ -129,15 +129,6 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
-		FD4518A61B1E9DE500A49D88 /* Plist */ = {
-			isa = PBXGroup;
-			children = (
-				FD4518A71B1E9E2700A49D88 /* cities.plist */,
-				FD4518A81B1E9E2700A49D88 /* cityGroups.plist */,
-			);
-			name = Plist;
-			sourceTree = "<group>";
-		};
 		FD4518B11B1EAE5E00A49D88 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,9 +145,10 @@
 			children = (
 				FD0DF10E1B1C50EE00FF6BE1 /* UIBarButtonItem+Extension.h */,
 				FD0DF10F1B1C50EE00FF6BE1 /* UIBarButtonItem+Extension.m */,
+				FD4518BA1B1EB72700A49D88 /* MJExtension */,
 				FD50FAD21B1C9C29005BD6B8 /* AFNetworking */,
-				FD4518AE1B1EAE3700A49D88 /* PXTools.h */,
-				FD4518AF1B1EAE3700A49D88 /* PXTools.m */,
+				FD4518AE1B1EAE3700A49D88 /* PXDataTools.h */,
+				FD4518AF1B1EAE3700A49D88 /* PXDataTools.m */,
 			);
 			name = Vender;
 			sourceTree = "<group>";
@@ -258,7 +250,7 @@
 		FDF061921B0EFCFB0075A5CB /* Others */ = {
 			isa = PBXGroup;
 			children = (
-				FD4518A61B1E9DE500A49D88 /* Plist */,
+				FD4518BC1B1EBA4B00A49D88 /* Plist */,
 				FDF061751B0EFC6E0075A5CB /* Main.storyboard */,
 				FDF0616F1B0EFC6E0075A5CB /* AppDelegate.h */,
 				FDF061701B0EFC6E0075A5CB /* AppDelegate.m */,
@@ -359,10 +351,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FDF061771B0EFC6E0075A5CB /* Main.storyboard in Resources */,
-				FD4518A91B1E9E2700A49D88 /* cities.plist in Resources */,
+				FD4518BD1B1EBA4B00A49D88 /* Plist in Resources */,
 				FD3E260A1B12C6B200901E42 /* Images.xcassets in Resources */,
-				FD4518AA1B1E9E2700A49D88 /* cityGroups.plist in Resources */,
 				FDF0617C1B0EFC6E0075A5CB /* LaunchScreen.xib in Resources */,
+				FD4518BB1B1EB72700A49D88 /* MJExtension in Resources */,
 				FDF061971B0EFEAF0075A5CB /* PXMain.storyboard in Resources */,
 				FD74078B1B1884F400C6A14C /* PXMainCell.xib in Resources */,
 				FD50FAD31B1C9C29005BD6B8 /* AFNetworking in Resources */,
@@ -394,7 +386,7 @@
 				FD4518B41B1EAFE600A49D88 /* PXCityGroup.m in Sources */,
 				FD0DF1101B1C50EE00FF6BE1 /* UIBarButtonItem+Extension.m in Sources */,
 				FD4518B71B1EAFF500A49D88 /* PXCity.m in Sources */,
-				FD4518B01B1EAE3700A49D88 /* PXTools.m in Sources */,
+				FD4518B01B1EAE3700A49D88 /* PXDataTools.m in Sources */,
 				FDEAECDC1B134AB200D48EBE /* PXAlerayViewController.m in Sources */,
 				FD3E260D1B12EF1B00901E42 /* PXMainViewController.m in Sources */,
 			);

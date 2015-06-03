@@ -8,6 +8,8 @@
 
 #import "PXCityViewController.h"
 #import "UIBarButtonItem+Extension.h"
+#import "PXDataTools.h"
+#import "PXCityGroup.h"
 
 @interface PXCityViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -47,27 +49,41 @@
 
 
 #pragma mark - Table view data source
+//设置有几组
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+
+    return [PXDataTools cityGroups].count;
+}
+
+//每组有几个cel
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    PXCityGroup *group = [PXDataTools cityGroups][section];
+    
+    return group.cities.count;
+}
 //
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//#warning Potentially incomplete method implementation.
-//    // Return the number of sections.
-//    return 10;
-//}
 //
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//#warning Incomplete method implementation.
-//    // Return the number of rows in the section.
-//    return 10;
-//}
-//
-//
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"city" forIndexPath:indexPath];
-//    
-//    // Configure the cell...
-//    
-//    return cell;
-//}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    
+    
+    static NSString *ID = @"city";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+    }
+    
+    // 设置城市名称
+    PXCityGroup *cityGroup = [PXDataTools cityGroups][indexPath.section];
+    cell.textLabel.text = cityGroup.cities[indexPath.row];
+    
+    return cell;
+    
+    
+    
+    
+}
 
 
 /*
