@@ -77,7 +77,7 @@
     [Diqu setTitle:@"北京" forState:UIControlStateNormal];
     [Diqu setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     
-//    [Diqu setBackgroundColor:[UIColor grayColor]];
+    
     
     [FirstV addSubview:Diqu];
     

@@ -9,6 +9,7 @@
 #import "PXMainViewController.h"
 #import "PXMainCell.h"
 #import "PXSearchViewController.h"
+#import "PXCityViewController.h"
 
 @interface PXMainViewController () <UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 @property(nonatomic,strong) UIImageView *LogoImageV;
@@ -18,6 +19,9 @@
 @property(nonatomic,strong) UISearchBar *searchBar;
 @property(nonatomic,strong) UITextField *TextField;
 @property(nonatomic,strong) UIImageView *Searchimage;
+
+
+
 @end
 
 @implementation PXMainViewController
@@ -94,9 +98,19 @@
     
     [CityButton setImage:[UIImage imageNamed:@"城市"] forState:UIControlStateNormal];
     
+    [CityButton addTarget:self action:@selector(btnClickAction) forControlEvents:UIControlEventTouchUpInside];
+    
     [headerV addSubview:CityButton];
 
    
+}
+
+//城市选择
+-(void)btnClickAction
+{
+    PXCityViewController *CityVC = [[PXCityViewController alloc]initWithStyle:UITableViewStyleGrouped];
+    
+    [self.navigationController pushViewController:CityVC animated:YES];
 }
 
 //隐藏状态栏
