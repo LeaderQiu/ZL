@@ -19,4 +19,5 @@
  *  返回所有的城市名称（里面都是NSString）
  */
 //+ (NSArray *)cityNames;
+
 @end

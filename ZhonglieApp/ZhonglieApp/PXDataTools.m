@@ -8,7 +8,7 @@
 
 #import "PXDataTools.h"
 #import "PXCityGroup.h"
-#import "MJExtension/MJExtension.h"
+#import "MJExtension.h"
 
 
 @implementation PXDataTools

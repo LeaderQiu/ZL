@@ -8,6 +8,7 @@
 
 #import "PXCityViewController.h"
 #import "UIBarButtonItem+Extension.h"
+#import "UIColor+SYExtension.h"
 #import "PXDataTools.h"
 #import "PXCityGroup.h"
 
@@ -22,6 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //设置导航栏
     self.navigationController.navigationBarHidden = NO;
     
     self.navigationItem.title = @"选择城市";
@@ -29,14 +31,15 @@
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:@"返回键" highImage:@"返回键" target:self action:@selector(BackClickBtn)];
     
 
+    //创建城市TableView列表
+    self.view.backgroundColor = [UIColor colorWithRGB:0xe3e3e3];
     
-    UITableView *CityV = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
     
-    CityV.backgroundColor = [UIColor yellowColor];
+    self.tableView.rowHeight = 44;
     
-    CityV.dataSource = self;
     
-    [self.view addSubview:CityV];
     
 }
 
@@ -48,14 +51,14 @@
 
 
 
-#pragma mark - Table view data source
+#pragma mark - Tableiew数据源
 //设置有几组
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
     return [PXDataTools cityGroups].count;
 }
 
-//每组有几个cel
+//每组有几个cell
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     PXCityGroup *group = [PXDataTools cityGroups][section];
@@ -84,6 +87,92 @@
     
     
 }
+
+#pragma mark - TableView代理
+
+//每个组组名
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    
+    PXCityGroup *cityGroup = [PXDataTools cityGroups][section];
+    
+    NSString *title = cityGroup.title;
+    
+    
+    
+    return cityGroup.title;
+}
+
+//检索栏
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
+{
+    NSArray *titles = [[PXDataTools cityGroups] valueForKeyPath:@"title"];
+    
+    
+    
+    return titles;
+}
+
+//设置组底部
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
+{
+        if (0 == section) {
+               return @"高端大气上档次";
+        }else{
+            return nil;
+   
+        }
+}
+
+//section头部视图
+- (UIView*) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    if (section == 1) {
+        UIView* view = [[UIView alloc] initWithFrame: CGRectMake(0.0f, 0.0f, 640.0f, 0.0f)];
+        view.backgroundColor = [UIColor whiteColor];
+        return view;
+    }
+    return nil;
+}
+
+
+//自定义标头视图
+-(UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    PXCityGroup *cityGroup = [PXDataTools cityGroups][section];
+    
+    
+    NSString *sectionTitle = cityGroup.title;
+    
+    sectionTitle
+    
+    
+    
+    // Create header view and add label as a subview
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(10.0,
+                                                            0.0,
+                                                            320.0,
+                                                            100.0)];
+    view.backgroundColor = [UIColor lightGrayColor];
+    
+    
+    // Create label with section title
+    UILabel *label = [[UILabel alloc] init];
+    label.frame = CGRectMake(5.0,
+                             12.0,
+                             284.0,
+                             24.0);
+    label.textColor = [UIColor blackColor];
+    label.font = [UIFont systemFontOfSize:16.0];
+    label.text = sectionTitle;
+    label.backgroundColor = [UIColor clearColor];
+    
+    [view addSubview:label];
+    
+    return view;
+    
+}
+
 
 
 /*
