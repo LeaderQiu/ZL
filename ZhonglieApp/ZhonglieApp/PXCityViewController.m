@@ -32,12 +32,15 @@
     
 
     //创建城市TableView列表
-    self.view.backgroundColor = [UIColor colorWithRGB:0xe3e3e3];
+//    self.view.backgroundColor = [UIColor colorWithRGB:0xe3e3e3];
+    self.view.backgroundColor = [UIColor whiteColor];
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
     self.tableView.rowHeight = 44;
+    
+    self.tableView.sectionFooterHeight = 0.0;
     
     
     
@@ -133,12 +136,16 @@
         
         return view;
     }else{
-        UIView* view = [[UIView alloc] init];
+      
+  
+
        
-         return view;
+         return nil;
     }
 
 }
+
+
 //设置底部高度
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
