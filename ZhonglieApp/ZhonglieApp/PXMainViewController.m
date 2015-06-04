@@ -14,12 +14,16 @@
 @interface PXMainViewController () <UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 @property(nonatomic,strong) UIImageView *LogoImageV;
 @property(nonatomic,strong) UIImage *LogoImage;
-@property(nonatomic,strong) UITableView *MainTableV;
+
 @property(nonatomic,strong) UITableViewCell *MainTableViewCell;
 @property(nonatomic,strong) UISearchBar *searchBar;
 @property(nonatomic,strong) UITextField *TextField;
 @property(nonatomic,strong) UIImageView *Searchimage;
 
+@property(nonatomic,strong) UIImageView *headerV;
+
+@property(nonatomic,strong) UITableView *SearchHistory;
+@property(nonatomic,strong) UITableView *MainTableV;
 
 
 @end
@@ -47,6 +51,11 @@
     
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"返回键"] style:UIBarButtonItemStyleDone target:nil action:nil];
     
+    UITableView *SearchHistory = [[UITableView alloc]initWithFrame:CGRectMake(0,170 ,self.view.bounds.size.width, 150)];
+    _SearchHistory = SearchHistory;
+
+    
+    
 }
 
 #pragma mark - 加载头部
@@ -55,6 +64,7 @@
 {
     //创建头部招牌View
     UIView *headerV = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 176)];
+    
     
     headerV.backgroundColor = [UIColor blackColor];
     
@@ -163,6 +173,9 @@
 {
     
     self.TextField.leftViewMode = UITextFieldViewModeNever;
+    
+    [self setupSearchHistory];
+    
 }
 //
 //-(BOOL)textFieldShouldClear:(UITextField *)textField
@@ -173,7 +186,11 @@
 //点击键盘搜索键，收回键盘.***跳转页面****
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
+    //隐藏搜索历史
+    self.SearchHistory.hidden = YES;
+    
 
+    
     [textField resignFirstResponder];
     
     textField.text = @" ";
@@ -188,6 +205,25 @@
     
 }
 
+//加载搜索历史
+-(void)setupSearchHistory
+{
+    UITableView *SearchHistory = [[UITableView alloc]initWithFrame:CGRectMake(0,170 ,self.view.bounds.size.width, 150)];
+    _SearchHistory = SearchHistory;
+    
+//    SearchHistory.delegate = self;
+//    SearchHistory.dataSource = self;
+    
+    
+    SearchHistory.backgroundColor = [UIColor grayColor];
+    
+    [self.view addSubview:SearchHistory];
+    
+    self.SearchHistory.hidden = NO;
+}
+
+
+
 //结束编辑时显示查找职位图片
 -(void)textFieldDidEndEditing:(UITextField *)textField
 {
@@ -199,6 +235,11 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
+    if ([tableView isEqual:_MainTableV]) {
+        return 10;
+    }else if ([tableView isEqual:_SearchHistory]){
+        return 10;
+    }
     return 10;
 }
 
@@ -229,6 +270,10 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if ([tableView isEqual:_SearchHistory]) {
+        return 20.0;
+    }
     
     return 96.0;
 }
