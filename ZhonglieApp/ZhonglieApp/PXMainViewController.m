@@ -259,6 +259,28 @@
         cell = [[PXMainCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
     }
     return cell;
+    
+    
+//    //指定cellIdentifier为自定义的cell
+//    static NSString *CellIdentifier = @"TableViewCell";
+//    //自定义cell类
+//    TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+//    if (cell == nil) {
+//        //通过xib的名称加载自定义的cell
+//        cell = [[[NSBundle mainBundle] loadNibNamed:@"TableViewCell" owner:self options:nil] lastObject];
+//    }
+//    
+//    //添加测试数据
+//    cell.titleLabel.text = [tableData objectAtIndex:indexPath.row];
+//    cell.content.text = @"这是一些测试数据";
+//    //测试图片
+//    cell.iamge.image = [UIImage imageNamed:@"testImage.jpg"];
+//    return cell;
+    
+
+    
+    
+    
 }
 
 
