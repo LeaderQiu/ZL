@@ -38,7 +38,8 @@
 		FD4518FB1B1EE14100A49D88 /* cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD4518F91B1EE14100A49D88 /* cities.plist */; };
 		FD4518FC1B1EE14100A49D88 /* cityGroups.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD4518FA1B1EE14100A49D88 /* cityGroups.plist */; };
 		FD4519021B1EE82000A49D88 /* UIColor+SYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4519011B1EE82000A49D88 /* UIColor+SYExtension.m */; };
-		FD4519051B204AB700A49D88 /* PXSearchHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4519041B204AB700A49D88 /* PXSearchHistoryCell.m */; };
+		FD4519091B204B2B00A49D88 /* PXSearchHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4519071B204B2B00A49D88 /* PXSearchHistoryCell.m */; };
+		FD45190A1B204B2B00A49D88 /* PXSearchHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD4519081B204B2B00A49D88 /* PXSearchHistoryCell.xib */; };
 		FD74078B1B1884F400C6A14C /* PXMainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD74078A1B1884F400C6A14C /* PXMainCell.xib */; };
 		FDEAECDC1B134AB200D48EBE /* PXAlerayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDEAECDB1B134AB200D48EBE /* PXAlerayViewController.m */; };
 		FDEAECDF1B134AD100D48EBE /* PXUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDEAECDE1B134AD100D48EBE /* PXUserViewController.m */; };
@@ -122,8 +123,9 @@
 		FD4518FA1B1EE14100A49D88 /* cityGroups.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cityGroups.plist; sourceTree = "<group>"; };
 		FD4519001B1EE82000A49D88 /* UIColor+SYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+SYExtension.h"; sourceTree = "<group>"; };
 		FD4519011B1EE82000A49D88 /* UIColor+SYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SYExtension.m"; sourceTree = "<group>"; };
-		FD4519031B204AB700A49D88 /* PXSearchHistoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXSearchHistoryCell.h; sourceTree = "<group>"; };
-		FD4519041B204AB700A49D88 /* PXSearchHistoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXSearchHistoryCell.m; sourceTree = "<group>"; };
+		FD4519061B204B2B00A49D88 /* PXSearchHistoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXSearchHistoryCell.h; sourceTree = "<group>"; };
+		FD4519071B204B2B00A49D88 /* PXSearchHistoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXSearchHistoryCell.m; sourceTree = "<group>"; };
+		FD4519081B204B2B00A49D88 /* PXSearchHistoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PXSearchHistoryCell.xib; sourceTree = "<group>"; };
 		FD74078A1B1884F400C6A14C /* PXMainCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PXMainCell.xib; sourceTree = "<group>"; };
 		FDEAECDA1B134AB200D48EBE /* PXAlerayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXAlerayViewController.h; sourceTree = "<group>"; };
 		FDEAECDB1B134AB200D48EBE /* PXAlerayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXAlerayViewController.m; sourceTree = "<group>"; };
@@ -169,8 +171,9 @@
 				FD74078A1B1884F400C6A14C /* PXMainCell.xib */,
 				FD4518A21B1DC40300A49D88 /* PXNavViewController.h */,
 				FD4518A31B1DC40300A49D88 /* PXNavViewController.m */,
-				FD4519031B204AB700A49D88 /* PXSearchHistoryCell.h */,
-				FD4519041B204AB700A49D88 /* PXSearchHistoryCell.m */,
+				FD4519061B204B2B00A49D88 /* PXSearchHistoryCell.h */,
+				FD4519071B204B2B00A49D88 /* PXSearchHistoryCell.m */,
+				FD4519081B204B2B00A49D88 /* PXSearchHistoryCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -470,6 +473,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD45190A1B204B2B00A49D88 /* PXSearchHistoryCell.xib in Resources */,
 				FDF061771B0EFC6E0075A5CB /* Main.storyboard in Resources */,
 				FD3E260A1B12C6B200901E42 /* Images.xcassets in Resources */,
 				FD4518FC1B1EE14100A49D88 /* cityGroups.plist in Resources */,
@@ -498,7 +502,7 @@
 				FD4519021B1EE82000A49D88 /* UIColor+SYExtension.m in Sources */,
 				FD1178841B185A2D00DAE956 /* PXSearchViewController.m in Sources */,
 				FDF061711B0EFC6E0075A5CB /* AppDelegate.m in Sources */,
-				FD4519051B204AB700A49D88 /* PXSearchHistoryCell.m in Sources */,
+				FD4519091B204B2B00A49D88 /* PXSearchHistoryCell.m in Sources */,
 				FD4518EF1B1EDF8900A49D88 /* AFHTTPRequestOperation.m in Sources */,
 				FD4518F61B1EDF8900A49D88 /* AFURLResponseSerialization.m in Sources */,
 				FD4518A41B1DC40300A49D88 /* PXNavViewController.m in Sources */,
