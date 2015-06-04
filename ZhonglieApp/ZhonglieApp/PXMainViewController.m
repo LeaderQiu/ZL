@@ -177,11 +177,6 @@
     [self setupSearchHistory];
     
 }
-//
-//-(BOOL)textFieldShouldClear:(UITextField *)textField
-//{
-//    return YES;
-//}
 
 //点击键盘搜索键，收回键盘.***跳转页面****
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -211,11 +206,11 @@
     UITableView *SearchHistory = [[UITableView alloc]initWithFrame:CGRectMake(0,170 ,self.view.bounds.size.width, 150)];
     _SearchHistory = SearchHistory;
     
-//    SearchHistory.delegate = self;
-//    SearchHistory.dataSource = self;
+    SearchHistory.delegate = self;
+    SearchHistory.dataSource = self;
     
     
-    SearchHistory.backgroundColor = [UIColor grayColor];
+    SearchHistory.backgroundColor = [UIColor whiteColor];
     
     [self.view addSubview:SearchHistory];
     
@@ -233,18 +228,28 @@
 
 #pragma mark - TableView数据源
 
+//cell个数
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     if ([tableView isEqual:_MainTableV]) {
         return 10;
-    }else if ([tableView isEqual:_SearchHistory]){
-        return 10;
+    }else if ([tableView isEqual:self.SearchHistory]){
+        return 5;
     }
     return 10;
 }
 
 //自定义Cell
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if ([tableView isEqual:_SearchHistory]) {
+        
+        UITableViewCell *searchHistoryCell = [[UITableViewCell alloc]init];
+        searchHistoryCell.backgroundColor = [UIColor whiteColor];
+      
+        
+        return searchHistoryCell;
+    }
     
     static NSString *ID = @"PXMainCell";
     
@@ -269,10 +274,11 @@
     return 96.0;
 }
 
+//cell高度
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if ([tableView isEqual:_SearchHistory]) {
-        return 20.0;
+    if ([tableView isEqual:self.SearchHistory]) {
+        return 48.0;
     }
     
     return 96.0;
