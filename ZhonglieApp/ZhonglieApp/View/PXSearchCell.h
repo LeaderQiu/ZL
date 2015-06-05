@@ -10,4 +10,8 @@
 
 @interface PXSearchCell : UITableViewCell
 
+//暴露一个模型属性
+@property (nonatomic,copy) NSString *model;
+
+
 @end

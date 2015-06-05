@@ -242,8 +242,8 @@
 }
 
 //自定义Cell
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     
     if ([tableView isEqual:_SearchHistory]) {
         
@@ -261,6 +261,7 @@
             return cell;
         } else {
             
+            
             static NSString *searchID = @"searchCell";
             
             PXSearchCell *cell = [tableView dequeueReusableCellWithIdentifier:searchID];
@@ -269,6 +270,9 @@
                 
                 cell = [[PXSearchCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:searchID];
             }
+            
+            cell.model = @"O(∩_∩)O哈哈~";
+            
             return cell;
         }
         
@@ -285,10 +289,15 @@
     }
     
     
+    
+
+    
+}
 
     
     
-}
+    
+
 
 
 #pragma mark - TableView代理方法
@@ -307,11 +316,21 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if ([tableView isEqual:self.SearchHistory]) {
-        return 48.0;
+        if(indexPath.row == 1){
+            return 88;
+        }else{
+            return 48.0;
+        }
+        
     }
     
     return 96.0;
 }
+//- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+//    
+//    return nil;
+//}
+
 
 
 @end

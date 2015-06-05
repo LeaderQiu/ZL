@@ -10,6 +10,29 @@
 
 @implementation PXSearchHistoryCell
 
+
+
+-(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+{
+    if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
+        /**
+         *  初始化cell
+         *
+         *  @return
+         */
+#warning TODO
+        self.userInteractionEnabled = FALSE;
+        [self setSelectionStyle:UITableViewCellSelectionStyleNone];
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        
+        
+        //加载xib
+        self = [[NSBundle mainBundle] loadNibNamed:@"PXSearchHistoryCell" owner:nil options:nil].firstObject;
+    }
+    return self;
+}
+
 - (void)awakeFromNib {
     // Initialization code
 }

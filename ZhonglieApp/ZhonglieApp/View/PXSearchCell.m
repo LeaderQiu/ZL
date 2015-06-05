@@ -8,7 +8,36 @@
 
 #import "PXSearchCell.h"
 
+
+@interface PXSearchCell ()
+
+@property (weak, nonatomic) IBOutlet UILabel *SearchLable;
+
+
+@end
+
+
+
 @implementation PXSearchCell
+
+
+
+-(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+{
+    if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
+        /**
+         *  初始化cell
+         *
+         *  @return <#return value description#>
+         */
+        
+        
+        self = [[NSBundle mainBundle] loadNibNamed:@"PXSearchCell" owner:nil options:nil].firstObject;
+    }
+    return self;
+}
+
+
 
 - (void)awakeFromNib {
     // Initialization code
@@ -18,6 +47,13 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+-(void)setModel:(NSString *)model
+{
+    _model = model;
+    
+    _SearchLable.text = model;
 }
 
 @end
