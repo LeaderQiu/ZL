@@ -10,6 +10,8 @@
 #import "PXMainCell.h"
 #import "PXSearchViewController.h"
 #import "PXCityViewController.h"
+#import "PXSearchHistoryCell.h"
+#import "PXSearchCell.h"
 
 @interface PXMainViewController () <UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 @property(nonatomic,strong) UIImageView *LogoImageV;
@@ -242,43 +244,48 @@
 //自定义Cell
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    
     if ([tableView isEqual:_SearchHistory]) {
         
-        UITableViewCell *searchHistoryCell = [[UITableViewCell alloc]init];
-        searchHistoryCell.backgroundColor = [UIColor whiteColor];
-      
+        if (indexPath.row == 0) {
+            
+            static NSString *searchHistoryID = @"searchHistoryCell";
+            
+            PXSearchHistoryCell *cell = [tableView dequeueReusableCellWithIdentifier:searchHistoryID];
+            
+            if (cell == nil) {
+                
+                cell = [[PXSearchHistoryCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:searchHistoryID];
+            }
+            
+            return cell;
+        } else {
+            
+            static NSString *searchID = @"searchCell";
+            
+            PXSearchCell *cell = [tableView dequeueReusableCellWithIdentifier:searchID];
+            
+            if (cell == nil) {
+                
+                cell = [[PXSearchCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:searchID];
+            }
+            return cell;
+        }
         
-        return searchHistoryCell;
+    } else {
+        
+        static NSString *mainID = @"PXMainCell";
+        
+        PXMainCell *cell = [tableView dequeueReusableCellWithIdentifier:mainID];
+        
+        if (cell == nil) {
+            cell = [[PXMainCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:mainID];
+        }
+        return cell;
     }
     
-    static NSString *ID = @"PXMainCell";
-    
-    PXMainCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    
-    if (cell == nil) {
-        cell = [[PXMainCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
-    }
-    return cell;
-    
-    
-//    //指定cellIdentifier为自定义的cell
-//    static NSString *CellIdentifier = @"TableViewCell";
-//    //自定义cell类
-//    TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-//    if (cell == nil) {
-//        //通过xib的名称加载自定义的cell
-//        cell = [[[NSBundle mainBundle] loadNibNamed:@"TableViewCell" owner:self options:nil] lastObject];
-//    }
-//    
-//    //添加测试数据
-//    cell.titleLabel.text = [tableData objectAtIndex:indexPath.row];
-//    cell.content.text = @"这是一些测试数据";
-//    //测试图片
-//    cell.iamge.image = [UIImage imageNamed:@"testImage.jpg"];
-//    return cell;
     
 
-    
     
     
 }
