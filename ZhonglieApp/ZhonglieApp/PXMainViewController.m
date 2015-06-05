@@ -27,6 +27,7 @@
 @property(nonatomic,strong) UITableView *SearchHistory;
 @property(nonatomic,strong) UITableView *MainTableV;
 
+@property(nonatomic,strong) NSArray *SearchText2;
 
 
 @end
@@ -199,11 +200,14 @@
     
     NSString *SearchText = [textField text];
     
+    
     _SearchText =SearchText;
+
     
     NSLog(@"用户输入******%@",SearchText);
     
     [[NSUserDefaults standardUserDefaults]setObject:SearchText forKey:@"textFieldKey"];
+    
 
   
     
