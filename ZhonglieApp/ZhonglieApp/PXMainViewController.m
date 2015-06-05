@@ -28,6 +28,7 @@
 @property(nonatomic,strong) UITableView *MainTableV;
 
 
+
 @end
 
 @implementation PXMainViewController
@@ -53,12 +54,21 @@
     
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"返回键"] style:UIBarButtonItemStyleDone target:nil action:nil];
     
-    UITableView *SearchHistory = [[UITableView alloc]initWithFrame:CGRectMake(0,170 ,self.view.bounds.size.width, 150)];
+    UITableView *SearchHistory = [[UITableView alloc]initWithFrame:CGRectMake(0,170 ,self.view.bounds.size.width, 10)];
     _SearchHistory = SearchHistory;
 
     
     
 }
+
+//点击空白收起键盘、收起SearchHistoryView
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.TextField resignFirstResponder];
+    
+    self.SearchHistory.hidden = YES;
+}
+
 
 #pragma mark - 加载头部
 
@@ -205,7 +215,7 @@
 //加载搜索历史
 -(void)setupSearchHistory
 {
-    UITableView *SearchHistory = [[UITableView alloc]initWithFrame:CGRectMake(0,170 ,self.view.bounds.size.width, 150)];
+    UITableView *SearchHistory = [[UITableView alloc]initWithFrame:CGRectMake(0,170 ,self.view.bounds.size.width, 180)];
     _SearchHistory = SearchHistory;
     
     SearchHistory.delegate = self;
@@ -224,7 +234,16 @@
 //结束编辑时显示查找职位图片
 -(void)textFieldDidEndEditing:(UITextField *)textField
 {
+    self.SearchHistory.hidden = YES;
     self.TextField.leftViewMode = UITextFieldViewModeUnlessEditing;
+    
+    //获取用户输入的内容
+    
+    NSString *SearchText = [textField text];
+    
+    _SearchText =SearchText;
+    
+    NSLog(@"用户输入******%@",SearchText);
     
 }
 
@@ -248,6 +267,12 @@
     if ([tableView isEqual:_SearchHistory]) {
         
         if (indexPath.row == 1) {
+            
+            UIView *backV = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, 100)];
+            backV.backgroundColor = [UIColor yellowColor];
+            
+            self.SearchHistory.sectionIndexBackgroundColor = [UIColor yellowColor];
+            
             
             static NSString *searchHistoryID = @"searchHistoryCell";
             
@@ -344,7 +369,7 @@
     
     if ([tableView isEqual:self.SearchHistory]) {
         if(indexPath.row == 1){
-            return 88;
+            return 100;
         }else{
             return 48.0;
         }
@@ -353,10 +378,6 @@
     
     return 96.0;
 }
-//- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-//    
-//    return nil;
-//}
 
 
 

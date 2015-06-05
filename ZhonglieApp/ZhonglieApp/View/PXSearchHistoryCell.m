@@ -21,9 +21,17 @@
          *  @return
          */
 #warning TODO
-        self.userInteractionEnabled = FALSE;
-        [self setSelectionStyle:UITableViewCellSelectionStyleNone];
-        self.selectionStyle = UITableViewCellSelectionStyleNone;
+//        self.userInteractionEnabled = FALSE;
+//        [self setSelectionStyle:UITableViewCellSelectionStyleNone];
+//        self.selectionStyle = UITableViewCellSelectionStyleNone;
+//        
+
+//        UIView *backV = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, 100)];
+//        backV.backgroundColor = [UIColor yellowColor];
+//        
+//        self.selectedBackgroundView = backV;
+//        self.selected = NO;
+        
         
         
         
