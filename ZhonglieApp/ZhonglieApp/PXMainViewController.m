@@ -12,6 +12,7 @@
 #import "PXCityViewController.h"
 #import "PXSearchHistoryCell.h"
 #import "PXSearchCell.h"
+#import "PXDetailViewController.h"
 
 @interface PXMainViewController () <UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 @property(nonatomic,strong) UIImageView *LogoImageV;
@@ -390,6 +391,9 @@
 #pragma mark - TableView代理方法
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    PXDetailViewController *DetailVC = [[PXDetailViewController alloc]initWithStyle:UITableViewStyleGrouped];
+    
+    [self.navigationController pushViewController:DetailVC animated:YES];
     
     NSLog(@"%zd", indexPath.row);
 }
