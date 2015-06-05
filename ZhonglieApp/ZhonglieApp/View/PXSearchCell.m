@@ -33,6 +33,9 @@
         
         
         self = [[NSBundle mainBundle] loadNibNamed:@"PXSearchCell" owner:nil options:nil].firstObject;
+        
+        //设置为不可选中
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     return self;
 }

@@ -36,6 +36,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
     self.navigationController.navigationBarHidden = YES;
     
     self.navigationController.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image: [UIImage imageNamed:@"home"]selectedImage:[UIImage imageNamed:@"home-hover"]];
@@ -193,6 +194,23 @@
 //点击键盘搜索键，收回键盘.***跳转页面****
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
+    
+    //获取用户输入的内容
+    
+    NSString *SearchText = [textField text];
+    
+    _SearchText =SearchText;
+    
+    NSLog(@"用户输入******%@",SearchText);
+    
+    [[NSUserDefaults standardUserDefaults]setObject:SearchText forKey:@"textFieldKey"];
+
+  
+    
+    
+    
+    
+    
     //隐藏搜索历史
     self.SearchHistory.hidden = YES;
     
@@ -207,6 +225,9 @@
 //    [self presentViewController:SearchVC animated:YES completion:nil];
     
     [self.navigationController pushViewController:SearchVC animated:YES];
+    
+    
+   
     
     return YES;
     
@@ -237,13 +258,7 @@
     self.SearchHistory.hidden = YES;
     self.TextField.leftViewMode = UITextFieldViewModeUnlessEditing;
     
-    //获取用户输入的内容
     
-    NSString *SearchText = [textField text];
-    
-    _SearchText =SearchText;
-    
-    NSLog(@"用户输入******%@",SearchText);
     
 }
 
@@ -313,6 +328,22 @@
                 
                 return cell;
             }
+            if (indexPath.row == 3) {
+                static NSString *searchID = @"searchCell";
+                
+                PXSearchCell *cell = [tableView dequeueReusableCellWithIdentifier:searchID];
+                
+                if (cell == nil) {
+                    
+                    cell = [[PXSearchCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:searchID];
+                }
+                
+                
+                cell.model = [[NSUserDefaults standardUserDefaults] objectForKey:@"textFieldKey"];
+                
+                return cell;
+            }
+
             
             static NSString *searchID = @"searchCell";
             
