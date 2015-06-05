@@ -247,7 +247,7 @@
     
     if ([tableView isEqual:_SearchHistory]) {
         
-        if (indexPath.row == 0) {
+        if (indexPath.row == 1) {
             
             static NSString *searchHistoryID = @"searchHistoryCell";
             
@@ -260,7 +260,34 @@
             
             return cell;
         } else {
-            
+            if (indexPath.row == 0) {
+                static NSString *searchID = @"searchCell";
+                
+                PXSearchCell *cell = [tableView dequeueReusableCellWithIdentifier:searchID];
+                
+                if (cell == nil) {
+                    
+                    cell = [[PXSearchCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:searchID];
+                }
+                
+                cell.model = @"热门搜索";
+                
+                return cell;
+            }
+            if (indexPath.row == 2) {
+                static NSString *searchID = @"searchCell";
+                
+                PXSearchCell *cell = [tableView dequeueReusableCellWithIdentifier:searchID];
+                
+                if (cell == nil) {
+                    
+                    cell = [[PXSearchCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:searchID];
+                }
+                
+                cell.model = @"搜索历史";
+                
+                return cell;
+            }
             
             static NSString *searchID = @"searchCell";
             
@@ -271,7 +298,7 @@
                 cell = [[PXSearchCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:searchID];
             }
             
-            cell.model = @"O(∩_∩)O哈哈~";
+            cell.model = @" ";
             
             return cell;
         }
