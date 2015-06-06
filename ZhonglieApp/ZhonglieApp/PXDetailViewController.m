@@ -76,10 +76,13 @@
     if (cell == nil) {
         cell = [[PXDetailCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
         
+      
         cell.DetailLable = @"冯明";
         cell.DetailPlaceholder = @"字猥琐";
     }
     return cell;
+    
+    
 }
 
 
