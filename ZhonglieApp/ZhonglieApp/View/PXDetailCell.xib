@@ -27,6 +27,10 @@
                     </textField>
                 </subviews>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="Label" destination="Zp2-pM-MIt" id="I3l-f5-bUS"/>
+                <outlet property="TextField" destination="SrN-uB-JUV" id="CWR-6j-gJr"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>

@@ -8,6 +8,12 @@
 
 #import "PXDetailCell.h"
 
+@interface PXDetailCell () 
+@property (weak, nonatomic) IBOutlet UILabel *Label;
+@property (weak, nonatomic) IBOutlet UITextField *TextField;
+
+@end
+
 @implementation PXDetailCell
 
 
@@ -24,6 +30,20 @@
     }
     
     return self;
+}
+
+-(void)setDetailLable:(NSString *)DetailLable
+{
+    _DetailLable = DetailLable;
+    
+    _Label.text = DetailLable;
+}
+
+-(void)setDetailPlaceholder:(NSString *)DetailPlaceholder
+{
+    _DetailPlaceholder = DetailPlaceholder;
+    
+    _TextField.placeholder = DetailPlaceholder;
 }
 
 - (void)awakeFromNib {

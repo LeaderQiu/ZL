@@ -10,4 +10,8 @@
 
 @interface PXDetailCell : UITableViewCell
 
+@property (nonatomic,strong) NSString *DetailLable;
+
+@property (nonatomic,strong) NSString *DetailPlaceholder;
+
 @end
