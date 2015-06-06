@@ -43,8 +43,9 @@
 		FD45190E1B21323500A49D88 /* PXSearchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FD45190C1B21323500A49D88 /* PXSearchCell.m */; };
 		FD45190F1B21323500A49D88 /* PXSearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD45190D1B21323500A49D88 /* PXSearchCell.xib */; };
 		FD4519221B21C46B00A49D88 /* PXDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4519201B21C46B00A49D88 /* PXDetailViewController.m */; };
-		FD4519231B21C46B00A49D88 /* PXDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD4519211B21C46B00A49D88 /* PXDetailViewController.xib */; };
 		FD74078B1B1884F400C6A14C /* PXMainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD74078A1B1884F400C6A14C /* PXMainCell.xib */; };
+		FD991CA61B22A26300E79F12 /* PXDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FD991CA41B22A26300E79F12 /* PXDetailCell.m */; };
+		FD991CA71B22A26300E79F12 /* PXDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD991CA51B22A26300E79F12 /* PXDetailCell.xib */; };
 		FDEAECDC1B134AB200D48EBE /* PXAlerayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDEAECDB1B134AB200D48EBE /* PXAlerayViewController.m */; };
 		FDEAECDF1B134AD100D48EBE /* PXUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDEAECDE1B134AD100D48EBE /* PXUserViewController.m */; };
 		FDF0616E1B0EFC6E0075A5CB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FDF0616D1B0EFC6E0075A5CB /* main.m */; };
@@ -135,8 +136,10 @@
 		FD45190D1B21323500A49D88 /* PXSearchCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PXSearchCell.xib; sourceTree = "<group>"; };
 		FD45191F1B21C46B00A49D88 /* PXDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXDetailViewController.h; sourceTree = "<group>"; };
 		FD4519201B21C46B00A49D88 /* PXDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXDetailViewController.m; sourceTree = "<group>"; };
-		FD4519211B21C46B00A49D88 /* PXDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PXDetailViewController.xib; sourceTree = "<group>"; };
 		FD74078A1B1884F400C6A14C /* PXMainCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PXMainCell.xib; sourceTree = "<group>"; };
+		FD991CA31B22A26300E79F12 /* PXDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXDetailCell.h; sourceTree = "<group>"; };
+		FD991CA41B22A26300E79F12 /* PXDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXDetailCell.m; sourceTree = "<group>"; };
+		FD991CA51B22A26300E79F12 /* PXDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PXDetailCell.xib; sourceTree = "<group>"; };
 		FDEAECDA1B134AB200D48EBE /* PXAlerayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXAlerayViewController.h; sourceTree = "<group>"; };
 		FDEAECDB1B134AB200D48EBE /* PXAlerayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXAlerayViewController.m; sourceTree = "<group>"; };
 		FDEAECDD1B134AD100D48EBE /* PXUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXUserViewController.h; sourceTree = "<group>"; };
@@ -185,6 +188,9 @@
 				FD45190B1B21323500A49D88 /* PXSearchCell.h */,
 				FD45190C1B21323500A49D88 /* PXSearchCell.m */,
 				FD45190D1B21323500A49D88 /* PXSearchCell.xib */,
+				FD991CA31B22A26300E79F12 /* PXDetailCell.h */,
+				FD991CA41B22A26300E79F12 /* PXDetailCell.m */,
+				FD991CA51B22A26300E79F12 /* PXDetailCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -202,7 +208,6 @@
 				FD4518A31B1DC40300A49D88 /* PXNavViewController.m */,
 				FD45191F1B21C46B00A49D88 /* PXDetailViewController.h */,
 				FD4519201B21C46B00A49D88 /* PXDetailViewController.m */,
-				FD4519211B21C46B00A49D88 /* PXDetailViewController.xib */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -490,7 +495,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD45190A1B204B2B00A49D88 /* PXSearchHistoryCell.xib in Resources */,
-				FD4519231B21C46B00A49D88 /* PXDetailViewController.xib in Resources */,
 				FDF061771B0EFC6E0075A5CB /* Main.storyboard in Resources */,
 				FD45190F1B21323500A49D88 /* PXSearchCell.xib in Resources */,
 				FD3E260A1B12C6B200901E42 /* Images.xcassets in Resources */,
@@ -499,6 +503,7 @@
 				FD4518FB1B1EE14100A49D88 /* cities.plist in Resources */,
 				FDF061971B0EFEAF0075A5CB /* PXMain.storyboard in Resources */,
 				FD74078B1B1884F400C6A14C /* PXMainCell.xib in Resources */,
+				FD991CA71B22A26300E79F12 /* PXDetailCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,6 +533,7 @@
 				7AA145DA1B13332F0034E373 /* PXRunameViewController.m in Sources */,
 				FD4519221B21C46B00A49D88 /* PXDetailViewController.m in Sources */,
 				FD4518D31B1EDF6700A49D88 /* MJConst.m in Sources */,
+				FD991CA61B22A26300E79F12 /* PXDetailCell.m in Sources */,
 				FDF0616E1B0EFC6E0075A5CB /* main.m in Sources */,
 				7A1B1A5C1B17225D009C49E2 /* PXMainCell.m in Sources */,
 				FD4518D51B1EDF6700A49D88 /* MJProperty.m in Sources */,
