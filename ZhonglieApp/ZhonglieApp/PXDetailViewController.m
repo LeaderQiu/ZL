@@ -22,9 +22,6 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
-    self.tableView.backgroundColor = [UIColor yellowColor];
-    
-    
     
     //设置导航栏
     self.navigationController.navigationBarHidden = NO;
@@ -104,11 +101,7 @@
 //底部视图高度
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    if (section == 0) {
-        return 0;
-    } else {
-        return 44;
-    }
+    return 0;
 }
 
 
