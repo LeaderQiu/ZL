@@ -75,11 +75,16 @@
     
     if (cell == nil) {
         cell = [[PXDetailCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+     
+        NSInteger row = [indexPath row];
         
+//        NSDictionary *rowData = [self];
       
         cell.DetailLable = @"冯明";
         cell.DetailPlaceholder = @"字猥琐";
     }
+    
+    
     return cell;
     
     
@@ -107,6 +112,9 @@
 //底部视图高度
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
+    if (section == 3) {
+        return 60;
+    }
     return 0;
 }
 
@@ -121,24 +129,25 @@
     }
     
 }
-//
-////每个cell高度
-//-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    
-//}
-//
-////自定义底部视图
-//-(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
-//{
-//    
-//}
-//
-////自定义头部视图
-//-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-//{
-//    
-//}
+
+//自定义底部视图
+-(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    if (section == 3) {
+        UIView *TuiJianV = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 100, 40)];
+        
+        TuiJianV.backgroundColor = [UIColor clearColor];
+        
+        UIButton *TuiJianBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, 10, 300, 49)];
+        
+        [TuiJianBtn setImage:[UIImage imageNamed:@"推荐Btn"] forState:UIControlStateNormal];
+        [TuiJianV addSubview:TuiJianBtn];
+        
+        [self.view addSubview:TuiJianV];
+        return TuiJianV;
+    }
+    return nil;
+}
 
 
 
