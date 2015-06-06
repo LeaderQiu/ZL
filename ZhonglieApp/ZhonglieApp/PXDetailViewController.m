@@ -8,6 +8,8 @@
 
 #import "PXDetailViewController.h"
 #import "UIBarButtonItem+Extension.h"
+#import "PXDetailCell.h"
+
 
 @interface PXDetailViewController () <UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong) UITableView *DetailV;
@@ -69,12 +71,12 @@
 {
     
     static NSString *ID = @"flagCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    PXDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+        cell = [[PXDetailCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
         
-        cell.textLabel.text = [NSString stringWithFormat:@"%zd",arc4random()/5];
+//        cell.textLabel.text = [NSString stringWithFormat:@"%zd",arc4random()/5];
     }
     return cell;
 }
