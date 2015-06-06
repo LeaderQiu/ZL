@@ -9,8 +9,8 @@
 #import "PXDetailViewController.h"
 #import "UIBarButtonItem+Extension.h"
 
-@interface PXDetailViewController ()
-
+@interface PXDetailViewController () <UITableViewDelegate,UITableViewDataSource>
+@property(nonatomic,strong) UITableView *DetailV;
 
 @end
 
@@ -18,27 +18,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
     
-//    UITableView *DetailV = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
-//    _DetailV = DetailV;
-//    
-//    self.DetailV.delegate = self;
-//    self.DetailV.dataSource = self;
-//    
-//    self.DetailV.backgroundColor = [UIColor whiteColor];
-//    
-//    self.DetailV.rowHeight = 88;
-//    
-//    [self.view addSubview:DetailV];
-    
-    UITableView *a = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
-    a.rowHeight = 44;
-    a.delegate = self;
-    a.dataSource = self;
+    self.tableView.backgroundColor = [UIColor yellowColor];
     
     
-    
-    [self.view addSubview:a];
     
     //设置导航栏
     self.navigationController.navigationBarHidden = NO;
@@ -59,16 +45,29 @@
 
 #pragma mark - Table view data source
 
+
+//几个section
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return 4;
 }
 
+//每个组几个cell
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;
+    if (section == 0) {
+        return 1;
+    } else if (section ==1) {
+        return 4;
+    } else if (section ==2) {
+        return 5;
+    } else {
+        return 5;
+    }
+    
 }
 
+//自定义cell
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
@@ -82,6 +81,66 @@
     }
     return cell;
 }
+
+
+#pragma mark - TableView 代理
+
+
+//每个组组名
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    if (section == 0) {
+        return nil;
+    } else if (section == 1) {
+        return @"职位描述";
+    } else if (section == 2) {
+        return @"职位要求";
+    } else {
+        return @"企业介绍";
+    }
+    
+}
+
+//底部视图高度
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    if (section == 0) {
+        return 0;
+    } else {
+        return 44;
+    }
+}
+
+
+//头部视图高度
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    if (section == 0) {
+        return 0;
+    } else {
+        return 44;
+    }
+    
+}
+//
+////每个cell高度
+//-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    
+//}
+//
+////自定义底部视图
+//-(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+//{
+//    
+//}
+//
+////自定义头部视图
+//-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+//{
+//    
+//}
+
 
 
 @end
