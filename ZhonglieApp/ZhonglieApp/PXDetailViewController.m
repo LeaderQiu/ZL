@@ -8,7 +8,7 @@
 
 #import "PXDetailViewController.h"
 #import "UIBarButtonItem+Extension.h"
-#import "PXDetailCell.h"
+
 
 
 @interface PXDetailViewController () <UITableViewDelegate,UITableViewDataSource>
@@ -69,21 +69,81 @@
 //自定义cell
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+
     static NSString *ID = @"flagCell";
-    PXDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     
     if (cell == nil) {
-        cell = [[PXDetailCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
-     
-        NSInteger row = [indexPath row];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
         
-//        NSDictionary *rowData = [self];
-      
-        cell.DetailLable = @"冯明";
-        cell.DetailPlaceholder = @"字猥琐";
+        cell.detailTextLabel.text = @"冯明";
+        cell.textLabel.text = @"字猥琐";
     }
-    
+    if (indexPath.section == 1) {
+        switch (indexPath.row) {
+                case 0:
+                cell.textLabel.text = @"汇报对象";
+                break;
+                case 1:
+                cell.textLabel.text = @"所属部门";
+                break;
+                case 2:
+                cell.textLabel.text = @"下属人数";
+                break;
+                case 3:
+                cell.textLabel.text = @"工作内容及要求";
+                break;
+                
+            default:
+                break;
+        }
+    }
+    if (indexPath.section == 2) {
+        switch (indexPath.row) {
+            case 0:
+                cell.textLabel.text = @"学       历";
+                break;
+            case 1:
+                cell.textLabel.text = @"性       别";
+                break;
+            case 2:
+                cell.textLabel.text = @"专业要求";
+                break;
+            case 3:
+                cell.textLabel.text = @"年龄阶段";
+                break;
+            case 4:
+                cell.textLabel.text = @"工作年限";
+                break;
+                
+            default:
+                break;
+        }
+    }
+    if (indexPath.section == 3) {
+        switch (indexPath.row) {
+            case 0:
+                cell.textLabel.text = @"公司名称";
+                break;
+            case 1:
+                cell.textLabel.text = @"公司地址";
+                break;
+            case 2:
+                cell.textLabel.text = @"公司人数";
+                break;
+            case 3:
+                cell.textLabel.text = @"公司介绍";
+                break;
+            case 4:
+                cell.textLabel.text = @"";
+                break;
+
+                
+                
+            default:
+                break;
+        }
+    }
     
     return cell;
     
