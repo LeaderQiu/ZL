@@ -9,11 +9,14 @@
 #import "PXDetailViewController.h"
 #import "UIBarButtonItem+Extension.h"
 #import "PXMainCell.h"
+#import "PXRuname2ViewController.h"
 
 
 
 @interface PXDetailViewController () <UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong) UITableView *DetailV;
+
+@property(nonatomic,strong) PXDetailViewController *DetailVC;
 
 @end
 
@@ -75,6 +78,7 @@
     UIButton *TuiJianBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, 10, 300, 49)];
     
     [TuiJianBtn setImage:[UIImage imageNamed:@"推荐Btn"] forState:UIControlStateNormal];
+    
     
     [TuiJianBtn addTarget:self action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
     
@@ -170,9 +174,10 @@
                 break;
             case 5:
                 cell.textLabel.text = @"";
-#warning TODO Btn点击不了
-                cell.backgroundView = TuiJianV;
-              cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
+                cell.selectionStyle = UITableViewCellSelectionStyleNone;
+                
+                [cell.contentView addSubview:TuiJianV];
                 
                 
             default:
@@ -185,9 +190,14 @@
     
 }
 
+//点击推荐职位按钮
 -(void)btnClick
 {
     NSLog(@"点击了推荐按钮");
+    
+    PXRuname2ViewController *Runame2VC = [[PXRuname2ViewController alloc]init];
+    
+    [self.navigationController pushViewController:Runame2VC animated:YES];
 }
 
 

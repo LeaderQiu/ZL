@@ -1,5 +1,5 @@
 //
-//  PXRuname2Cell.h
+//  PXRunameCell.h
 //  ZhonglieApp
 //
 //  Created by 邱思雨 on 15/6/8.

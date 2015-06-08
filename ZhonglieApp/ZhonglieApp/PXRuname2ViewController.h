@@ -1,5 +1,5 @@
 //
-//  PXRuname2Cell.h
+//  PXRuname2ViewController.h
 //  ZhonglieApp
 //
 //  Created by 邱思雨 on 15/6/8.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PXRunameCell : UITableViewCell
+@interface PXRuname2ViewController : UITableViewController
 
 @end

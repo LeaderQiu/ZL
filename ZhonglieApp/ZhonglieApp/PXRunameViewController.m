@@ -9,7 +9,7 @@
 #import "PXRunameViewController.h"
 #import "UIBarButtonItem+Extension.h"
 #import "PXRunameCell.h"
-#import "PXRuname2Cell.h"
+
 
 @interface PXRunameViewController ()<UITextFieldDelegate,UITableViewDataSource,UITableViewDelegate>
 
@@ -39,10 +39,12 @@
 {
     UIView *FirstV = [[UIView alloc]initWithFrame:CGRectMake(0, 64, 320, 49)];
     
-    UIImageView *backImage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"搜索栏Cell背景"]];
-    backImage.frame = CGRectMake(0, 64, 320, 48) ;
+    [FirstV setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"搜索栏Cell背景"]]];
     
-    [FirstV addSubview:backImage];
+//    UIImageView *backImage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"搜索栏Cell背景"]];
+//    backImage.frame = CGRectMake(0, 64, 320, 48) ;
+//    
+//    [FirstV addSubview:backImage];
     
     //添加TextFiel
     UITextField *TextField = [[UITextField alloc]initWithFrame:CGRectMake(10, 7, 300, 35)];
@@ -82,6 +84,16 @@
     self.TextField.font = [UIFont fontWithName:@"Helvetica-Bold"size:16];
 }
 
+//开始编辑时隐藏查找职位图片
+-(void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    
+    self.TextField.leftViewMode = UITextFieldViewModeNever;
+    
+//    [self setupSearchHistory];
+    
+}
+
 -(void)setupTableV
 {
     UITableView *tableV = [[UITableView alloc]initWithFrame:CGRectMake(0, 113, self.view.bounds.size.width, self.view.bounds.size.height)];
@@ -107,12 +119,12 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
    
-    static NSString *RunameID = @"Runame2Cell";
+    static NSString *RunameID = @"RunameCell";
     
-    PXRuname2Cell *cell = [tableView dequeueReusableCellWithIdentifier:RunameID];
+    PXRunameCell *cell = [tableView dequeueReusableCellWithIdentifier:RunameID];
     
     if (cell == nil) {
-        cell = [[PXRuname2Cell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:RunameID];
+        cell = [[PXRunameCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:RunameID];
     }
     
 
