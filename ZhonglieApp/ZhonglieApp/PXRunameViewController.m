@@ -94,6 +94,7 @@
     
 }
 
+//设置TableView
 -(void)setupTableV
 {
     UITableView *tableV = [[UITableView alloc]initWithFrame:CGRectMake(0, 113, self.view.bounds.size.width, self.view.bounds.size.height)];
@@ -110,13 +111,13 @@
 #pragma mark - Table view data source
 
 
-
+//几个cell
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
     return 8;
 }
 
-
+//自定义cell
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
    
     static NSString *RunameID = @"RunameCell";
@@ -132,6 +133,25 @@
     return cell;
 }
 
+//底部视图高度
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 70;
+}
+
+//设置底部视图
+-(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    UIView *footerV = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+    
+    UIButton *AddBtn = [[UIButton alloc] initWithFrame:CGRectMake(10, 10, 300, 49)];
+    
+    [AddBtn setImage:[UIImage imageNamed:@"添加简历"] forState:UIControlStateNormal];
+    
+    [footerV addSubview:AddBtn];
+    
+    return footerV;
+}
 
 /*
 // Override to support conditional editing of the table view.
