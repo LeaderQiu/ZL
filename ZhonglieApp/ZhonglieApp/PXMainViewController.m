@@ -390,12 +390,16 @@
 
 #pragma mark - TableView代理方法
 
+//点击cell事件
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    PXDetailViewController *DetailVC = [[PXDetailViewController alloc]initWithStyle:UITableViewStyleGrouped];
-    
-    [self.navigationController pushViewController:DetailVC animated:YES];
-    
-    NSLog(@"%zd", indexPath.row);
+    if ([tableView isEqual:_MainTableV]) {
+        PXDetailViewController *DetailVC = [[PXDetailViewController alloc]initWithStyle:UITableViewStyleGrouped];
+        
+        [self.navigationController pushViewController:DetailVC animated:YES];
+        
+        NSLog(@"%zd", indexPath.row);
+
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {

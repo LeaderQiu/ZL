@@ -8,6 +8,8 @@
 
 #import "PXRunameViewController.h"
 #import "UIBarButtonItem+Extension.h"
+#import "PXRunameCell.h"
+#import "PXRuname2Cell.h"
 
 @interface PXRunameViewController ()<UITextFieldDelegate,UITableViewDataSource,UITableViewDelegate>
 
@@ -84,33 +86,40 @@
 {
     UITableView *tableV = [[UITableView alloc]initWithFrame:CGRectMake(0, 113, self.view.bounds.size.width, self.view.bounds.size.height)];
     
+    tableV.delegate = self;
+    tableV.dataSource = self;
+    
+    tableV.rowHeight = 49;
+    
     [self.view addSubview:tableV];
 }
 
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
-}
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+
+    return 8;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+   
+    static NSString *RunameID = @"Runame2Cell";
     
-    // Configure the cell...
+    PXRuname2Cell *cell = [tableView dequeueReusableCellWithIdentifier:RunameID];
+    
+    if (cell == nil) {
+        cell = [[PXRuname2Cell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:RunameID];
+    }
+    
+
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
