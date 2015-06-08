@@ -61,7 +61,7 @@
     } else if (section ==2) {
         return 5;
     } else {
-        return 5;
+        return 6;
     }
     
 }
@@ -69,6 +69,16 @@
 //自定义cell
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+    //创建推荐按钮
+    UIButton *TuiJianBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, 10, 300, 49)];
+    
+    [TuiJianBtn setImage:[UIImage imageNamed:@"推荐Btn"] forState:UIControlStateNormal];
+    
+    UIView *TuiJianV = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, 70)];
+    
+    [TuiJianV addSubview:TuiJianBtn];
+    
 
     static NSString *ID = @"flagCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
@@ -137,7 +147,8 @@
             case 4:
                 cell.textLabel.text = @"";
                 break;
-
+            case 5:
+                cell.backgroundView = TuiJianV;
                 
                 
             default:
@@ -153,6 +164,16 @@
 
 #pragma mark - TableView 代理
 
+//每个cell的高度
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 3) {
+        if (indexPath.row == 5) {
+            return 80;
+        }
+    }
+    return 44;
+}
 
 //每个组组名
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
@@ -172,9 +193,7 @@
 //底部视图高度
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    if (section == 3) {
-        return 60;
-    }
+    
     return 0;
 }
 
@@ -193,19 +212,7 @@
 //自定义底部视图
 -(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
-    if (section == 3) {
-        UIView *TuiJianV = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 100, 40)];
-        
-        TuiJianV.backgroundColor = [UIColor clearColor];
-        
-        UIButton *TuiJianBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, 10, 300, 49)];
-        
-        [TuiJianBtn setImage:[UIImage imageNamed:@"推荐Btn"] forState:UIControlStateNormal];
-        [TuiJianV addSubview:TuiJianBtn];
-        
-        [self.view addSubview:TuiJianV];
-        return TuiJianV;
-    }
+
     return nil;
 }
 
