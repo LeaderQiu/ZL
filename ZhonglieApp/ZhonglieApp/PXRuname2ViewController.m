@@ -44,8 +44,11 @@
 -(void)BackClickBtn
 {
 //     PXDetailViewController *DetailVC = [[PXDetailViewController alloc]initWithStyle:UITableViewStyleGrouped];
+    
+    //    [self.navigationController popToViewController:DetailVC animated:YES];
+    
     [self.navigationController popToRootViewControllerAnimated:YES];
-//    [self.navigationController popToViewController:DetailVC animated:YES];
+
 }
 
 -(void)setupFirstV
