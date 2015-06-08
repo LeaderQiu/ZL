@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PXRunameViewController : UITableViewController
+@interface PXRunameViewController : UIViewController
 
 @end

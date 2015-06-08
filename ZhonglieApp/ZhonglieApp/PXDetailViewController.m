@@ -8,6 +8,7 @@
 
 #import "PXDetailViewController.h"
 #import "UIBarButtonItem+Extension.h"
+#import "PXMainCell.h"
 
 
 
@@ -81,16 +82,34 @@
     
     [TuiJianV addSubview:TuiJianBtn];
     
-
+  
+    
+    
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     
     static NSString *CellIdentifier = @"Cell";
     
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        cell.textLabel.text = @"冯猥琐";
-      
+        
     }
+    
+#warning TODO xib加载不成功
+    if (indexPath.section == 0) {
+        
+        static NSString *mainID = @"PXMainCell";
+        
+        PXMainCell *cell = [tableView dequeueReusableCellWithIdentifier:mainID];
+        
+        if (indexPath.row == 0) {
+            cell = [[PXMainCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:mainID];
+        }
+        
+
+    }
+   
+
+
     if (indexPath.section == 1) {
         switch (indexPath.row) {
                 case 0:
@@ -151,6 +170,7 @@
                 break;
             case 5:
                 cell.textLabel.text = @"";
+#warning TODO Btn点击不了
                 cell.backgroundView = TuiJianV;
               cell.selectionStyle = UITableViewCellSelectionStyleNone;
                 

@@ -7,8 +7,11 @@
 //
 
 #import "PXRunameViewController.h"
+#import "UIBarButtonItem+Extension.h"
 
-@interface PXRunameViewController ()
+@interface PXRunameViewController ()<UITextFieldDelegate,UITableViewDataSource,UITableViewDelegate>
+
+@property(nonatomic,strong) UITextField *TextField;
 
 @end
 
@@ -18,12 +21,72 @@
     [super viewDidLoad];
     
     self.navigationController.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image: [UIImage imageNamed:@"runame"]selectedImage:[UIImage imageNamed:@"runame-hover"]];
+    
+    self.navigationController.navigationBarHidden = NO;
+    
+    self.navigationItem.title = @"简历管理";
+    
+    [self setupFirstV];
+    
+    [self setupTableV];
+    
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)setupFirstV
+{
+    UIView *FirstV = [[UIView alloc]initWithFrame:CGRectMake(0, 64, 320, 49)];
+    
+    UIImageView *backImage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"搜索栏Cell背景"]];
+    backImage.frame = CGRectMake(0, 64, 320, 48) ;
+    
+    [FirstV addSubview:backImage];
+    
+    //添加TextFiel
+    UITextField *TextField = [[UITextField alloc]initWithFrame:CGRectMake(10, 7, 300, 35)];
+    
+    _TextField = TextField;
+    
+    [self setupTextFiel];
+    [FirstV addSubview:TextField];
+    
+    [self.view addSubview:FirstV];
 }
+
+//设置TextField细节
+-(void)setupTextFiel
+{
+    self.TextField.borderStyle = UITextBorderStyleNone;
+    self.TextField.keyboardType = UIKeyboardTypeDefault;
+    self.TextField.delegate = self;
+    
+    self.TextField.autocorrectionType = UITextAutocorrectionTypeNo;
+    self.TextField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+    self.TextField.returnKeyType = UIReturnKeySearch;
+    
+    self.TextField.background = [UIImage imageNamed:@"搜索栏"];
+    
+    
+    UIImageView *Searchimage=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"查找简历"]];
+    self.TextField.leftView=Searchimage;
+    self.TextField.leftViewMode = UITextFieldViewModeUnlessEditing;
+    
+    self.TextField.userInteractionEnabled = YES;
+    
+    self.TextField.textColor = [UIColor whiteColor];
+    
+    self.TextField.clearsOnBeginEditing = YES;
+    
+    self.TextField.font = [UIFont fontWithName:@"Helvetica-Bold"size:16];
+}
+
+-(void)setupTableV
+{
+    UITableView *tableV = [[UITableView alloc]initWithFrame:CGRectMake(0, 113, self.view.bounds.size.width, self.view.bounds.size.height)];
+    
+    [self.view addSubview:tableV];
+}
+
 
 #pragma mark - Table view data source
 
