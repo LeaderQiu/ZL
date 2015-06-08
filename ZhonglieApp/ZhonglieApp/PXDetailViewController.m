@@ -75,19 +75,21 @@
     
     [TuiJianBtn setImage:[UIImage imageNamed:@"推荐Btn"] forState:UIControlStateNormal];
     
+    [TuiJianBtn addTarget:self action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
+    
     UIView *TuiJianV = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, 70)];
     
     [TuiJianV addSubview:TuiJianBtn];
     
 
-    static NSString *ID = @"flagCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    
+    static NSString *CellIdentifier = @"Cell";
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
-        
-        cell.detailTextLabel.text = @"冯明";
-        cell.textLabel.text = @"字猥琐";
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell.textLabel.text = @"冯猥琐";
+      
     }
     if (indexPath.section == 1) {
         switch (indexPath.row) {
@@ -148,7 +150,9 @@
                 cell.textLabel.text = @"";
                 break;
             case 5:
+                cell.textLabel.text = @"";
                 cell.backgroundView = TuiJianV;
+              cell.selectionStyle = UITableViewCellSelectionStyleNone;
                 
                 
             default:
@@ -159,6 +163,11 @@
     return cell;
     
     
+}
+
+-(void)btnClick
+{
+    NSLog(@"点击了推荐按钮");
 }
 
 
