@@ -22,7 +22,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationController.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image: [UIImage imageNamed:@"runame"]selectedImage:[UIImage imageNamed:@"runame-hover"]];
+    self.navigationController.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image: [UIImage imageNamed:@"简历"]selectedImage:[UIImage imageNamed:@"简历-hover"]];
+    
+    self.navigationController.tabBarItem.title = @"简历";
     
     self.navigationController.navigationBarHidden = NO;
     
@@ -91,6 +93,26 @@
     self.TextField.leftViewMode = UITextFieldViewModeNever;
     
 //    [self setupSearchHistory];
+    
+}
+
+//点击键盘搜索键，收回键盘.***跳转页面****
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+
+    [textField resignFirstResponder];
+    
+    textField.text = @" ";
+   
+    return YES;
+    
+}
+
+//点击空白收起键盘、
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.TextField resignFirstResponder];
+    
     
 }
 

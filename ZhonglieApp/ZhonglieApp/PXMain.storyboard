@@ -27,11 +27,11 @@
             </objects>
             <point key="canvasLocation" x="-481" y="-62"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--众猎-->
         <scene sceneID="iAj-hV-jRk">
             <objects>
                 <navigationController id="2Jw-Ft-DgC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="home" selectedImage="home-hover" id="Zd9-m0-uUp"/>
+                    <tabBarItem key="tabBarItem" enabled="NO" title="众猎" image="矩形-7" selectedImage="众猎-hover" id="Zd9-m0-uUp"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9kQ-RU-1J7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -101,7 +101,7 @@
         <scene sceneID="GtT-A3-HtN">
             <objects>
                 <navigationController id="MOZ-Cs-m71" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="user" selectedImage="runame" id="HtB-iM-Ul6"/>
+                    <tabBarItem key="tabBarItem" title="" image="user" selectedImage="我的1" id="HtB-iM-Ul6"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="w4R-MH-A0D">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -226,10 +226,11 @@
     </scenes>
     <resources>
         <image name="aleary" width="80" height="42"/>
-        <image name="home" width="80" height="37"/>
-        <image name="home-hover" width="80" height="41"/>
         <image name="runame" width="80" height="42"/>
         <image name="runame-hover" width="80" height="41"/>
         <image name="user" width="80" height="42"/>
+        <image name="众猎-hover" width="27" height="39"/>
+        <image name="我的1" width="25" height="49"/>
+        <image name="矩形-7" width="27" height="27"/>
     </resources>
 </document>

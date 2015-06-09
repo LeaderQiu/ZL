@@ -17,7 +17,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationController.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image: [UIImage imageNamed:@"aleary"]selectedImage:[UIImage imageNamed:@"aleray-hover"]];}
+    self.navigationController.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image: [UIImage imageNamed:@"已推荐"]selectedImage:[UIImage imageNamed:@"已推荐-hover"]];}
+
+    
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

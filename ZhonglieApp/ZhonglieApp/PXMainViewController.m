@@ -41,7 +41,20 @@
     
     self.navigationController.navigationBarHidden = YES;
     
-    self.navigationController.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image: [UIImage imageNamed:@"home"]selectedImage:[UIImage imageNamed:@"home-hover"]];
+//    [self.tabBarItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:14], nil] forState:UIControlStateNormal];
+//    
+//    [self.tabBarItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:14], nil] forState:UIControlStateHighlighted];
+
+    
+    
+    self.navigationController.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image: [UIImage imageNamed:@"众猎"]selectedImage:[UIImage imageNamed:@"众猎-hover"]];
+    
+    self.navigationController.tabBarItem.title= @"众猎";
+    
+    
+
+    
+     
   
     [self setupHeaderView];
     

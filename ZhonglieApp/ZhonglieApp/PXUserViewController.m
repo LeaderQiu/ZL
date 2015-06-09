@@ -18,7 +18,7 @@
     [super viewDidLoad];
     
     
-    self.navigationController.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image: [UIImage imageNamed:@"user"]selectedImage:[UIImage imageNamed:@"user-hover"]];
+    self.navigationController.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image: [UIImage imageNamed:@"我的"]selectedImage:[UIImage imageNamed:@"我的-hover"]];
     
 }
 

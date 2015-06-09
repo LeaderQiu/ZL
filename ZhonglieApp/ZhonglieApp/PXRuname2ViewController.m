@@ -43,11 +43,11 @@
 //点击返回键
 -(void)BackClickBtn
 {
-     PXDetailViewController *DetailVC = [[PXDetailViewController alloc]initWithStyle:UITableViewStyleGrouped];
-    
-        [self.navigationController popToViewController:DetailVC animated:YES];
-    
-//    [self.navigationController popToRootViewControllerAnimated:YES];
+//     PXDetailViewController *DetailVC = [[PXDetailViewController alloc]initWithStyle:UITableViewStyleGrouped];
+//    
+//        [self.navigationController popToViewController:DetailVC animated:YES];
+
+    [self.navigationController popToRootViewControllerAnimated:YES];
 
 }
 
