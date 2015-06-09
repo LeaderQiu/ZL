@@ -7,6 +7,7 @@
 //
 
 #import "PXAlerayViewController.h"
+#import "PXHistoryCell.h"
 
 @interface PXAlerayViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -22,6 +23,7 @@
 
     self.navigationItem.title = @"推荐记录";
     
+    self.tableView.rowHeight = 101;
     
     
 
@@ -30,7 +32,12 @@
 //设置headerView的属性
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    UIView *headerV = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 20, 20)];
+    UIView *headerV = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, 44)];
+    
+    UIImageView *backImageV = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"头部背景"]];
+    backImageV.frame = CGRectMake(0, 0, 320, 44);
+    
+    [headerV addSubview:backImageV];
     
     //创建三个筛选按钮
     UIButton *ShiJian = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 107,44)];
@@ -58,4 +65,29 @@
     
 }
 
+#pragma mark - TableView Delegate DetaSource
+
+//header的高度
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 44;
+}
+
+//自定义cell
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *HistoryID = @"HistoryCell";
+    
+    PXHistoryCell *cell = [tableView dequeueReusableCellWithIdentifier:HistoryID];
+    
+    if (cell == nil) {
+        cell = [[PXHistoryCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:HistoryID];
+    }
+    return cell;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 4;
+}
 @end

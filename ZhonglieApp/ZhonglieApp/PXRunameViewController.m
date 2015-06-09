@@ -136,7 +136,7 @@
 //几个cell
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return 8;
+    return 6;
 }
 
 //自定义cell
