@@ -10,12 +10,14 @@
 #import "PXRuname2Cell.h"
 #import "UIBarButtonItem+Extension.h"
 #import "PXDetailViewController.h"
+#import "PXSuccessViewController.h"
 
 
 
 @interface PXRuname2ViewController ()<UITextFieldDelegate,UITableViewDataSource,UITabBarDelegate>
 
 @property(nonatomic,strong) UITextField *TextField;
+
 
 @end
 
@@ -140,7 +142,7 @@
     PXRuname2Cell *cell = [tableView dequeueReusableCellWithIdentifier:RunameID];
     
     if (cell == nil) {
-        cell = [[PXRuname2Cell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:RunameID];
+        cell = [[PXRuname2Cell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:RunameID target:self action:@selector(TuiJianSuccess)];
     }
      cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
@@ -148,7 +150,13 @@
     return cell;
 }
 
-
+//点击推荐跳转到成功界面
+-(void)TuiJianSuccess
+{
+    PXSuccessViewController *SuccessVC = [[PXSuccessViewController alloc]init];
+    
+    [self.navigationController pushViewController:SuccessVC animated:YES];
+}
 /*
  // Override to support conditional editing of the table view.
  - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

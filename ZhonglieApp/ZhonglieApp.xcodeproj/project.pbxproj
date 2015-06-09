@@ -57,6 +57,7 @@
 		FDF0617C1B0EFC6E0075A5CB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDF0617A1B0EFC6E0075A5CB /* LaunchScreen.xib */; };
 		FDF061881B0EFC6E0075A5CB /* ZhonglieAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FDF061871B0EFC6E0075A5CB /* ZhonglieAppTests.m */; };
 		FDF061971B0EFEAF0075A5CB /* PXMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDF061961B0EFEAF0075A5CB /* PXMain.storyboard */; };
+		FDFDBC9E1B26C495001C360A /* PXSuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDFDBC9D1B26C495001C360A /* PXSuccessViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,6 +164,8 @@
 		FDF061861B0EFC6E0075A5CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FDF061871B0EFC6E0075A5CB /* ZhonglieAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZhonglieAppTests.m; sourceTree = "<group>"; };
 		FDF061961B0EFEAF0075A5CB /* PXMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = PXMain.storyboard; path = ../PXMain.storyboard; sourceTree = "<group>"; };
+		FDFDBC9C1B26C495001C360A /* PXSuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXSuccessViewController.h; sourceTree = "<group>"; };
+		FDFDBC9D1B26C495001C360A /* PXSuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXSuccessViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -357,6 +360,8 @@
 				7AA145D91B13332F0034E373 /* PXRunameViewController.m */,
 				FD991CB51B259F0100E79F12 /* PXRuname2ViewController.h */,
 				FD991CB61B259F0200E79F12 /* PXRuname2ViewController.m */,
+				FDFDBC9C1B26C495001C360A /* PXSuccessViewController.h */,
+				FDFDBC9D1B26C495001C360A /* PXSuccessViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -588,6 +593,7 @@
 				FD4518F51B1EDF8900A49D88 /* AFURLRequestSerialization.m in Sources */,
 				FD991CB31B258AC400E79F12 /* PXRunameCell.m in Sources */,
 				FDEAECDF1B134AD100D48EBE /* PXUserViewController.m in Sources */,
+				FDFDBC9E1B26C495001C360A /* PXSuccessViewController.m in Sources */,
 				FD991CB71B259F0200E79F12 /* PXRuname2ViewController.m in Sources */,
 				FD4518B41B1EAFE600A49D88 /* PXCityGroup.m in Sources */,
 				FD0DF1101B1C50EE00FF6BE1 /* UIBarButtonItem+Extension.m in Sources */,

@@ -10,4 +10,5 @@
 
 @interface PXRuname2Cell : UITableViewCell
 
+-(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier target:(id)target action:(SEL)action;
 @end
