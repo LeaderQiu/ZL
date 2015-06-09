@@ -20,6 +20,7 @@
     
     self.navigationController.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image: [UIImage imageNamed:@"我的"]selectedImage:[UIImage imageNamed:@"我的-hover"]];
     
+    self.navigationController.tabBarItem.title = @"我的";
 }
 
 - (void)didReceiveMemoryWarning {

@@ -15,6 +15,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="selectedImageTintColor" red="0.1450980392" green="0.63137254899999995" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="2Jw-Ft-DgC" kind="relationship" relationship="viewControllers" id="gFf-EL-c7g"/>
@@ -31,7 +32,7 @@
         <scene sceneID="iAj-hV-jRk">
             <objects>
                 <navigationController id="2Jw-Ft-DgC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" enabled="NO" title="众猎" image="矩形-7" selectedImage="众猎-hover" id="Zd9-m0-uUp"/>
+                    <tabBarItem key="tabBarItem" title="众猎" image="众猎" selectedImage="众猎-hover" id="Zd9-m0-uUp"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9kQ-RU-1J7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -97,11 +98,11 @@
             </objects>
             <point key="canvasLocation" x="-481" y="1337"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--我的-->
         <scene sceneID="GtT-A3-HtN">
             <objects>
                 <navigationController id="MOZ-Cs-m71" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="user" selectedImage="我的1" id="HtB-iM-Ul6"/>
+                    <tabBarItem key="tabBarItem" title="我的" image="我的" selectedImage="我的-hover" id="HtB-iM-Ul6"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="w4R-MH-A0D">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -117,11 +118,11 @@
             </objects>
             <point key="canvasLocation" x="-481" y="618"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--简历-->
         <scene sceneID="dA5-xQ-bkI">
             <objects>
                 <navigationController id="8yg-6Q-ghU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="runame" selectedImage="runame-hover" id="m17-da-gir"/>
+                    <tabBarItem key="tabBarItem" title="简历" image="简历" selectedImage="简历-hover" id="m17-da-gir"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bg3-uW-266">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -136,11 +137,11 @@
             </objects>
             <point key="canvasLocation" x="-80" y="618"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--已推荐-->
         <scene sceneID="mdb-T0-gOG">
             <objects>
                 <navigationController id="ifc-ei-SPa" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="aleary" id="lTW-fF-306"/>
+                    <tabBarItem key="tabBarItem" title="已推荐" image="已推荐" selectedImage="已推荐-hover" id="lTW-fF-306"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="T90-Dn-sfb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -225,12 +226,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="aleary" width="80" height="42"/>
-        <image name="runame" width="80" height="42"/>
-        <image name="runame-hover" width="80" height="41"/>
-        <image name="user" width="80" height="42"/>
-        <image name="众猎-hover" width="27" height="39"/>
-        <image name="我的1" width="25" height="49"/>
-        <image name="矩形-7" width="27" height="27"/>
+        <image name="众猎" width="26" height="26"/>
+        <image name="众猎-hover" width="26" height="26"/>
+        <image name="已推荐" width="25" height="25"/>
+        <image name="已推荐-hover" width="25" height="25"/>
+        <image name="我的" width="25" height="25"/>
+        <image name="我的-hover" width="25" height="25"/>
+        <image name="简历" width="22" height="25"/>
+        <image name="简历-hover" width="22" height="25"/>
     </resources>
 </document>
