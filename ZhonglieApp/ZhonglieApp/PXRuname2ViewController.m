@@ -53,6 +53,19 @@
 
 }
 
+//点击键盘搜索键，收回键盘.***跳转页面****
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    
+    [textField resignFirstResponder];
+    
+    textField.text = @" ";
+    
+    return YES;
+    
+}
+
+
 -(void)setupFirstV
 {
     UIView *FirstV = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, 49)];
