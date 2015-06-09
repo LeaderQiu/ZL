@@ -58,6 +58,8 @@
 		FDF061881B0EFC6E0075A5CB /* ZhonglieAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FDF061871B0EFC6E0075A5CB /* ZhonglieAppTests.m */; };
 		FDF061971B0EFEAF0075A5CB /* PXMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDF061961B0EFEAF0075A5CB /* PXMain.storyboard */; };
 		FDFDBC9E1B26C495001C360A /* PXSuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDFDBC9D1B26C495001C360A /* PXSuccessViewController.m */; };
+		FDFDBCA51B26FE00001C360A /* PXHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FDFDBCA31B26FE00001C360A /* PXHistoryCell.m */; };
+		FDFDBCA61B26FE00001C360A /* PXHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDFDBCA41B26FE00001C360A /* PXHistoryCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -166,6 +168,9 @@
 		FDF061961B0EFEAF0075A5CB /* PXMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = PXMain.storyboard; path = ../PXMain.storyboard; sourceTree = "<group>"; };
 		FDFDBC9C1B26C495001C360A /* PXSuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXSuccessViewController.h; sourceTree = "<group>"; };
 		FDFDBC9D1B26C495001C360A /* PXSuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXSuccessViewController.m; sourceTree = "<group>"; };
+		FDFDBCA21B26FE00001C360A /* PXHistoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXHistoryCell.h; sourceTree = "<group>"; };
+		FDFDBCA31B26FE00001C360A /* PXHistoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXHistoryCell.m; sourceTree = "<group>"; };
+		FDFDBCA41B26FE00001C360A /* PXHistoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PXHistoryCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -318,8 +323,9 @@
 		FD7407881B1883DB00C6A14C /* Aleray(推荐) */ = {
 			isa = PBXGroup;
 			children = (
-				FDEAECDA1B134AB200D48EBE /* PXAlerayViewController.h */,
-				FDEAECDB1B134AB200D48EBE /* PXAlerayViewController.m */,
+				FDFDBC9F1B26FD98001C360A /* Controller */,
+				FDFDBCA01B26FDA2001C360A /* View */,
+				FDFDBCA11B26FDAD001C360A /* Model */,
 			);
 			name = "Aleray(推荐)";
 			sourceTree = "<group>";
@@ -455,6 +461,32 @@
 			name = "Main(首页)";
 			sourceTree = "<group>";
 		};
+		FDFDBC9F1B26FD98001C360A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FDEAECDA1B134AB200D48EBE /* PXAlerayViewController.h */,
+				FDEAECDB1B134AB200D48EBE /* PXAlerayViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		FDFDBCA01B26FDA2001C360A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FDFDBCA21B26FE00001C360A /* PXHistoryCell.h */,
+				FDFDBCA31B26FE00001C360A /* PXHistoryCell.m */,
+				FDFDBCA41B26FE00001C360A /* PXHistoryCell.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		FDFDBCA11B26FDAD001C360A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -540,6 +572,7 @@
 				FD991CAF1B2586C100E79F12 /* PXRuname2Cell.xib in Resources */,
 				FDF061771B0EFC6E0075A5CB /* Main.storyboard in Resources */,
 				FD45190F1B21323500A49D88 /* PXSearchCell.xib in Resources */,
+				FDFDBCA61B26FE00001C360A /* PXHistoryCell.xib in Resources */,
 				FD3E260A1B12C6B200901E42 /* Images.xcassets in Resources */,
 				FD991CB41B258AC400E79F12 /* PXRunameCell.xib in Resources */,
 				FD4518FC1B1EE14100A49D88 /* cityGroups.plist in Resources */,
@@ -584,6 +617,7 @@
 				FD4518F71B1EDF8900A49D88 /* AFURLSessionManager.m in Sources */,
 				FD4518D41B1EDF6700A49D88 /* MJFoundation.m in Sources */,
 				FD4518AD1B1EA15500A49D88 /* PXCityViewController.m in Sources */,
+				FDFDBCA51B26FE00001C360A /* PXHistoryCell.m in Sources */,
 				FD4518F11B1EDF8900A49D88 /* AFHTTPSessionManager.m in Sources */,
 				FD4518D61B1EDF6700A49D88 /* MJType.m in Sources */,
 				FD4518F21B1EDF8900A49D88 /* AFNetworkReachabilityManager.m in Sources */,
