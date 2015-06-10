@@ -34,6 +34,8 @@
     [self setupDataV];
     
     [self setupOutV];
+    
+    [self setupMiMaV];
 }
 
 //设置头部数据
@@ -96,10 +98,52 @@
 //设置退出View数据
 -(void)setupOutV
 {
-    UIView *OutV = [[UIView alloc]initWithFrame:CGRectMake(0, 450, self.view.bounds.size.width, 70)];
+    UIView *OutV = [[UIView alloc]initWithFrame:CGRectMake(0, 449, self.view.bounds.size.width, 70)];
     
-    OutV.backgroundColor = [UIColor yellowColor];
+    OutV.backgroundColor = [UIColor clearColor];
     
+    UIButton *TuiChuBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, 10, 300, 49)];
+    
+    [TuiChuBtn setBackgroundImage:[UIImage imageNamed:@"退出登录"] forState:UIControlStateNormal];
+
+    [TuiChuBtn setTitle:@"帐号退出" forState:UIControlStateNormal];
+    
+    [OutV addSubview:TuiChuBtn];
     [self.view addSubview:OutV];
+}
+
+//设置密码中心View数据
+-(void)setupMiMaV
+{
+    UIView *MiMaV = [[UIView alloc]initWithFrame:CGRectMake(0, 398, self.view.bounds.size.width, 51)];
+    MiMaV.backgroundColor = [UIColor whiteColor];
+    
+    
+    UIImageView *MiMaImageV = [[UIImageView alloc]initWithFrame:CGRectMake(10, 19, 18, 18)];
+    [MiMaImageV setImage:[UIImage imageNamed:@"lock-256"]];
+    
+    UIButton *MiMaBtn = [[UIButton alloc]initWithFrame:CGRectMake(38, 0, 300, 51)];
+    [MiMaBtn setTitle:@"密码中心" forState:UIControlStateNormal];
+   
+    //title居左
+    MiMaBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+    //title颜色
+    [MiMaBtn setTitleColor:[UIColor blackColor]forState:UIControlStateNormal];
+    
+    MiMaBtn.userInteractionEnabled = YES;
+    
+    [MiMaBtn addTarget:self action:@selector(MiMaClick) forControlEvents:UIControlEventTouchUpInside];
+    
+    [MiMaV addSubview:MiMaImageV];
+    [MiMaV addSubview:MiMaBtn];
+    [self.view addSubview:MiMaV];
+   
+    
+}
+
+//密码中心点击事件
+-(void)MiMaClick
+{
+    NSLog(@"密码中心");
 }
 @end
