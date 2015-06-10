@@ -119,7 +119,7 @@
     
 
      //添加TextFiel
-     UITextField *TextField = [[UITextField alloc]initWithFrame:CGRectMake(130, 120, 160, 30)];
+     UITextField *TextField = [[UITextField alloc]initWithFrame:CGRectMake(90, 130, 220, 32)];
     
     _TextField = TextField;
     
@@ -132,9 +132,11 @@
     
     
     //创建地区按钮
-    UIButton *CityButton = [[UIButton alloc]initWithFrame:CGRectMake(10, 125, 107, 32)];
-    
+    UIButton *CityButton = [[UIButton alloc]initWithFrame:CGRectMake(10, 130, 45, 32)];
+
     [CityButton setImage:[UIImage imageNamed:@"城市"] forState:UIControlStateNormal];
+//
+//    [CityButton setTitle:@"北京" forState:UIControlStateNormal];
     
     [CityButton addTarget:self action:@selector(btnClickAction) forControlEvents:UIControlEventTouchUpInside];
     

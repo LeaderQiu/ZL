@@ -11,6 +11,13 @@
 
 @interface PXAlerayViewController ()<UITableViewDelegate,UITableViewDataSource>
 
+@property(nonatomic,strong) UIButton *ShiJian;
+@property(nonatomic,strong) UIButton *ZhuangTai;
+@property(nonatomic,strong) UIButton *DaiYu;
+
+@property(nonatomic,strong) UIView *AlertV1;
+@property(nonatomic,strong) UIView *AlertV2;
+@property(nonatomic,strong) UIView *AlertV3;
 @end
 
 @implementation PXAlerayViewController
@@ -22,6 +29,7 @@
     self.navigationController.tabBarItem.title = @"已推荐";
 
     self.navigationItem.title = @"推荐记录";
+    
     
     self.tableView.rowHeight = 101;
     
@@ -41,29 +49,91 @@
     
     //创建三个筛选按钮
     UIButton *ShiJian = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 107,44)];
+    _ShiJian = ShiJian;
     
     [ShiJian setImage:[UIImage imageNamed:@"推荐时间"] forState:UIControlStateNormal];
+    
+    [ShiJian addTarget:self action:@selector(ShiJianClick) forControlEvents:UIControlEventTouchUpInside];
     
     [headerV addSubview:ShiJian];
     
     UIButton *ZhuangTai = [[UIButton alloc]initWithFrame:CGRectMake(107, 0, 107,44)];
+    _ZhuangTai = ZhuangTai;
     
     [ZhuangTai setImage:[UIImage imageNamed:@"入职状态"] forState:UIControlStateNormal];
+    
+    [ZhuangTai addTarget:self action:@selector(ZhuangTaiClick) forControlEvents:UIControlEventTouchUpInside];
     
     [headerV addSubview:ZhuangTai];
     
     UIButton *DaiYu = [[UIButton alloc]initWithFrame:CGRectMake(214, 0, 107,44)];
+    _DaiYu = DaiYu;
     
     [DaiYu setImage:[UIImage imageNamed:@"薪资待遇"] forState:UIControlStateNormal];
+    
+    [DaiYu addTarget:self action:@selector(DaiYuClick) forControlEvents:UIControlEventTouchUpInside];
     
     [headerV addSubview:DaiYu];
     
     return headerV;
     
-    
-    
-    
 }
+
+//点击推荐时间
+-(void)ShiJianClick
+{
+    self.AlertV2.hidden = YES;
+    self.AlertV3.hidden = YES;
+    
+    UIView *AlertV1 = [[UIView alloc]initWithFrame:CGRectMake(10, 44, 300, 59)];
+    _AlertV1 = AlertV1;
+    
+    UIImageView *backImage1 = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"弹出框1"]];
+    
+    [AlertV1 addSubview:backImage1];
+  
+    [self.view addSubview:AlertV1];
+}
+
+//点击入职状态
+-(void)ZhuangTaiClick
+{
+    self.AlertV1.hidden = YES;
+    self.AlertV3.hidden = YES;
+    
+    UIView *AlertV2 = [[UIView alloc]initWithFrame:CGRectMake(10, 44, 300, 59)];
+    _AlertV2 = AlertV2;
+    
+    UIImageView *backImage1 = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"弹出框2"]];
+    
+    [AlertV2 addSubview:backImage1];
+    [self.view addSubview:AlertV2];
+}
+
+//点击薪资待遇
+-(void)DaiYuClick
+{
+    
+    self.AlertV1.hidden = YES;
+    self.AlertV2.hidden = YES;
+    
+    UIView *AlertV3 = [[UIView alloc]initWithFrame:CGRectMake(10, 44, 300, 59)];
+    _AlertV3 = AlertV3;
+    
+    UIImageView *backImage1 = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"弹出框3"]];
+    
+    [AlertV3 addSubview:backImage1];
+    [self.view addSubview:AlertV3];
+}
+
+//点击空白 隐藏AlertV  （没什么用）
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+   
+    self.AlertV1.hidden = YES;
+}
+
+
 
 #pragma mark - TableView Delegate DetaSource
 
@@ -89,5 +159,14 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return 4;
+}
+
+//点击cell
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    self.AlertV1.hidden = YES;
+    self.AlertV2.hidden = YES;
+    self.AlertV3.hidden = YES;
+   
 }
 @end
