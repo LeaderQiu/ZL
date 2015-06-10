@@ -7,6 +7,8 @@
 //
 
 #import "PXUserViewController.h"
+#import "UIBarButtonItem+Extension.h"
+#import "UIColor+SYExtension.h"
 
 @interface PXUserViewController () <UITableViewDelegate>
 
@@ -17,83 +19,87 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
     self.navigationController.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image: [UIImage imageNamed:@"我的"]selectedImage:[UIImage imageNamed:@"我的-hover"]];
     
     self.navigationController.tabBarItem.title = @"我的";
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
-}
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    // Configure the cell...
+    self.navigationController.navigationBarHidden = YES;
     
-    return cell;
+    self.view.backgroundColor = [UIColor grayColor];
+    
+    [self setupHeaderV];
+    
+    [self setupBtnV];
+    
+    [self setupDataV];
+    
+    [self setupOutV];
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+//设置头部数据
+-(void)setupHeaderV
+{
+    UIView *HeaderV = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 159)];
+    
+    UIImageView *BackImageV = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"我的背景"]];
+    
+    [HeaderV addSubview:BackImageV];
+    [self.view addSubview:HeaderV];
+    
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+
+//设置BtnView数据
+-(void)setupBtnV
+{
+    UIView *BtnV = [[UIView alloc]initWithFrame:CGRectMake(0, 159, self.view.bounds.size.width, 51)];
+    
+    UIButton *TJJLBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 161, 51)];
+    
+    [TJJLBtn setBackgroundImage:[UIImage imageNamed:@"矩形-6"] forState:UIControlStateNormal];
+    
+    [TJJLBtn setTitle:@"推荐记录" forState:UIControlStateNormal];
+
+    [TJJLBtn setTitleColor:[UIColor colorWithRGB:0x25a1db] forState:UIControlStateNormal];
+    
+    
+    [BtnV addSubview:TJJLBtn];
+    
+
+    
+    UIButton *JJGLBtn = [[UIButton alloc]initWithFrame:CGRectMake(161, 0, 161, 51)];
+    
+    [JJGLBtn setBackgroundImage:[UIImage imageNamed:@"矩形-6"] forState:UIControlStateNormal];
+    
+    [JJGLBtn setTitle:@"简历管理" forState:UIControlStateNormal];
+    
+    [JJGLBtn setTitleColor:[UIColor colorWithRGB:0x25a1db] forState:UIControlStateNormal];
+    
+    [BtnV addSubview:JJGLBtn];
+    [self.view addSubview:BtnV];
+    
+ 
+
+    
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+//设置DataView数据
+-(void)setupDataV
+{
+    UIView *DataV = [[UIView alloc]init];
+    
+    
+    
+    
 }
-*/
 
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
+//设置退出View数据
+-(void)setupOutV
+{
+    UIView *OutV = [[UIView alloc]initWithFrame:CGRectMake(0, 450, self.view.bounds.size.width, 70)];
+    
+    OutV.backgroundColor = [UIColor yellowColor];
+    
+    [self.view addSubview:OutV];
 }
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end
