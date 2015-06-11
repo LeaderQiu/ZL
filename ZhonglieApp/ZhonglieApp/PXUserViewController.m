@@ -10,6 +10,8 @@
 #import "UIBarButtonItem+Extension.h"
 #import "UIColor+SYExtension.h"
 #import "PXUserCenterView.h"
+#import "AFNetworking.h"
+
 
 @interface PXUserViewController () <UITableViewDelegate,UITableViewDataSource>
 
@@ -33,12 +35,7 @@
     [self setupBtnV];
     
     [self setupTableV];
-    
-//    [self setupDataV];
-    
-//    [self setupOutV];
-    
-//    [self setupMiMaV];
+ 
 }
 
 //设置头部数据
@@ -67,6 +64,7 @@
 
     [TJJLBtn setTitleColor:[UIColor colorWithRGB:0x25a1db] forState:UIControlStateNormal];
     
+    [TJJLBtn addTarget:self action:@selector(TJJLBtnClick) forControlEvents:UIControlEventTouchUpInside];
     
     [BtnV addSubview:TJJLBtn];
     
@@ -109,15 +107,21 @@
 //设置TableV数据
 -(void)setupTableV
 {
-    UITableView *TableV = [[UITableView alloc]initWithFrame:CGRectMake(0, 220, self.view.bounds.size.width, self.view.bounds.size.height) style:UITableViewStyleGrouped];
-    TableV.backgroundColor = [UIColor grayColor];
+    UIScrollView *TableV = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 220, [UIScreen mainScreen].bounds.size.width, 350)];
+
     
+    TableV.contentSize = CGSizeMake(320, 400);
+    TableV.userInteractionEnabled = YES;
+    TableV.scrollEnabled = YES;
+    
+    TableV.backgroundColor = [UIColor grayColor];
+//    
     //加载dataV
     PXUserCenterView *dataV = [[PXUserCenterView alloc]initWithFrame:CGRectMake(100, 300, self.view.bounds.size.width, 250)];
     
     [TableV addSubview:dataV];
-    
-    //加载MiMaV
+//
+//    //加载MiMaV
     
     UIView *MiMaV = [[UIView alloc]initWithFrame:CGRectMake(0, 260, self.view.bounds.size.width, 51)];
     MiMaV.backgroundColor = [UIColor whiteColor];
@@ -140,9 +144,9 @@
     [MiMaV addSubview:MiMaImageV];
     [MiMaV addSubview:MiMaBtn];
     [TableV addSubview:MiMaV];
-
+//
     //加载用户登出按钮
-    UIView *OutV = [[UIView alloc]initWithFrame:CGRectMake(0, 311, self.view.bounds.size.width, 70)];
+    UIView *OutV = [[UIView alloc]initWithFrame:CGRectMake(0, 311, self.view.bounds.size.width, 300)];
     
     OutV.backgroundColor = [UIColor clearColor];
     
@@ -156,61 +160,41 @@
     
     [TableV addSubview:OutV];
 
-    
-    
     [self.view addSubview:TableV];
 }
 
-
-//设置退出View数据
--(void)setupOutV
-{
-    UIView *OutV = [[UIView alloc]initWithFrame:CGRectMake(0, 449, self.view.bounds.size.width, 70)];
-    
-    OutV.backgroundColor = [UIColor clearColor];
-    
-    UIButton *TuiChuBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, 10, 300, 49)];
-    
-    [TuiChuBtn setBackgroundImage:[UIImage imageNamed:@"退出登录"] forState:UIControlStateNormal];
-
-    [TuiChuBtn setTitle:@"帐号退出" forState:UIControlStateNormal];
-    
-    [OutV addSubview:TuiChuBtn];
-    [self.view addSubview:OutV];
-}
-
-//设置密码中心View数据
--(void)setupMiMaV
-{
-    UIView *MiMaV = [[UIView alloc]initWithFrame:CGRectMake(0, 398, self.view.bounds.size.width, 51)];
-    MiMaV.backgroundColor = [UIColor whiteColor];
-    
-    
-    UIImageView *MiMaImageV = [[UIImageView alloc]initWithFrame:CGRectMake(10, 19, 18, 18)];
-    [MiMaImageV setImage:[UIImage imageNamed:@"lock-256"]];
-    
-    UIButton *MiMaBtn = [[UIButton alloc]initWithFrame:CGRectMake(38, 0, 300, 51)];
-    [MiMaBtn setTitle:@"密码中心" forState:UIControlStateNormal];
-   
-    //title居左
-    MiMaBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-    //title颜色
-    [MiMaBtn setTitleColor:[UIColor blackColor]forState:UIControlStateNormal];
-    
-    MiMaBtn.userInteractionEnabled = YES;
-    
-    [MiMaBtn addTarget:self action:@selector(MiMaClick) forControlEvents:UIControlEventTouchUpInside];
-    
-    [MiMaV addSubview:MiMaImageV];
-    [MiMaV addSubview:MiMaBtn];
-    [self.view addSubview:MiMaV];
-   
-    
-}
-
 //密码中心点击事件
--(void)MiMaClick
+//-(void)MiMaClick
+//{
+//    NSLog(@"密码中心");
+//}
+//
+////推荐记录Btn点击事件
+//-(void)TJJLBtnClick
+//{
+//    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+//    
+//    mgr.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+//    
+//    NSString *url = @"http://192.168.1.103/zhonglie/index.php/home/position/positionList";
+//    
+//    NSDictionary *params = @{@"Page":@"1"};
+//    
+//    [mgr POST:url parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//        //成功回掉
+//        NSLog(@"网络请求成功==》%@",responseObject);
+//        
+//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        //失败回掉
+//        NSLog(@"网络请求失败==》%@",error);
+//    }];
+//    
+//}
+
+-(void)TJJLBtnClick
 {
-    NSLog(@"密码中心");
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSDictionary *parameters = @{@"Page": @"2"};
+    [manager POST:@"http://192.168.1.103/zhonglie/index.php/home/position/positionList" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) { NSLog(@"网络请求成功: %@", responseObject); } failure:^(AFHTTPRequestOperation *operation, NSError *error) { NSLog(@"网络请求失败: %@", error); }];
 }
 @end
