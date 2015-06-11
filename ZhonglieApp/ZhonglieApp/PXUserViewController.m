@@ -110,23 +110,56 @@
 -(void)setupTableV
 {
     UITableView *TableV = [[UITableView alloc]initWithFrame:CGRectMake(0, 220, self.view.bounds.size.width, self.view.bounds.size.height) style:UITableViewStyleGrouped];
+    TableV.backgroundColor = [UIColor grayColor];
     
+    //加载dataV
+    PXUserCenterView *dataV = [[PXUserCenterView alloc]initWithFrame:CGRectMake(100, 300, self.view.bounds.size.width, 250)];
     
+    [TableV addSubview:dataV];
     
+    //加载MiMaV
+    
+    UIView *MiMaV = [[UIView alloc]initWithFrame:CGRectMake(0, 260, self.view.bounds.size.width, 51)];
+    MiMaV.backgroundColor = [UIColor whiteColor];
+    
+    UIImageView *MiMaImageV = [[UIImageView alloc]initWithFrame:CGRectMake(10, 19, 18, 18)];
+    [MiMaImageV setImage:[UIImage imageNamed:@"lock-256"]];
+    
+    UIButton *MiMaBtn = [[UIButton alloc]initWithFrame:CGRectMake(38, 0, 300, 51)];
+    [MiMaBtn setTitle:@"密码中心" forState:UIControlStateNormal];
+    
+    //title居左
+    MiMaBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+    //title颜色
+    [MiMaBtn setTitleColor:[UIColor blackColor]forState:UIControlStateNormal];
+    
+    MiMaBtn.userInteractionEnabled = YES;
+    
+    [MiMaBtn addTarget:self action:@selector(MiMaClick) forControlEvents:UIControlEventTouchUpInside];
+    
+    [MiMaV addSubview:MiMaImageV];
+    [MiMaV addSubview:MiMaBtn];
+    [TableV addSubview:MiMaV];
+
+    //加载用户登出按钮
+    UIView *OutV = [[UIView alloc]initWithFrame:CGRectMake(0, 311, self.view.bounds.size.width, 70)];
+    
+    OutV.backgroundColor = [UIColor clearColor];
+    
+    UIButton *TuiChuBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, 10, 300, 49)];
+    
+    [TuiChuBtn setBackgroundImage:[UIImage imageNamed:@"退出登录"] forState:UIControlStateNormal];
+    
+    [TuiChuBtn setTitle:@"帐号退出" forState:UIControlStateNormal];
+    
+    [OutV addSubview:TuiChuBtn];
+    
+    [TableV addSubview:OutV];
+
     
     
     [self.view addSubview:TableV];
 }
-
-//-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-//{
-//    return 1;
-//}
-//
-//-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//
-//}
 
 
 //设置退出View数据
