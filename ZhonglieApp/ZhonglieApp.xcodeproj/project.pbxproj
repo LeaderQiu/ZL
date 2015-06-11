@@ -61,8 +61,7 @@
 		FDFDBCA51B26FE00001C360A /* PXHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FDFDBCA31B26FE00001C360A /* PXHistoryCell.m */; };
 		FDFDBCA61B26FE00001C360A /* PXHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDFDBCA41B26FE00001C360A /* PXHistoryCell.xib */; };
 		FDFDBCAE1B282A3B001C360A /* PXUserCenterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDFDBCAC1B282A3B001C360A /* PXUserCenterView.xib */; };
-		FDFDBCB21B28629E001C360A /* PXUserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FDFDBCB01B28629E001C360A /* PXUserTableViewCell.m */; };
-		FDFDBCB31B28629E001C360A /* PXUserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDFDBCB11B28629E001C360A /* PXUserTableViewCell.xib */; };
+		FDFDBCB61B292705001C360A /* PXUserCenterView.m in Sources */ = {isa = PBXBuildFile; fileRef = FDFDBCB51B292705001C360A /* PXUserCenterView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -175,9 +174,8 @@
 		FDFDBCA31B26FE00001C360A /* PXHistoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXHistoryCell.m; sourceTree = "<group>"; };
 		FDFDBCA41B26FE00001C360A /* PXHistoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PXHistoryCell.xib; sourceTree = "<group>"; };
 		FDFDBCAC1B282A3B001C360A /* PXUserCenterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PXUserCenterView.xib; sourceTree = "<group>"; };
-		FDFDBCAF1B28629E001C360A /* PXUserTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXUserTableViewCell.h; sourceTree = "<group>"; };
-		FDFDBCB01B28629E001C360A /* PXUserTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXUserTableViewCell.m; sourceTree = "<group>"; };
-		FDFDBCB11B28629E001C360A /* PXUserTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PXUserTableViewCell.xib; sourceTree = "<group>"; };
+		FDFDBCB41B292705001C360A /* PXUserCenterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXUserCenterView.h; sourceTree = "<group>"; };
+		FDFDBCB51B292705001C360A /* PXUserCenterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXUserCenterView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -506,9 +504,8 @@
 			isa = PBXGroup;
 			children = (
 				FDFDBCAC1B282A3B001C360A /* PXUserCenterView.xib */,
-				FDFDBCAF1B28629E001C360A /* PXUserTableViewCell.h */,
-				FDFDBCB01B28629E001C360A /* PXUserTableViewCell.m */,
-				FDFDBCB11B28629E001C360A /* PXUserTableViewCell.xib */,
+				FDFDBCB41B292705001C360A /* PXUserCenterView.h */,
+				FDFDBCB51B292705001C360A /* PXUserCenterView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -603,7 +600,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FDFDBCB31B28629E001C360A /* PXUserTableViewCell.xib in Resources */,
 				FD45190A1B204B2B00A49D88 /* PXSearchHistoryCell.xib in Resources */,
 				FD991CAF1B2586C100E79F12 /* PXRuname2Cell.xib in Resources */,
 				FDF061771B0EFC6E0075A5CB /* Main.storyboard in Resources */,
@@ -638,7 +634,6 @@
 				FD45190E1B21323500A49D88 /* PXSearchCell.m in Sources */,
 				FD4519021B1EE82000A49D88 /* UIColor+SYExtension.m in Sources */,
 				FD1178841B185A2D00DAE956 /* PXSearchViewController.m in Sources */,
-				FDFDBCB21B28629E001C360A /* PXUserTableViewCell.m in Sources */,
 				FDF061711B0EFC6E0075A5CB /* AppDelegate.m in Sources */,
 				FD4519091B204B2B00A49D88 /* PXSearchHistoryCell.m in Sources */,
 				FD4518EF1B1EDF8900A49D88 /* AFHTTPRequestOperation.m in Sources */,
@@ -665,6 +660,7 @@
 				FD4518F51B1EDF8900A49D88 /* AFURLRequestSerialization.m in Sources */,
 				FD991CB31B258AC400E79F12 /* PXRunameCell.m in Sources */,
 				FDEAECDF1B134AD100D48EBE /* PXUserViewController.m in Sources */,
+				FDFDBCB61B292705001C360A /* PXUserCenterView.m in Sources */,
 				FDFDBC9E1B26C495001C360A /* PXSuccessViewController.m in Sources */,
 				FD991CB71B259F0200E79F12 /* PXRuname2ViewController.m in Sources */,
 				FD4518B41B1EAFE600A49D88 /* PXCityGroup.m in Sources */,

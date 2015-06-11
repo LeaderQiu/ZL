@@ -9,6 +9,7 @@
 #import "PXUserViewController.h"
 #import "UIBarButtonItem+Extension.h"
 #import "UIColor+SYExtension.h"
+#import "PXUserCenterView.h"
 
 @interface PXUserViewController () <UITableViewDelegate>
 
@@ -88,8 +89,15 @@
 //设置DataView数据
 -(void)setupDataV
 {
-    UIView *DataV = [[UIView alloc]init];
     
+    UIView *DataBackV = [[UIView alloc]initWithFrame:CGRectMake(0, 220, self.view.bounds.size.width, 250)];
+    
+    
+    
+    PXUserCenterView *dataV = [[PXUserCenterView alloc]initWithFrame:CGRectMake(100, 300, self.view.bounds.size.width, 250)];
+    
+    [DataBackV addSubview:dataV];
+    [self.view addSubview:DataBackV];
     
     
     
