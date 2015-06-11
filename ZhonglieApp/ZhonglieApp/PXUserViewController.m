@@ -11,7 +11,7 @@
 #import "UIColor+SYExtension.h"
 #import "PXUserCenterView.h"
 
-@interface PXUserViewController () <UITableViewDelegate>
+@interface PXUserViewController () <UITableViewDelegate,UITableViewDataSource>
 
 @end
 
@@ -32,11 +32,13 @@
     
     [self setupBtnV];
     
-    [self setupDataV];
+    [self setupTableV];
     
-    [self setupOutV];
+//    [self setupDataV];
     
-    [self setupMiMaV];
+//    [self setupOutV];
+    
+//    [self setupMiMaV];
 }
 
 //设置头部数据
@@ -90,9 +92,10 @@
 -(void)setupDataV
 {
     
-    UIView *DataBackV = [[UIView alloc]initWithFrame:CGRectMake(0, 220, self.view.bounds.size.width, 250)];
+    UITableView *DataBackV = [[UITableView alloc]initWithFrame:CGRectMake(0, 220, self.view.bounds.size.width, 250)];
     
-    
+    DataBackV.delegate = self;
+    DataBackV.dataSource = self;
     
     PXUserCenterView *dataV = [[PXUserCenterView alloc]initWithFrame:CGRectMake(100, 300, self.view.bounds.size.width, 250)];
     
@@ -102,6 +105,29 @@
     
     
 }
+
+//设置TableV数据
+-(void)setupTableV
+{
+    UITableView *TableV = [[UITableView alloc]initWithFrame:CGRectMake(0, 220, self.view.bounds.size.width, self.view.bounds.size.height) style:UITableViewStyleGrouped];
+    
+    
+    
+    
+    
+    [self.view addSubview:TableV];
+}
+
+//-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+//{
+//    return 1;
+//}
+//
+//-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//
+//}
+
 
 //设置退出View数据
 -(void)setupOutV
