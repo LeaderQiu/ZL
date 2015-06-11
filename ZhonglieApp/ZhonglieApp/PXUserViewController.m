@@ -169,32 +169,28 @@
 //    NSLog(@"密码中心");
 //}
 //
-////推荐记录Btn点击事件
-//-(void)TJJLBtnClick
-//{
-//    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
-//    
-//    mgr.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-//    
-//    NSString *url = @"http://192.168.1.103/zhonglie/index.php/home/position/positionList";
-//    
-//    NSDictionary *params = @{@"Page":@"1"};
-//    
-//    [mgr POST:url parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//        //成功回掉
-//        NSLog(@"网络请求成功==》%@",responseObject);
-//        
-//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//        //失败回掉
-//        NSLog(@"网络请求失败==》%@",error);
-//    }];
-//    
-//}
-
+//推荐记录Btn点击事件
 -(void)TJJLBtnClick
 {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    NSDictionary *parameters = @{@"Page": @"2"};
-    [manager POST:@"http://192.168.1.103/zhonglie/index.php/home/position/positionList" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) { NSLog(@"网络请求成功: %@", responseObject); } failure:^(AFHTTPRequestOperation *operation, NSError *error) { NSLog(@"网络请求失败: %@", error); }];
+    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+    
+    mgr.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"]; // 设置content-Type为text/html
+    mgr.requestSerializer = [AFJSONRequestSerializer serializer];
+    mgr.responseSerializer = [AFJSONResponseSerializer serializer];
+    
+    NSString *url = @"http://192.168.1.103/zhonglie/index.php/home/position/positionList";
+    
+    NSDictionary *params = @{@"Page":@"2"};
+    
+    [mgr POST:url parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        //成功回掉
+        NSLog(@"网络请求成功==》%@",responseObject);
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        //失败回掉
+        NSLog(@"网络请求失败==》%@",error);
+    }];
+    
 }
+
 @end
