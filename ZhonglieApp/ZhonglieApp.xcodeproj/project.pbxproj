@@ -42,6 +42,10 @@
 		FD991CB71B259F0200E79F12 /* PXRuname2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD991CB61B259F0200E79F12 /* PXRuname2ViewController.m */; };
 		FDE764B61B2A7ABC00CF1F01 /* PXMiMaViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE764B51B2A7ABC00CF1F01 /* PXMiMaViewController1.m */; };
 		FDE764B91B2A7ACB00CF1F01 /* PXMiMaViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE764B81B2A7ACB00CF1F01 /* PXMiMaViewController2.m */; };
+		FDE764BF1B2A89B800CF1F01 /* PXMiMaView1.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE764BD1B2A89B800CF1F01 /* PXMiMaView1.m */; };
+		FDE764C01B2A89B800CF1F01 /* PXMiMaView1.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDE764BE1B2A89B800CF1F01 /* PXMiMaView1.xib */; };
+		FDE764C41B2A89CD00CF1F01 /* PXMiMaView2.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE764C21B2A89CD00CF1F01 /* PXMiMaView2.m */; };
+		FDE764C51B2A89CD00CF1F01 /* PXMiMaView2.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDE764C31B2A89CD00CF1F01 /* PXMiMaView2.xib */; };
 		FDEAECDC1B134AB200D48EBE /* PXAlerayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDEAECDB1B134AB200D48EBE /* PXAlerayViewController.m */; };
 		FDEAECDF1B134AD100D48EBE /* PXUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDEAECDE1B134AD100D48EBE /* PXUserViewController.m */; };
 		FDF0616E1B0EFC6E0075A5CB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FDF0616D1B0EFC6E0075A5CB /* main.m */; };
@@ -141,6 +145,12 @@
 		FDE764B51B2A7ABC00CF1F01 /* PXMiMaViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXMiMaViewController1.m; sourceTree = "<group>"; };
 		FDE764B71B2A7ACB00CF1F01 /* PXMiMaViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXMiMaViewController2.h; sourceTree = "<group>"; };
 		FDE764B81B2A7ACB00CF1F01 /* PXMiMaViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXMiMaViewController2.m; sourceTree = "<group>"; };
+		FDE764BC1B2A89B800CF1F01 /* PXMiMaView1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXMiMaView1.h; sourceTree = "<group>"; };
+		FDE764BD1B2A89B800CF1F01 /* PXMiMaView1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXMiMaView1.m; sourceTree = "<group>"; };
+		FDE764BE1B2A89B800CF1F01 /* PXMiMaView1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PXMiMaView1.xib; sourceTree = "<group>"; };
+		FDE764C11B2A89CD00CF1F01 /* PXMiMaView2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXMiMaView2.h; sourceTree = "<group>"; };
+		FDE764C21B2A89CD00CF1F01 /* PXMiMaView2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXMiMaView2.m; sourceTree = "<group>"; };
+		FDE764C31B2A89CD00CF1F01 /* PXMiMaView2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PXMiMaView2.xib; sourceTree = "<group>"; };
 		FDEAECDA1B134AB200D48EBE /* PXAlerayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXAlerayViewController.h; sourceTree = "<group>"; };
 		FDEAECDB1B134AB200D48EBE /* PXAlerayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXAlerayViewController.m; sourceTree = "<group>"; };
 		FDEAECDD1B134AD100D48EBE /* PXUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXUserViewController.h; sourceTree = "<group>"; };
@@ -489,6 +499,12 @@
 				FDFDBCAC1B282A3B001C360A /* PXUserCenterView.xib */,
 				FDFDBCB41B292705001C360A /* PXUserCenterView.h */,
 				FDFDBCB51B292705001C360A /* PXUserCenterView.m */,
+				FDE764BC1B2A89B800CF1F01 /* PXMiMaView1.h */,
+				FDE764BD1B2A89B800CF1F01 /* PXMiMaView1.m */,
+				FDE764BE1B2A89B800CF1F01 /* PXMiMaView1.xib */,
+				FDE764C11B2A89CD00CF1F01 /* PXMiMaView2.h */,
+				FDE764C21B2A89CD00CF1F01 /* PXMiMaView2.m */,
+				FDE764C31B2A89CD00CF1F01 /* PXMiMaView2.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -615,10 +631,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDE764C51B2A89CD00CF1F01 /* PXMiMaView2.xib in Resources */,
 				FD45190A1B204B2B00A49D88 /* PXSearchHistoryCell.xib in Resources */,
 				FD991CAF1B2586C100E79F12 /* PXRuname2Cell.xib in Resources */,
 				FDF061771B0EFC6E0075A5CB /* Main.storyboard in Resources */,
 				FD45190F1B21323500A49D88 /* PXSearchCell.xib in Resources */,
+				FDE764C01B2A89B800CF1F01 /* PXMiMaView1.xib in Resources */,
 				FDFDBCA61B26FE00001C360A /* PXHistoryCell.xib in Resources */,
 				FD3E260A1B12C6B200901E42 /* Images.xcassets in Resources */,
 				FD991CB41B258AC400E79F12 /* PXRunameCell.xib in Resources */,
@@ -682,7 +700,9 @@
 				FDE764B61B2A7ABC00CF1F01 /* PXMiMaViewController1.m in Sources */,
 				FD4518D71B1EDF6700A49D88 /* NSObject+MJCoding.m in Sources */,
 				FD4518B01B1EAE3700A49D88 /* PXDataTools.m in Sources */,
+				FDE764C41B2A89CD00CF1F01 /* PXMiMaView2.m in Sources */,
 				FDFDBD221B299548001C360A /* AFNetworkReachabilityManager.m in Sources */,
+				FDE764BF1B2A89B800CF1F01 /* PXMiMaView1.m in Sources */,
 				FDEAECDC1B134AB200D48EBE /* PXAlerayViewController.m in Sources */,
 				FDE764B91B2A7ACB00CF1F01 /* PXMiMaViewController2.m in Sources */,
 				FDFDBD201B299548001C360A /* AFHTTPRequestOperationManager.m in Sources */,

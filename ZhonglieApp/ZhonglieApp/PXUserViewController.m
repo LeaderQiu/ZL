@@ -11,6 +11,7 @@
 #import "UIColor+SYExtension.h"
 #import "PXUserCenterView.h"
 #import "AFNetworking.h"
+#import "PXMiMaViewController1.h"
 
 
 @interface PXUserViewController () <UITableViewDelegate,UITableViewDataSource>
@@ -28,7 +29,7 @@
     
     self.navigationController.navigationBarHidden = YES;
     
-    self.view.backgroundColor = [UIColor grayColor];
+    self.view.backgroundColor = [UIColor colorWithRGB:0xececec];
     
     [self setupHeaderV];
     
@@ -90,13 +91,14 @@
 -(void)setupTableV
 {
     UIScrollView *TableV = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 220, [UIScreen mainScreen].bounds.size.width, 350)];
+    
+    TableV.backgroundColor = [UIColor colorWithRGB:0xececec];
 
     
     TableV.contentSize = CGSizeMake(320, 430);
     TableV.userInteractionEnabled = YES;
     TableV.scrollEnabled = YES;
     
-    TableV.backgroundColor = [UIColor grayColor];
 //    
     //加载dataV
     PXUserCenterView *dataV = [[PXUserCenterView alloc]initWithFrame:CGRectMake(100, 300, self.view.bounds.size.width, 250)];
@@ -148,6 +150,10 @@
 //密码中心点击事件
 -(void)MiMaClick
 {
+    PXMiMaViewController1 *MiMaV1 = [[PXMiMaViewController1 alloc]init];
+    
+    [self.navigationController pushViewController:MiMaV1 animated:YES];
+    
     NSLog(@"密码中心");
 }
 
@@ -175,4 +181,8 @@
     
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    self.navigationController.navigationBarHidden = YES;
+}
 @end
