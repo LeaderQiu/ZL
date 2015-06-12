@@ -39,7 +39,7 @@
 //加载tableView内容
 -(void)setupTableV
 {
-    UITableView *TableV = [[UITableView alloc]initWithFrame:CGRectMake(0, 114, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height) style:UITableViewStyleGrouped];
+    UITableView *TableV = [[UITableView alloc]initWithFrame:CGRectMake(0, 114, [UIScreen mainScreen].bounds.size.width, 400) style:UITableViewStyleGrouped];
     
     TableV.backgroundColor = [UIColor colorWithRGB:0xececec];
     
@@ -249,7 +249,21 @@
     return 4;
 }
 
-
+-(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    if (section == 3) {
+        UIView *footerV = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 80)];
+        
+        UIButton *BaoCunBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 320, 49)];
+        
+        [BaoCunBtn setImage:[UIImage imageNamed:@"保存并推荐"] forState:UIControlStateNormal];
+        
+        [footerV addSubview:BaoCunBtn];
+        return footerV;
+    }
+    
+    return nil;
+}
 
 
 
