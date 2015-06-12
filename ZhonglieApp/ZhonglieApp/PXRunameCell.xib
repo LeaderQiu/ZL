@@ -40,6 +40,9 @@
                     </label>
                 </subviews>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="EditBtn" destination="blj-St-HM4" id="IEQ-pD-eck"/>
+            </connections>
             <point key="canvasLocation" x="311" y="281"/>
         </tableViewCell>
     </objects>

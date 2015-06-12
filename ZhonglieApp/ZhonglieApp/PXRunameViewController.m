@@ -10,6 +10,7 @@
 #import "UIBarButtonItem+Extension.h"
 #import "PXRunameCell.h"
 #import "PXAddRunameViewController.h"
+#import "PXEditRunameViewController.h"
 
 
 @interface PXRunameViewController ()<UITextFieldDelegate,UITableViewDataSource,UITableViewDelegate>
@@ -148,12 +149,20 @@
     PXRunameCell *cell = [tableView dequeueReusableCellWithIdentifier:RunameID];
     
     if (cell == nil) {
-        cell = [[PXRunameCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:RunameID];
+        cell = [[PXRunameCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:RunameID target:self action:@selector(EditBtnClick)];
     }
     
 
     
     return cell;
+}
+
+//编辑按钮点击事件
+-(void)EditBtnClick
+{
+    PXEditRunameViewController *EditV = [[PXEditRunameViewController alloc]init];
+    
+    [self.navigationController pushViewController:EditV animated:YES];
 }
 
 //底部视图高度

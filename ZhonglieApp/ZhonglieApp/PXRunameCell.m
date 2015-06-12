@@ -8,10 +8,15 @@
 
 #import "PXRunameCell.h"
 
+@interface PXRunameCell () 
+@property (weak, nonatomic) IBOutlet UIButton *EditBtn;
+
+@end
+
 @implementation PXRunameCell
 
 
--(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+-(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier target:(id)target action:(SEL)action
 {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         /**
@@ -26,6 +31,8 @@
         
         //设置为不可选中
         self.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        [_EditBtn addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
 
     }
     return self;
