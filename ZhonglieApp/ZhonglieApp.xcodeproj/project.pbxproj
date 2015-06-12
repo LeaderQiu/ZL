@@ -40,6 +40,8 @@
 		FD991CB31B258AC400E79F12 /* PXRunameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FD991CB11B258AC400E79F12 /* PXRunameCell.m */; };
 		FD991CB41B258AC400E79F12 /* PXRunameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD991CB21B258AC400E79F12 /* PXRunameCell.xib */; };
 		FD991CB71B259F0200E79F12 /* PXRuname2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD991CB61B259F0200E79F12 /* PXRuname2ViewController.m */; };
+		FDE764B61B2A7ABC00CF1F01 /* PXMiMaViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE764B51B2A7ABC00CF1F01 /* PXMiMaViewController1.m */; };
+		FDE764B91B2A7ACB00CF1F01 /* PXMiMaViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE764B81B2A7ACB00CF1F01 /* PXMiMaViewController2.m */; };
 		FDEAECDC1B134AB200D48EBE /* PXAlerayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDEAECDB1B134AB200D48EBE /* PXAlerayViewController.m */; };
 		FDEAECDF1B134AD100D48EBE /* PXUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDEAECDE1B134AD100D48EBE /* PXUserViewController.m */; };
 		FDF0616E1B0EFC6E0075A5CB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FDF0616D1B0EFC6E0075A5CB /* main.m */; };
@@ -135,6 +137,10 @@
 		FD991CB21B258AC400E79F12 /* PXRunameCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PXRunameCell.xib; sourceTree = "<group>"; };
 		FD991CB51B259F0100E79F12 /* PXRuname2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXRuname2ViewController.h; sourceTree = "<group>"; };
 		FD991CB61B259F0200E79F12 /* PXRuname2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXRuname2ViewController.m; sourceTree = "<group>"; };
+		FDE764B41B2A7ABC00CF1F01 /* PXMiMaViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXMiMaViewController1.h; sourceTree = "<group>"; };
+		FDE764B51B2A7ABC00CF1F01 /* PXMiMaViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXMiMaViewController1.m; sourceTree = "<group>"; };
+		FDE764B71B2A7ACB00CF1F01 /* PXMiMaViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXMiMaViewController2.h; sourceTree = "<group>"; };
+		FDE764B81B2A7ACB00CF1F01 /* PXMiMaViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXMiMaViewController2.m; sourceTree = "<group>"; };
 		FDEAECDA1B134AB200D48EBE /* PXAlerayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXAlerayViewController.h; sourceTree = "<group>"; };
 		FDEAECDB1B134AB200D48EBE /* PXAlerayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXAlerayViewController.m; sourceTree = "<group>"; };
 		FDEAECDD1B134AD100D48EBE /* PXUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXUserViewController.h; sourceTree = "<group>"; };
@@ -494,6 +500,10 @@
 				FDEAECDE1B134AD100D48EBE /* PXUserViewController.m */,
 				FDFDBCEB1B295C11001C360A /* PXYanZhengViewController.h */,
 				FDFDBCEC1B295C11001C360A /* PXYanZhengViewController.m */,
+				FDE764B41B2A7ABC00CF1F01 /* PXMiMaViewController1.h */,
+				FDE764B51B2A7ABC00CF1F01 /* PXMiMaViewController1.m */,
+				FDE764B71B2A7ACB00CF1F01 /* PXMiMaViewController2.h */,
+				FDE764B81B2A7ACB00CF1F01 /* PXMiMaViewController2.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -669,10 +679,12 @@
 				FD0DF1101B1C50EE00FF6BE1 /* UIBarButtonItem+Extension.m in Sources */,
 				FD4518B71B1EAFF500A49D88 /* PXCity.m in Sources */,
 				FD4518D91B1EDF6700A49D88 /* NSObject+MJProperty.m in Sources */,
+				FDE764B61B2A7ABC00CF1F01 /* PXMiMaViewController1.m in Sources */,
 				FD4518D71B1EDF6700A49D88 /* NSObject+MJCoding.m in Sources */,
 				FD4518B01B1EAE3700A49D88 /* PXDataTools.m in Sources */,
 				FDFDBD221B299548001C360A /* AFNetworkReachabilityManager.m in Sources */,
 				FDEAECDC1B134AB200D48EBE /* PXAlerayViewController.m in Sources */,
+				FDE764B91B2A7ACB00CF1F01 /* PXMiMaViewController2.m in Sources */,
 				FDFDBD201B299548001C360A /* AFHTTPRequestOperationManager.m in Sources */,
 				FDFDBD261B299548001C360A /* AFURLResponseSerialization.m in Sources */,
 				FDFDBD1F1B299548001C360A /* AFHTTPRequestOperation.m in Sources */,
