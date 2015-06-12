@@ -89,32 +89,6 @@
     
 }
 
-//#pragma mark - 自定义NavBarItem
-//-(void)loadNavBarItem {
-//        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-//        titleLabel.backgroundColor = [UIColor clearColor];
-////        titleLabel.font = CLNNCommonBigTextSize;
-//        titleLabel.text = self.title;
-//        titleLabel.textColor = [UIColor whiteColor];
-////        titleLabel.textColor = CLNNCommonDarkGrayColor;
-//        [titleLabel sizeToFit];
-//        self.navigationItem.titleView = titleLabel;
-//        
-//        UIButton *btnReturn = [UIButton buttonWithType:UIButtonTypeCustom];
-//        [btnReturn setBackgroundImage:[UIImage imageNamed:@"返回键"] forState:UIControlStateNormal];
-//        [btnReturn sizeToFit];
-//        btnReturn.exclusiveTouch = YES;
-//        btnReturn.backgroundColor = [UIColor clearColor];
-//        [btnReturn addTarget:self action:@selector(btnReturnClicked) forControlEvents:UIControlEventTouchUpInside];
-//        
-//        UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithCustomView:btnReturn];
-//        self.navigationItem.leftBarButtonItem = leftItem;
-//    }
-//
-//-(void)btnReturnClicked
-//{
-//    
-//}
 
 
 //加载tableView数据
@@ -255,11 +229,7 @@
     
     self.TextField.leftViewMode = UITextFieldViewModeNever;
 }
-//
-//-(BOOL)textFieldShouldClear:(UITextField *)textField
-//{
-//    return YES;
-//}
+
 
 //点击键盘搜索键，收回键盘.***跳转页面****
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -289,43 +259,6 @@
 }
 
 
-//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-//    
-//    //创建一个视图（v_headerView）
-//    UIView *v_headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 23)];
-//    
-//    UIImageView *v_headerImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 23)];//创建一个UIimageView（v_headerImageView）
-//    
-//    v_headerImageView.image = [UIImage imageNamed:@"HeaderView"];//给v_headerImageView设置图片
-//    
-//    [v_headerView addSubview:v_headerImageView];//将v_headerImageView添加到创建的视图（v_headerView）中
-//    
-//    UILabel *v_headerLab = [[UILabel alloc] initWithFrame:CGRectMake(10, 1, 100, 19)];//创建一个UILable（v_headerLab）用来显示标题
-//    v_headerLab.backgroundColor = [UIColor clearColor];//设置v_headerLab的背景颜色
-//    v_headerLab.textColor = [UIColor grayColor];//设置v_headerLab的字体颜色
-//    v_headerLab.font = [UIFont fontWithName:@"Arial" size:13];//设置v_headerLab的字体样式和大小
-//    v_headerLab.shadowColor = [UIColor whiteColor];//设置v_headerLab的字体的投影
-//    [v_headerLab setShadowOffset:CGSizeMake(0, 1)];//设置v_headerLab的字体投影的位置
-//    //设置每组的的标题
-//    if (section == 0) {
-//        v_headerLab.text = @"拍品导航";
-//    }
-//    if (section == 1) {
-//        v_headerLab.text = @"专场特卖";
-//    }
-//    [v_headerView addSubview:v_headerLab];//将标题v_headerLab添加到创建的视图（v_headerView）中
-//
-//    return v_headerView;//将视图（v_headerView）返回
-//}
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
