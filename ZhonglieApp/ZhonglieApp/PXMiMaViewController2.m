@@ -9,6 +9,7 @@
 #import "PXMiMaViewController2.h"
 #import "UIBarButtonItem+Extension.h"
 #import "PXMiMaViewController1.h"
+#import "PXMiMaView2.h"
 
 @interface PXMiMaViewController2 ()
 
@@ -27,34 +28,25 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    [self setupView];
+    [self setupXib];
 }
 
-//加载View内容
--(void)setupView
+-(void)setupXib
 {
-    UIImageView *ImageV = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"下划线" ]];
+    PXMiMaView2 *MiMaV2 = [[PXMiMaView2 alloc]initWithFrame:CGRectMake(0, 200, 320, 500) target:self action:@selector(QueRen)];
     
-    ImageV.frame = CGRectMake(10, 100, 300, 49);
+    UIView *backV = [[UIView alloc]initWithFrame:CGRectMake(0, 64, self.view.bounds.size.width, 500)];
+    backV.backgroundColor = [UIColor yellowColor];
     
-    UIImageView *ImageV2 = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"下划线" ]];
+    [backV addSubview:MiMaV2];
     
-    ImageV.frame = CGRectMake(10, 150, 300, 49);
+    [self.view addSubview:backV];
     
-    //下一步按钮
-    UIButton *NextBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, 200, 300, 49)];
-    
-    [NextBtn setImage:[UIImage imageNamed:@"确认"] forState:UIControlStateNormal];
-    
-    [NextBtn addTarget:self action:@selector(NextBtnClick) forControlEvents:UIControlEventTouchUpInside];
-    
-    [self.view addSubview:NextBtn];
-    [self.view addSubview:ImageV];
-    [self.view addSubview:ImageV2];
 }
+
 
 //下一步按钮点击事件
--(void)NextBtnClick
+-(void)QueRen
 {
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
@@ -63,11 +55,6 @@
 -(void)BackClickBtn
 {
     PXMiMaViewController1 *MiMaV1 = [[PXMiMaViewController1 alloc]init];
-    
-    
-    CATransition* transition = [CATransition animation];
-    transition.type = kCATransitionPush;//可更改为其他方式
-    transition.subtype = kCATransitionFromLeft;//可更改为其他方式
     
     [self.navigationController pushViewController:MiMaV1 animated:YES];
 }

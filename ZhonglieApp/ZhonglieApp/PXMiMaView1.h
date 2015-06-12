@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PXMiMaView1 : UIViewController
+@interface PXMiMaView1 : UIView
 
+-(instancetype)initWithFrame:(CGRect)frame target:(id)target action:(SEL)action;
 @end

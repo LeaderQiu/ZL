@@ -9,29 +9,23 @@
 #import "PXMiMaView2.h"
 
 @interface PXMiMaView2 ()
+@property (weak, nonatomic) IBOutlet UIButton *QueRen;
 
 @end
 
 @implementation PXMiMaView2
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+-(instancetype)initWithFrame:(CGRect)frame target:(id)target action:(SEL)action
+{
+    if (self = [super initWithFrame:frame]) {
+        /**
+         *  初始化xib
+         */
+        self = [[NSBundle mainBundle] loadNibNamed:@"PXMiMaView2" owner:nil options:nil].firstObject;
+        
+        [_QueRen addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+    }
+    return self;
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

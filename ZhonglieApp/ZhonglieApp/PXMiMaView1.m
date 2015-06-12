@@ -9,15 +9,24 @@
 #import "PXMiMaView1.h"
 
 @interface PXMiMaView1 ()
+@property (weak, nonatomic) IBOutlet UIButton *NextBtn;
 
 @end
 
 @implementation PXMiMaView1
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-}
+-(instancetype)initWithFrame:(CGRect)frame target:(id)target action:(SEL)action
+{
 
+    if (self = [super initWithFrame:frame]) {
+        /**
+         *  加载xib
+         */
+        self = [[NSBundle mainBundle] loadNibNamed:@"PXMiMaView1" owner:nil options:nil].firstObject;
+        
+        [_NextBtn addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+    }
+    return self;
+}
 
 @end

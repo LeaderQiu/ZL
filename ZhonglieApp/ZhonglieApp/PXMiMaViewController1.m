@@ -9,6 +9,7 @@
 #import "PXMiMaViewController1.h"
 #import "UIBarButtonItem+Extension.h"
 #import "PXMiMaViewController2.h"
+#import "PXMiMaView1.h"
 
 @interface PXMiMaViewController1 ()
 
@@ -26,36 +27,25 @@
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:@"返回键" highImage:@"返回键" target:self action:@selector(BackClickBtn)];
     
     self.view.backgroundColor = [UIColor whiteColor];
+
     
-    [self setupView];
+    [self setupXib];
 }
 
-//加载View内容
--(void)setupView
+-(void)setupXib
 {
-    //设置第一个下划线
-    UIImageView *ImageV = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"下划线" ]];
+    PXMiMaView1 *MiMaV1 = [[PXMiMaView1 alloc]initWithFrame:CGRectMake(0, 200, 320, 500) target:self action:@selector(NextBtnClick)];
     
-    ImageV.frame = CGRectMake(10,120, 300,5);
+    UIView *backV = [[UIView alloc]initWithFrame:CGRectMake(0, 64, self.view.bounds.size.width, 500)];
+    backV.backgroundColor = [UIColor yellowColor];
     
-    //设置第二个下划线
-    UIImageView *ImageV2 = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"下划线" ]];
+    [backV addSubview:MiMaV1];
     
-    ImageV2.frame = CGRectMake(10, 170, 300, 5);
-    
- 
-    
-    //下一步按钮
-    UIButton *NextBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, 220, 300, 49)];
-    
-    [NextBtn setImage:[UIImage imageNamed:@"下一步"] forState:UIControlStateNormal];
-    
-    [NextBtn addTarget:self action:@selector(NextBtnClick) forControlEvents:UIControlEventTouchUpInside];
-    
-    [self.view addSubview:NextBtn];
-    [self.view addSubview:ImageV];
-    [self.view addSubview:ImageV2];
+    [self.view addSubview:backV];
+
 }
+
+
 
 //下一步按钮点击事件
 -(void)NextBtnClick

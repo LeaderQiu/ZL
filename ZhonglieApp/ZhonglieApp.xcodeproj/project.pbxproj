@@ -13,7 +13,6 @@
 		FD1178841B185A2D00DAE956 /* PXSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1178831B185A2D00DAE956 /* PXSearchViewController.m */; };
 		FD3E260A1B12C6B200901E42 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD3E26091B12C6B200901E42 /* Images.xcassets */; };
 		FD3E260D1B12EF1B00901E42 /* PXMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3E260C1B12EF1B00901E42 /* PXMainViewController.m */; };
-		FD4518A41B1DC40300A49D88 /* PXNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4518A31B1DC40300A49D88 /* PXNavViewController.m */; };
 		FD4518AD1B1EA15500A49D88 /* PXCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4518AC1B1EA15500A49D88 /* PXCityViewController.m */; };
 		FD4518B01B1EAE3700A49D88 /* PXDataTools.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4518AF1B1EAE3700A49D88 /* PXDataTools.m */; };
 		FD4518B41B1EAFE600A49D88 /* PXCityGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4518B31B1EAFE600A49D88 /* PXCityGroup.m */; };
@@ -93,8 +92,6 @@
 		FD3E26091B12C6B200901E42 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FD3E260B1B12EF1B00901E42 /* PXMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXMainViewController.h; sourceTree = "<group>"; };
 		FD3E260C1B12EF1B00901E42 /* PXMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXMainViewController.m; sourceTree = "<group>"; };
-		FD4518A21B1DC40300A49D88 /* PXNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PXNavViewController.h; path = View/PXNavViewController.h; sourceTree = "<group>"; };
-		FD4518A31B1DC40300A49D88 /* PXNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PXNavViewController.m; path = View/PXNavViewController.m; sourceTree = "<group>"; };
 		FD4518AB1B1EA15500A49D88 /* PXCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXCityViewController.h; sourceTree = "<group>"; };
 		FD4518AC1B1EA15500A49D88 /* PXCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXCityViewController.m; sourceTree = "<group>"; };
 		FD4518AE1B1EAE3700A49D88 /* PXDataTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXDataTools.h; sourceTree = "<group>"; };
@@ -241,8 +238,6 @@
 				FD1178831B185A2D00DAE956 /* PXSearchViewController.m */,
 				FD4518AB1B1EA15500A49D88 /* PXCityViewController.h */,
 				FD4518AC1B1EA15500A49D88 /* PXCityViewController.m */,
-				FD4518A21B1DC40300A49D88 /* PXNavViewController.h */,
-				FD4518A31B1DC40300A49D88 /* PXNavViewController.m */,
 				FD45191F1B21C46B00A49D88 /* PXDetailViewController.h */,
 				FD4519201B21C46B00A49D88 /* PXDetailViewController.m */,
 			);
@@ -670,7 +665,6 @@
 				FDFDBD211B299548001C360A /* AFHTTPSessionManager.m in Sources */,
 				FDF061711B0EFC6E0075A5CB /* AppDelegate.m in Sources */,
 				FD4519091B204B2B00A49D88 /* PXSearchHistoryCell.m in Sources */,
-				FD4518A41B1DC40300A49D88 /* PXNavViewController.m in Sources */,
 				FDFDBD251B299548001C360A /* AFURLRequestSerialization.m in Sources */,
 				7AA145DA1B13332F0034E373 /* PXRunameViewController.m in Sources */,
 				FDFDBD231B299548001C360A /* AFSecurityPolicy.m in Sources */,
