@@ -86,31 +86,13 @@
     
 }
 
-//设置DataView数据
--(void)setupDataV
-{
-    
-    UITableView *DataBackV = [[UITableView alloc]initWithFrame:CGRectMake(0, 220, self.view.bounds.size.width, 250)];
-    
-    DataBackV.delegate = self;
-    DataBackV.dataSource = self;
-    
-    PXUserCenterView *dataV = [[PXUserCenterView alloc]initWithFrame:CGRectMake(100, 300, self.view.bounds.size.width, 250)];
-    
-    [DataBackV addSubview:dataV];
-    [self.view addSubview:DataBackV];
-    
-    
-    
-}
-
 //设置TableV数据
 -(void)setupTableV
 {
     UIScrollView *TableV = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 220, [UIScreen mainScreen].bounds.size.width, 350)];
 
     
-    TableV.contentSize = CGSizeMake(320, 400);
+    TableV.contentSize = CGSizeMake(320, 430);
     TableV.userInteractionEnabled = YES;
     TableV.scrollEnabled = YES;
     
@@ -164,11 +146,11 @@
 }
 
 //密码中心点击事件
-//-(void)MiMaClick
-//{
-//    NSLog(@"密码中心");
-//}
-//
+-(void)MiMaClick
+{
+    NSLog(@"密码中心");
+}
+
 //推荐记录Btn点击事件
 -(void)TJJLBtnClick
 {
