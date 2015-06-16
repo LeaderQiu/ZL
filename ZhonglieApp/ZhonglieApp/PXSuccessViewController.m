@@ -55,6 +55,11 @@
     
 }
 
+-(void)viewWillDisappear:(BOOL)animated
+{
+    self.tabBarController.tabBar.hidden = NO;
+}
+
 
 //设置推荐成功图片
 -(void)setupImage
