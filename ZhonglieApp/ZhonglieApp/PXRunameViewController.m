@@ -17,6 +17,10 @@
 
 @property(nonatomic,strong) UITextField *TextField;
 
+@property(nonatomic,strong) UITableView *tableV;
+
+@property(nonatomic,strong) NSMutableArray *myArray;
+
 @end
 
 @implementation PXRunameViewController
@@ -36,6 +40,9 @@
     
     [self setupTableV];
     
+    NSMutableArray *myArray = [NSMutableArray arrayWithObjects:@"one",@"two",@"three",@"four",@"five",nil];
+    _myArray =  myArray;
+    
     
 }
 
@@ -44,11 +51,7 @@
     UIView *FirstV = [[UIView alloc]initWithFrame:CGRectMake(0, 64, 320, 49)];
     
     [FirstV setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"搜索栏Cell背景"]]];
-    
-//    UIImageView *backImage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"搜索栏Cell背景"]];
-//    backImage.frame = CGRectMake(0, 64, 320, 48) ;
-//    
-//    [FirstV addSubview:backImage];
+
     
     //添加TextFiel
     UITextField *TextField = [[UITextField alloc]initWithFrame:CGRectMake(10, 7, 300, 35)];
@@ -93,8 +96,7 @@
 {
     
     self.TextField.leftViewMode = UITextFieldViewModeNever;
-    
-//    [self setupSearchHistory];
+
     
 }
 
@@ -122,6 +124,7 @@
 -(void)setupTableV
 {
     UITableView *tableV = [[UITableView alloc]initWithFrame:CGRectMake(0, 113, self.view.bounds.size.width, self.view.bounds.size.height)];
+    _tableV = tableV;
     
     tableV.delegate = self;
     tableV.dataSource = self;
@@ -138,7 +141,7 @@
 //几个cell
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return 6;
+    return [_myArray count];
 }
 
 //自定义cell
@@ -160,6 +163,14 @@
 -(void)DeleteBtnClick
 {
     NSLog(@"删除简历");
+    
+    PXRunameCell *cell = [[PXRunameCell alloc]init];
+    
+    NSIndexPath *indexPath = [_tableV indexPathForCell:cell];
+    
+    [_myArray removeObjectAtIndex:indexPath.row];
+    
+    [_tableV deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
 }
 
 //编辑按钮点击事件
