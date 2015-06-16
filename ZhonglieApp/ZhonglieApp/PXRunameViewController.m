@@ -163,14 +163,15 @@
 -(void)DeleteBtnClick
 {
     NSLog(@"删除简历");
+
     
-    PXRunameCell *cell = [[PXRunameCell alloc]init];
-    
-    NSIndexPath *indexPath = [_tableV indexPathForCell:cell];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:1 inSection:0];
     
     [_myArray removeObjectAtIndex:indexPath.row];
     
-    [_tableV deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    [_tableV deleteRowsAtIndexPaths:@[indexPath]  withRowAnimation:UITableViewRowAnimationFade];
+    
+    [_tableV reloadData];
 }
 
 //编辑按钮点击事件
