@@ -149,12 +149,17 @@
     PXRunameCell *cell = [tableView dequeueReusableCellWithIdentifier:RunameID];
     
     if (cell == nil) {
-        cell = [[PXRunameCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:RunameID target:self action:@selector(EditBtnClick)];
+        cell = [[PXRunameCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:RunameID target:self action:@selector(EditBtnClick) target2:self action2:@selector(DeleteBtnClick)];
     }
-    
 
     
     return cell;
+}
+
+//删除按钮点击事件
+-(void)DeleteBtnClick
+{
+    NSLog(@"删除简历");
 }
 
 //编辑按钮点击事件

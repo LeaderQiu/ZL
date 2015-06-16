@@ -10,13 +10,14 @@
 
 @interface PXRunameCell () 
 @property (weak, nonatomic) IBOutlet UIButton *EditBtn;
+@property (weak, nonatomic) IBOutlet UIButton *DeleteBtn;
 
 @end
 
 @implementation PXRunameCell
 
 
--(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier target:(id)target action:(SEL)action
+-(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier target:(id)target action:(SEL)action target2:(id)target2 action2:(SEL)action2
 {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         /**
@@ -34,6 +35,7 @@
         
         [_EditBtn addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
 
+        [_DeleteBtn addTarget:target2 action:action2 forControlEvents:UIControlEventTouchUpInside];
     }
     return self;
 }

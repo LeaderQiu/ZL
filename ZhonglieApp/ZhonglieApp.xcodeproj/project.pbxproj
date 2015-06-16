@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		7A1B1A5C1B17225D009C49E2 /* PXMainCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1B1A5A1B17225D009C49E2 /* PXMainCell.m */; };
-		7AA145DA1B13332F0034E373 /* PXRunameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA145D91B13332F0034E373 /* PXRunameViewController.m */; };
 		FD0DF1101B1C50EE00FF6BE1 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0DF10F1B1C50EE00FF6BE1 /* UIBarButtonItem+Extension.m */; };
 		FD1178841B185A2D00DAE956 /* PXSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1178831B185A2D00DAE956 /* PXSearchViewController.m */; };
 		FD3E260A1B12C6B200901E42 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD3E26091B12C6B200901E42 /* Images.xcassets */; };
 		FD3E260D1B12EF1B00901E42 /* PXMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3E260C1B12EF1B00901E42 /* PXMainViewController.m */; };
+		FD3F893D1B3015AB002210A6 /* PXRunameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3F893C1B3015AB002210A6 /* PXRunameViewController.m */; };
 		FD4518AD1B1EA15500A49D88 /* PXCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4518AC1B1EA15500A49D88 /* PXCityViewController.m */; };
 		FD4518B01B1EAE3700A49D88 /* PXDataTools.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4518AF1B1EAE3700A49D88 /* PXDataTools.m */; };
 		FD4518B41B1EAFE600A49D88 /* PXCityGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4518B31B1EAFE600A49D88 /* PXCityGroup.m */; };
@@ -86,7 +86,6 @@
 		7A1B1A591B17225D009C49E2 /* PXMainCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXMainCell.h; sourceTree = "<group>"; };
 		7A1B1A5A1B17225D009C49E2 /* PXMainCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXMainCell.m; sourceTree = "<group>"; };
 		7AA145D81B13332F0034E373 /* PXRunameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXRunameViewController.h; sourceTree = "<group>"; };
-		7AA145D91B13332F0034E373 /* PXRunameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXRunameViewController.m; sourceTree = "<group>"; };
 		FD0DF10E1B1C50EE00FF6BE1 /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
 		FD0DF10F1B1C50EE00FF6BE1 /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
 		FD1178821B185A2D00DAE956 /* PXSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PXSearchViewController.h; path = View/PXSearchViewController.h; sourceTree = "<group>"; };
@@ -94,6 +93,8 @@
 		FD3E26091B12C6B200901E42 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FD3E260B1B12EF1B00901E42 /* PXMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXMainViewController.h; sourceTree = "<group>"; };
 		FD3E260C1B12EF1B00901E42 /* PXMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXMainViewController.m; sourceTree = "<group>"; };
+		FD3F893B1B30154F002210A6 /* PXRuname2ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PXRuname2ViewController.h; sourceTree = "<group>"; };
+		FD3F893C1B3015AB002210A6 /* PXRunameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXRunameViewController.m; sourceTree = "<group>"; };
 		FD4518AB1B1EA15500A49D88 /* PXCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXCityViewController.h; sourceTree = "<group>"; };
 		FD4518AC1B1EA15500A49D88 /* PXCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXCityViewController.m; sourceTree = "<group>"; };
 		FD4518AE1B1EAE3700A49D88 /* PXDataTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXDataTools.h; sourceTree = "<group>"; };
@@ -138,7 +139,6 @@
 		FD991CB01B258AC400E79F12 /* PXRunameCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXRunameCell.h; sourceTree = "<group>"; };
 		FD991CB11B258AC400E79F12 /* PXRunameCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXRunameCell.m; sourceTree = "<group>"; };
 		FD991CB21B258AC400E79F12 /* PXRunameCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PXRunameCell.xib; sourceTree = "<group>"; };
-		FD991CB51B259F0100E79F12 /* PXRuname2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXRuname2ViewController.h; sourceTree = "<group>"; };
 		FD991CB61B259F0200E79F12 /* PXRuname2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXRuname2ViewController.m; sourceTree = "<group>"; };
 		FDE764B41B2A7ABC00CF1F01 /* PXMiMaViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXMiMaViewController1.h; sourceTree = "<group>"; };
 		FDE764B51B2A7ABC00CF1F01 /* PXMiMaViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXMiMaViewController1.m; sourceTree = "<group>"; };
@@ -363,8 +363,8 @@
 			isa = PBXGroup;
 			children = (
 				7AA145D81B13332F0034E373 /* PXRunameViewController.h */,
-				7AA145D91B13332F0034E373 /* PXRunameViewController.m */,
-				FD991CB51B259F0100E79F12 /* PXRuname2ViewController.h */,
+				FD3F893C1B3015AB002210A6 /* PXRunameViewController.m */,
+				FD3F893B1B30154F002210A6 /* PXRuname2ViewController.h */,
 				FD991CB61B259F0200E79F12 /* PXRuname2ViewController.m */,
 				FDFDBC9C1B26C495001C360A /* PXSuccessViewController.h */,
 				FDFDBC9D1B26C495001C360A /* PXSuccessViewController.m */,
@@ -672,12 +672,12 @@
 				FD4519021B1EE82000A49D88 /* UIColor+SYExtension.m in Sources */,
 				FDE764C91B2ABFD600CF1F01 /* PXAddRunameViewController.m in Sources */,
 				FD1178841B185A2D00DAE956 /* PXSearchViewController.m in Sources */,
+				FD3F893D1B3015AB002210A6 /* PXRunameViewController.m in Sources */,
 				FDFDBD271B299548001C360A /* AFURLSessionManager.m in Sources */,
 				FDFDBD211B299548001C360A /* AFHTTPSessionManager.m in Sources */,
 				FDF061711B0EFC6E0075A5CB /* AppDelegate.m in Sources */,
 				FD4519091B204B2B00A49D88 /* PXSearchHistoryCell.m in Sources */,
 				FDFDBD251B299548001C360A /* AFURLRequestSerialization.m in Sources */,
-				7AA145DA1B13332F0034E373 /* PXRunameViewController.m in Sources */,
 				FDFDBD231B299548001C360A /* AFSecurityPolicy.m in Sources */,
 				FD4519221B21C46B00A49D88 /* PXDetailViewController.m in Sources */,
 				FD4518D31B1EDF6700A49D88 /* MJConst.m in Sources */,
