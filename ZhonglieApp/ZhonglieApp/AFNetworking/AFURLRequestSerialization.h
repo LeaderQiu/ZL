@@ -1,5 +1,6 @@
 // AFURLRequestSerialization.h
-// Copyright (c) 2011–2015 Alamofire Software Foundation (http://alamofire.org/)
+//
+// Copyright (c) 2013-2015 AFNetworking (http://afnetworking.com)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -117,10 +118,10 @@ typedef NS_ENUM(NSUInteger, AFHTTPRequestQueryStringSerializationStyle) {
 
 /**
  Default HTTP header field values to be applied to serialized requests. By default, these include the following:
-
+ 
  - `Accept-Language` with the contents of `NSLocale +preferredLanguages`
  - `User-Agent` with the contents of various bundle identifiers and OS designations
-
+ 
  @discussion To add or remove default request headers, use `setValue:forHTTPHeaderField:`.
  */
 @property (readonly, nonatomic, strong) NSDictionary *HTTPRequestHeaders;
@@ -191,7 +192,7 @@ forHTTPHeaderField:(NSString *)field;
 
  @param block A block that defines a process of encoding parameters into a query string. This block returns the query string and takes three arguments: the request, the parameters to encode, and the error that occurred when attempting to encode parameters for the given request.
  */
-- (void)setQueryStringSerializationWithBlock:(NSString * (^)(NSURLRequest *request, id parameters, NSError * __autoreleasing *error))block;
+- (void)setQueryStringSerializationWithBlock:(NSString * (^)(NSURLRequest *request, NSDictionary *parameters, NSError * __autoreleasing *error))block;
 
 ///-------------------------------
 /// @name Creating Request Objects
@@ -212,7 +213,7 @@ forHTTPHeaderField:(NSString *)field;
  @param method The HTTP method for the request, such as `GET`, `POST`, `PUT`, or `DELETE`. This parameter must not be `nil`.
  @param URLString The URL string used to create the request URL.
  @param parameters The parameters to be either set as a query string for `GET` requests, or the request HTTP body.
- @param error The error that occurred while constructing the request.
+ @param error The error that occured while constructing the request.
 
  @return An `NSMutableURLRequest` object.
  */
@@ -238,7 +239,7 @@ forHTTPHeaderField:(NSString *)field;
  @param URLString The URL string used to create the request URL.
  @param parameters The parameters to be encoded and set in the request HTTP body.
  @param block A block that takes a single argument and appends data to the HTTP body. The block argument is an object adopting the `AFMultipartFormData` protocol.
- @param error The error that occurred while constructing the request.
+ @param error The error that occured while constructing the request.
 
  @return An `NSMutableURLRequest` object
  */

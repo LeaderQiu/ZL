@@ -1,5 +1,6 @@
 // AFURLConnectionOperation.m
-// Copyright (c) 2011–2015 Alamofire Software Foundation (http://alamofire.org/)
+//
+// Copyright (c) 2013-2015 AFNetworking (http://afnetworking.com)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -507,7 +508,7 @@ static inline BOOL AFStateTransitionIsValid(AFOperationState fromState, AFOperat
             [self.connection cancel];
             [self performSelector:@selector(connection:didFailWithError:) withObject:self.connection withObject:error];
         } else {
-            // Accommodate race condition where `self.connection` has not yet been set before cancellation
+            // Accomodate race condition where `self.connection` has not yet been set before cancellation
             self.error = error;
             [self finish];
         }

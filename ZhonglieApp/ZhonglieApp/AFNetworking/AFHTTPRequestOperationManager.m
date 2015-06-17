@@ -1,5 +1,6 @@
 // AFHTTPRequestOperationManager.m
-// Copyright (c) 2011–2015 Alamofire Software Foundation (http://alamofire.org/)
+//
+// Copyright (c) 2013-2015 AFNetworking (http://afnetworking.com)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -56,9 +57,12 @@
         url = [url URLByAppendingPathComponent:@""];
     }
 
+    // 基础的 URL!!!
     self.baseURL = url;
 
+    // 设置请求的数据格式
     self.requestSerializer = [AFHTTPRequestSerializer serializer];
+    // 设置响应的数据格式
     self.responseSerializer = [AFJSONResponseSerializer serializer];
 
     self.securityPolicy = [AFSecurityPolicy defaultPolicy];

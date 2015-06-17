@@ -13,6 +13,7 @@
 #import "PXSearchHistoryCell.h"
 #import "PXSearchCell.h"
 #import "PXDetailViewController.h"
+#import "AFNetworking.h"
 
 @interface PXMainViewController () <UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 @property(nonatomic,strong) UIImageView *LogoImageV;
@@ -40,21 +41,10 @@
     
     
     self.navigationController.navigationBarHidden = YES;
-    
-//    [self.tabBarItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:14], nil] forState:UIControlStateNormal];
-//    
-//    [self.tabBarItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:14], nil] forState:UIControlStateHighlighted];
 
-    
-    
     self.navigationController.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image: [UIImage imageNamed:@"众猎"]selectedImage:[UIImage imageNamed:@"众猎-hover"]];
     
     self.navigationController.tabBarItem.title= @"众猎";
-    
-    
-
-    
-     
   
     [self setupHeaderView];
     
@@ -73,10 +63,30 @@
     UITableView *SearchHistory = [[UITableView alloc]initWithFrame:CGRectMake(0,170 ,self.view.bounds.size.width, 10)];
     _SearchHistory = SearchHistory;
 
-    
+    //网络请求数据
+    [self setupHTTPData];
     
 }
 
+//网络请求数据
+-(void)setupHTTPData
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    NSDictionary *parameters = @{@"page":@"2"};
+    
+    [manager POST:@"http://192.168.1.103/zhonglie/index.php/home/position/positionList" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        //成功的回调
+        NSLog(@"成功的回调==>%@",responseObject);
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        //失败的回调
+        NSLog(@"失败的回调==>%@",error);
+        
+    }];
+}
 //点击空白收起键盘、收起SearchHistoryView
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
