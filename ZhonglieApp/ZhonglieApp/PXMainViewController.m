@@ -14,6 +14,10 @@
 #import "PXSearchCell.h"
 #import "PXDetailViewController.h"
 #import "AFNetworking.h"
+#import "PXZhiWei.h"
+#import "MJExtension.h"
+
+
 
 @interface PXMainViewController () <UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 @property(nonatomic,strong) UIImageView *LogoImageV;
@@ -32,6 +36,8 @@
 @property(nonatomic,strong) NSArray *SearchText2;
 
 
+/**存放的模型数组*/
+@property(nonatomic,strong) NSMutableArray *dataArray;
 @end
 
 @implementation PXMainViewController
@@ -68,6 +74,17 @@
     
 }
 
+/**
+ *  懒加载
+ */
+-(NSMutableArray *)dataArray
+{
+    if (_dataArray == nil) {
+        _dataArray = [[NSMutableArray alloc]init];
+    }
+    return _dataArray;
+}
+
 //网络请求数据
 -(void)setupHTTPData
 {
@@ -79,6 +96,20 @@
         
         //成功的回调
         NSLog(@"成功的回调==>%@",responseObject);
+        
+        NSArray *dictArray = [responseObject objectForKey:@"data"];
+        NSMutableArray *tempArray = [NSMutableArray array];
+        
+        for (NSDictionary *dict in dictArray) {
+            
+            PXZhiWei *ZhiWei = [PXZhiWei objectWithKeyValues:dict];
+            
+            [tempArray addObject:ZhiWei];
+        }
+        
+        [self.dataArray addObjectsFromArray:tempArray];
+        
+        NSLog(@"<dataArray在这里==>%@",self.dataArray);
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
