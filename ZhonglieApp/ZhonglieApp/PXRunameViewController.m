@@ -41,7 +41,7 @@
     
     [self setupTableV];
     
-    NSMutableArray *myArray = [NSMutableArray arrayWithObjects:@"one",@"two",@"three",@"four",@"five",nil];
+    NSMutableArray *myArray = [NSMutableArray arrayWithObjects:@"one",@"two",@"three",@"four",@"five",@"six",@"seven",@"eight",@"",nil];
     _myArray =  myArray;
     
     
@@ -207,12 +207,24 @@
 {
     UIView *footerV = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
     
-    UIButton *AddBtn = [[UIButton alloc] initWithFrame:CGRectMake(10, 10, 300, 49)];
     
-    [AddBtn setImage:[UIImage imageNamed:@"添加简历"] forState:UIControlStateNormal];
+    
+//    UIButton *AddBtn = [[UIButton alloc] initWithFrame:CGRectMake(10, 10, 300, 49)];
+    
+    UIButton *AddBtn = [UIButton new];
+    
+#warning TODO - 图片需修改
+    [AddBtn setBackgroundImage:[UIImage imageNamed:@"添加简历"] forState:UIControlStateNormal];
+    
+    [AddBtn setTitle:@"添加简历" forState:UIControlStateNormal];
+    
     [AddBtn addTarget:self action:@selector(AddBtnClick) forControlEvents:UIControlEventTouchUpInside];
     
     [footerV addSubview:AddBtn];
+    
+    [AddBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(footerV).insets(UIEdgeInsetsMake(10, 10, 10, 10));
+    }];
     
     return footerV;
 }
