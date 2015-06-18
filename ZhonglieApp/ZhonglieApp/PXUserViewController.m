@@ -12,6 +12,8 @@
 #import "PXUserCenterView.h"
 #import "AFNetworking.h"
 #import "PXMiMaViewController1.h"
+#import "Masonry.h"
+#import "PXAlerayViewController.h"
 
 
 @interface PXUserViewController () <UITableViewDelegate,UITableViewDataSource>
@@ -42,12 +44,34 @@
 //设置头部数据
 -(void)setupHeaderV
 {
-    UIView *HeaderV = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 159)];
+//    UIView *HeaderV = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 159)];
     
-    UIImageView *BackImageV = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"我的背景"]];
+    UIView *HeaderV = [UIView new];
+    
+    
+//    UIImageView *BackImageV = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"我的背景"]];
+    UIImageView *BackImageV = [UIImageView new];
+    
+    [BackImageV setImage:[UIImage imageNamed:@"我的背景"]];
     
     [HeaderV addSubview:BackImageV];
     [self.view addSubview:HeaderV];
+    
+    //HeaderV约束
+    [HeaderV mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.equalTo(self.view);
+        make.height.mas_equalTo(159);
+        make.top.equalTo(self.view);
+        make.left.equalTo(self.view);
+    }];
+    
+    //BackImageV约束
+    [BackImageV mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.equalTo(HeaderV);
+        make.height.equalTo(HeaderV);
+        make.top.equalTo(HeaderV);
+        make.left.equalTo(HeaderV);
+    }];
     
 }
 
@@ -57,7 +81,7 @@
 {
     UIView *BtnV = [[UIView alloc]initWithFrame:CGRectMake(0, 159, self.view.bounds.size.width, 51)];
     
-    UIButton *TJJLBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 161, 51)];
+    UIButton *TJJLBtn = [UIButton new];
     
     [TJJLBtn setBackgroundImage:[UIImage imageNamed:@"矩形-6"] forState:UIControlStateNormal];
     
@@ -69,9 +93,20 @@
     
     [BtnV addSubview:TJJLBtn];
     
+    //TJJLBtn约束
+    int padding1 = [UIScreen mainScreen].bounds.size.width/2;
+    
+    [TJJLBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(51);
+        make.width.mas_equalTo(padding1);
+        make.top.equalTo(BtnV);
+        make.left.equalTo(BtnV);
+        
+    }];
 
     
-    UIButton *JJGLBtn = [[UIButton alloc]initWithFrame:CGRectMake(161, 0, 161, 51)];
+//    UIButton *JJGLBtn = [[UIButton alloc]initWithFrame:CGRectMake(161, 0, 161, 51)];
+    UIButton *JJGLBtn = [UIButton new];
     
     [JJGLBtn setBackgroundImage:[UIImage imageNamed:@"矩形-6"] forState:UIControlStateNormal];
     
@@ -82,6 +117,15 @@
     [BtnV addSubview:JJGLBtn];
     [self.view addSubview:BtnV];
     
+    //JJGLBtn约束
+    [JJGLBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(51);
+        make.width.mas_equalTo(padding1);
+        make.left.equalTo(TJJLBtn.mas_right);
+        make.right.equalTo(BtnV);
+        make.top.equalTo(BtnV);
+    }];
+    
  
 
     
@@ -90,20 +134,27 @@
 //设置TableV数据
 -(void)setupTableV
 {
-    UIScrollView *TableV = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 220, [UIScreen mainScreen].bounds.size.width, 350)];
+    UIScrollView *TableV = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 220, [UIScreen mainScreen].bounds.size.width, 500)];
     
     TableV.backgroundColor = [UIColor colorWithRGB:0xececec];
 
     
-    TableV.contentSize = CGSizeMake(320, 430);
+    TableV.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, 430);
     TableV.userInteractionEnabled = YES;
     TableV.scrollEnabled = YES;
     
 //    
     //加载dataV
-    PXUserCenterView *dataV = [[PXUserCenterView alloc]initWithFrame:CGRectMake(100, 300, self.view.bounds.size.width, 250)];
+    PXUserCenterView *dataV = [[PXUserCenterView alloc]initWithFrame:CGRectMake(100, 300, [UIScreen mainScreen].bounds.size.width, 250)];
     
     [TableV addSubview:dataV];
+    
+    [dataV mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.equalTo(TableV);
+        make.height.mas_equalTo(250);
+        make.left.equalTo(TableV);
+        make.top.equalTo(TableV);
+    }];
 //
 //    //加载MiMaV
     
@@ -134,7 +185,7 @@
     
     OutV.backgroundColor = [UIColor clearColor];
     
-    UIButton *TuiChuBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, 10, 300, 49)];
+    UIButton *TuiChuBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, 10, self.view.bounds.size.width-20, 49)];
     
     [TuiChuBtn setBackgroundImage:[UIImage imageNamed:@"退出登录"] forState:UIControlStateNormal];
     
@@ -160,24 +211,16 @@
 //推荐记录Btn点击事件
 -(void)TJJLBtnClick
 {
-    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+    PXAlerayViewController *VC = [[PXAlerayViewController alloc]init];
     
-    mgr.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"]; // 设置content-Type为text/html
-    mgr.requestSerializer = [AFJSONRequestSerializer serializer];
-    mgr.responseSerializer = [AFJSONResponseSerializer serializer];
+    [self.navigationController pushViewController:VC animated:YES];
     
-    NSString *url = @"http://192.168.1.103/zhonglie/index.php/home/position/positionList";
+}
+//view消失时显示导航栏
+-(void)viewWillDisappear:(BOOL)animated
+{
+    self.navigationController.navigationBarHidden = NO;
     
-    NSDictionary *params = @{@"Page":@"2"};
-    
-    [mgr POST:url parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        //成功回掉
-        NSLog(@"网络请求成功==》%@",responseObject);
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        //失败回掉
-        NSLog(@"网络请求失败==》%@",error);
-    }];
     
 }
 
@@ -185,4 +228,6 @@
 {
     self.navigationController.navigationBarHidden = YES;
 }
+
+
 @end
