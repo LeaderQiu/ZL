@@ -56,7 +56,7 @@
     [self setupHeaderView];
     
     //创建首页岗位列表tableView
-    UITableView *MainTableV = [[UITableView alloc] initWithFrame:CGRectMake(0, 170, [UIScreen mainScreen].bounds.size.width, 450)];
+    UITableView *MainTableV = [[UITableView alloc] initWithFrame:CGRectMake(0, 170, [UIScreen mainScreen].bounds.size.width, 550)];
     
     //设置tableView数据源代理
     MainTableV.dataSource = self;
@@ -133,12 +133,12 @@
 -(void)setupHeaderView
 {
     //创建头部招牌View
-    UIView *headerV = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 176)];
-    
+    UIView *headerV = [UIView new];
     
     headerV.backgroundColor = [UIColor blackColor];
     
     [self.view addSubview:headerV];
+ 
 
     
     //设置头部招牌背景图
@@ -146,26 +146,23 @@
     
     [headerV addSubview:headerImageV];
     
-    [headerImageV mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.equalTo(headerV.mas_width);
-//        make.center.equalTo(self.view);
-    }];
-    
+
     
     //添加Logo
-    UIImageView* LogoImageV=[[UIImageView alloc] initWithFrame:CGRectMake(40,50,64,63)];
+    UIImageView *LogoImageV = [UIImageView new];
     
     LogoImageV.image =[UIImage imageNamed:@"Logo"];
     
     [headerImageV addSubview:LogoImageV];
+  
     
     //添加标语
-    UIImageView *TextImageV = [[UIImageView alloc] initWithFrame:CGRectMake(130,65,158,45)];
+    UIImageView *TextImageV = [UIImageView new];
     
     TextImageV.image = [UIImage imageNamed:@"标语"];
     
     [headerImageV addSubview:TextImageV];
-    
+  
 
      //添加TextFiel
     UITextField *TextField = [UITextField new];
@@ -175,13 +172,8 @@
     [self setupTextFiel];
     
     [headerV addSubview:TextField];
-    
-
-    
-    
+  
     //创建地区按钮
-//    UIButton *CityButton = [[UIButton alloc]initWithFrame:CGRectMake(10, 130, 45, 32)];
-    
     UIButton *CityButton = [UIButton new];
 
     [CityButton setImage:[UIImage imageNamed:@"城市"] forState:UIControlStateNormal];
@@ -189,6 +181,30 @@
     [CityButton addTarget:self action:@selector(btnClickAction) forControlEvents:UIControlEventTouchUpInside];
     
     [headerV addSubview:CityButton];
+    
+    
+    //约束的参数
+    int padding1 = 10;
+    int padding2 = 15;
+    int padding3 = ([UIScreen mainScreen].bounds.size.width-222)/3;
+    int padding4 = ([UIScreen mainScreen].bounds.size.height *(172/568));
+#warning TODO -高度
+    //headerView约束
+    [headerV mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.equalTo(self.view);
+        make.height.mas_equalTo(172);
+        make.left.equalTo(self.view);
+        make.top.equalTo(self.view);
+    }];
+    
+    //HeaderImage约束
+    [headerImageV mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.equalTo(headerV.mas_width);
+        
+        
+    }];
+ 
+    
     
     //CityButton约束
     [CityButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -199,8 +215,6 @@
     }];
     
     //TextField约束
-    int padding1 = 10;
-    int padding2 = 15;
     [TextField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.equalTo(@32);
         make.left.equalTo(CityButton.mas_right).offset(20);
@@ -208,7 +222,20 @@
         make.bottom.equalTo(headerV.mas_bottom).offset(-padding2);
     }];
     
-
+    //标语约束
+    [TextImageV mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(158, 45));
+        make.bottom.equalTo(TextField.mas_top).offset(-20);
+        make.right.equalTo(headerV).offset(-padding3);
+    }];
+    
+    
+    //Logo约束
+    [LogoImageV mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(64, 63));
+        make.bottom.equalTo(TextField.mas_top).offset(-20);
+        make.left.equalTo(headerV).offset(padding3);
+    }];
    
 }
 
