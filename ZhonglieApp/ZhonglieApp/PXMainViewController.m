@@ -16,6 +16,7 @@
 #import "AFNetworking.h"
 #import "PXZhiWei.h"
 #import "MJExtension.h"
+#import "Masonry.h"
 
 
 
@@ -70,7 +71,7 @@
     _SearchHistory = SearchHistory;
 
     //网络请求数据
-    [self setupHTTPData];
+//    [self setupHTTPData];
     
 }
 
@@ -138,11 +139,18 @@
     headerV.backgroundColor = [UIColor blackColor];
     
     [self.view addSubview:headerV];
+
     
     //设置头部招牌背景图
     UIImageView *headerImageV = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"首页背景图"]];
     
     [headerV addSubview:headerImageV];
+    
+    [headerImageV mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.equalTo(headerV.mas_width);
+//        make.center.equalTo(self.view);
+    }];
+    
     
     //添加Logo
     UIImageView* LogoImageV=[[UIImageView alloc] initWithFrame:CGRectMake(40,50,64,63)];
@@ -159,16 +167,24 @@
     [headerImageV addSubview:TextImageV];
     
 
-     //添加TextFiel
-     UITextField *TextField = [[UITextField alloc]initWithFrame:CGRectMake(90, 130, 220, 32)];
+     //添加TextFiel    
+    UITextField *TextField = [UITextField new];
     
     _TextField = TextField;
     
     [self setupTextFiel];
     
     [headerV addSubview:TextField];
+    
 
-
+    int padding1 = 10;
+    int padding2 = 15;
+    [TextField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.equalTo(@32);
+        make.width.equalTo(@220);
+        make.right.equalTo(headerV.mas_right).offset(-padding1);
+        make.bottom.equalTo(headerV.mas_bottom).offset(-padding2);
+    }];
     
     
     
