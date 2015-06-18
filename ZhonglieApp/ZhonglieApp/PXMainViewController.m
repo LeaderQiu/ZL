@@ -167,7 +167,7 @@
     [headerImageV addSubview:TextImageV];
     
 
-     //添加TextFiel    
+     //添加TextFiel
     UITextField *TextField = [UITextField new];
     
     _TextField = TextField;
@@ -177,27 +177,37 @@
     [headerV addSubview:TextField];
     
 
-    int padding1 = 10;
-    int padding2 = 15;
-    [TextField mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.height.equalTo(@32);
-        make.width.equalTo(@220);
-        make.right.equalTo(headerV.mas_right).offset(-padding1);
-        make.bottom.equalTo(headerV.mas_bottom).offset(-padding2);
-    }];
-    
     
     
     //创建地区按钮
-    UIButton *CityButton = [[UIButton alloc]initWithFrame:CGRectMake(10, 130, 45, 32)];
+//    UIButton *CityButton = [[UIButton alloc]initWithFrame:CGRectMake(10, 130, 45, 32)];
+    
+    UIButton *CityButton = [UIButton new];
 
     [CityButton setImage:[UIImage imageNamed:@"城市"] forState:UIControlStateNormal];
-//
-//    [CityButton setTitle:@"北京" forState:UIControlStateNormal];
     
     [CityButton addTarget:self action:@selector(btnClickAction) forControlEvents:UIControlEventTouchUpInside];
     
     [headerV addSubview:CityButton];
+    
+    //CityButton约束
+    [CityButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(headerV.mas_left).offset(20);
+        make.bottom.equalTo(TextField);
+        make.size.mas_equalTo(CGSizeMake(45, 32));
+        
+    }];
+    
+    //TextField约束
+    int padding1 = 10;
+    int padding2 = 15;
+    [TextField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.equalTo(@32);
+        make.left.equalTo(CityButton.mas_right).offset(20);
+        make.right.equalTo(headerV.mas_right).offset(-padding1);
+        make.bottom.equalTo(headerV.mas_bottom).offset(-padding2);
+    }];
+    
 
    
 }
