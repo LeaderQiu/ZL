@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7513.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -14,31 +15,60 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2015.06.08" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pWu-JI-4S6">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015.06.08" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pWu-JI-4S6">
                         <rect key="frame" x="8" y="11" width="86" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="86" id="Doq-A5-022"/>
+                            <constraint firstAttribute="height" constant="21" id="TRM-Y3-aHI"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="blj-St-HM4">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="blj-St-HM4">
                         <rect key="frame" x="250" y="11" width="22" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="22" id="3tJ-W3-ikB"/>
+                            <constraint firstAttribute="width" constant="22" id="M3o-h2-GVv"/>
+                        </constraints>
                         <state key="normal" backgroundImage="简历编辑">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aut-6Z-o34">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aut-6Z-o34">
                         <rect key="frame" x="290" y="11" width="22" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="22" id="0Ab-3H-B8I"/>
+                            <constraint firstAttribute="height" constant="22" id="ua9-sO-UTq"/>
+                        </constraints>
                         <state key="normal" backgroundImage="简历删除">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="冯明-首席保洁" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h7d-Uz-3me">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="冯明-首席保洁" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h7d-Uz-3me">
                         <rect key="frame" x="93" y="11" width="134" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="93i-s1-2pP"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottomMargin" secondItem="aut-6Z-o34" secondAttribute="bottom" constant="2" id="479-mN-GvQ"/>
+                    <constraint firstItem="h7d-Uz-3me" firstAttribute="top" secondItem="O2n-sq-giw" secondAttribute="topMargin" constant="3" id="Eoo-BV-KPw"/>
+                    <constraint firstItem="h7d-Uz-3me" firstAttribute="leading" secondItem="pWu-JI-4S6" secondAttribute="trailing" constant="-1" id="F7a-df-q0N"/>
+                    <constraint firstItem="aut-6Z-o34" firstAttribute="trailing" secondItem="O2n-sq-giw" secondAttribute="trailingMargin" id="K4W-0Q-wmM"/>
+                    <constraint firstItem="aut-6Z-o34" firstAttribute="centerY" secondItem="blj-St-HM4" secondAttribute="centerY" id="Mx6-jw-ORz"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="h7d-Uz-3me" secondAttribute="bottom" constant="3" id="PMZ-ds-1g3"/>
+                    <constraint firstItem="aut-6Z-o34" firstAttribute="top" secondItem="O2n-sq-giw" secondAttribute="topMargin" constant="3" id="UNB-Lp-h6y"/>
+                    <constraint firstItem="pWu-JI-4S6" firstAttribute="top" secondItem="O2n-sq-giw" secondAttribute="topMargin" constant="3" id="g3O-hz-i4L"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="pWu-JI-4S6" secondAttribute="bottom" constant="3" id="gOR-i5-Qpn"/>
+                    <constraint firstItem="aut-6Z-o34" firstAttribute="leading" secondItem="blj-St-HM4" secondAttribute="trailing" constant="18" id="gtS-9q-JrK"/>
+                    <constraint firstItem="pWu-JI-4S6" firstAttribute="leading" secondItem="O2n-sq-giw" secondAttribute="leadingMargin" id="liM-T4-vw5"/>
+                    <constraint firstItem="blj-St-HM4" firstAttribute="leading" secondItem="h7d-Uz-3me" secondAttribute="trailing" constant="23" id="sgP-YC-FC9"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="DeleteBtn" destination="aut-6Z-o34" id="eMl-9D-zLm"/>
