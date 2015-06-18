@@ -11,6 +11,7 @@
 #import "PXRunameCell.h"
 #import "PXAddRunameViewController.h"
 #import "PXEditRunameViewController.h"
+#import "Masonry.h"
 
 
 @interface PXRunameViewController ()<UITextFieldDelegate,UITableViewDataSource,UITableViewDelegate>
@@ -48,13 +49,13 @@
 
 -(void)setupFirstV
 {
-    UIView *FirstV = [[UIView alloc]initWithFrame:CGRectMake(0, 64, 320, 49)];
+     UIView *FirstV = [UIView new];
     
     [FirstV setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"搜索栏Cell背景"]]];
 
     
     //添加TextFiel
-    UITextField *TextField = [[UITextField alloc]initWithFrame:CGRectMake(10, 7, 300, 35)];
+    UITextField *TextField = [UITextField new];
     
     _TextField = TextField;
     
@@ -62,6 +63,19 @@
     [FirstV addSubview:TextField];
     
     [self.view addSubview:FirstV];
+    
+    //FirstV约束
+    [FirstV mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.equalTo(self.view);
+        make.height.mas_equalTo(49);
+        make.top.equalTo(self.view.mas_top).offset(64);
+        make.left.equalTo(self.view);
+    }];
+    
+    //TextField约束
+    [TextField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(FirstV).insets(UIEdgeInsetsMake(7, 10, 7, 10));
+    }];
 }
 
 //设置TextField细节
