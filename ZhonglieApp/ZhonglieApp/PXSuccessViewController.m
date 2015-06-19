@@ -10,6 +10,7 @@
 #import "UIBarButtonItem+Extension.h"
 #import "PXRuname2ViewController.h"
 #import "Masonry.h"
+#import "PXAlerayViewController.h"
 
 @interface PXSuccessViewController ()
 
@@ -61,6 +62,10 @@
     self.tabBarController.tabBar.hidden = NO;
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    self.tabBarController.tabBar.hidden = YES;
+}
 
 //设置推荐成功图片
 -(void)setupImage
@@ -134,7 +139,9 @@
 //点击查看
 -(void)ChaKanClick
 {
-//    self.navigationController pushViewController:<#(UIViewController *)#> animated:<#(BOOL)#>
+    PXAlerayViewController *VC = [[PXAlerayViewController alloc]init];
+    
+    [self.navigationController pushViewController:VC  animated:YES];
     
     NSLog(@"点击了查看");
 }
