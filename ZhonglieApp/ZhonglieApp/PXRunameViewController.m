@@ -137,7 +137,11 @@
 //设置TableView
 -(void)setupTableV
 {
-    UITableView *tableV = [[UITableView alloc]initWithFrame:CGRectMake(0, 113, self.view.bounds.size.width, self.view.bounds.size.height)];
+    UIScrollView *ScrollV = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 113, self.view.bounds.size.width, self.view.bounds.size.height)];
+    
+    ScrollV.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, 600);
+    
+    UITableView *tableV = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
     _tableV = tableV;
     
     tableV.delegate = self;
@@ -145,7 +149,9 @@
     
     tableV.rowHeight = 49;
     
-    [self.view addSubview:tableV];
+    [self.view addSubview:ScrollV];
+    [ScrollV addSubview:tableV];
+    
 }
 
 

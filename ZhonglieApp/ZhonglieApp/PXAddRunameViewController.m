@@ -9,6 +9,7 @@
 #import "PXAddRunameViewController.h"
 #import "UIBarButtonItem+Extension.h"
 #import "UIColor+SYExtension.h"
+#import "Masonry.h"
 
 
 @interface PXAddRunameViewController ()<UITextFieldDelegate,UITableViewDataSource,UITableViewDelegate>
@@ -39,7 +40,7 @@
 //加载tableView内容
 -(void)setupTableV
 {
-    UITableView *TableV = [[UITableView alloc]initWithFrame:CGRectMake(0, 114, [UIScreen mainScreen].bounds.size.width, 400) style:UITableViewStyleGrouped];
+    UITableView *TableV = [[UITableView alloc]initWithFrame:CGRectMake(0, 114, [UIScreen mainScreen].bounds.size.width, 500) style:UITableViewStyleGrouped];
     
     TableV.backgroundColor = [UIColor colorWithRGB:0xececec];
     
@@ -58,11 +59,12 @@
 //加载头部搜索栏
 -(void)setupHeaderV
 {
-    UIView *HeaderV = [[UIView alloc]initWithFrame:CGRectMake(0, 64, self.view.bounds.size.width, 50)];
+    UIView *HeaderV = [[UIView alloc]initWithFrame:CGRectMake(0, 64,[UIScreen mainScreen].bounds.size.width, 50)];
     
     HeaderV.backgroundColor = [UIColor whiteColor];
     
-    UITextField *TextField = [[UITextField alloc]initWithFrame:CGRectMake(10, 10, 300, 33)];
+//    UITextField *TextField = [[UITextField alloc]initWithFrame:CGRectMake(10, 10, 300, 33)];
+    UITextField *TextField = [UITextField new];
     
     _TextField = TextField;
     
@@ -75,6 +77,11 @@
     
     [HeaderV addSubview:TextField];
     [self.view addSubview:HeaderV];
+    
+    //TextField约束
+    [TextField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(HeaderV).insets(UIEdgeInsetsMake(10, 10, 10, 10));
+    }];
 }
 
 //TextField细节处理
@@ -248,15 +255,15 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 4;
 }
-
+//底部视图
 -(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
     if (section == 3) {
-        UIView *footerV = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 80)];
+        UIView *footerV = [[UIView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 80)];
         
-        UIButton *BaoCunBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 320, 49)];
+        UIButton *BaoCunBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 49)];
         
-        [BaoCunBtn setImage:[UIImage imageNamed:@"保存并推荐"] forState:UIControlStateNormal];
+        [BaoCunBtn setBackgroundImage:[UIImage imageNamed:@"保存并推荐"] forState:UIControlStateNormal];
         
         [footerV addSubview:BaoCunBtn];
         return footerV;
