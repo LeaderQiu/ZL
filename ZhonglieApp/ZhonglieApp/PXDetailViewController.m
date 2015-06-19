@@ -10,6 +10,7 @@
 #import "UIBarButtonItem+Extension.h"
 #import "PXMainCell.h"
 #import "PXRuname2ViewController.h"
+#import "Masonry.h"
 
 
 
@@ -75,16 +76,23 @@
 {
     
     //创建推荐按钮
-    UIButton *TuiJianBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, 10, 300, 49)];
+//    UIButton *TuiJianBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, 10, 300, 49)];
+    UIButton *TuiJianBtn = [UIButton new];
     
-    [TuiJianBtn setImage:[UIImage imageNamed:@"推荐Btn"] forState:UIControlStateNormal];
+    [TuiJianBtn setBackgroundImage:[UIImage imageNamed:@"推荐Btn"] forState:UIControlStateNormal];
     
     
     [TuiJianBtn addTarget:self action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
     
-    UIView *TuiJianV = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, 70)];
+    UIView *TuiJianV = [[UIView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 70)];
+
     
     [TuiJianV addSubview:TuiJianBtn];
+    
+    //TuiJianBtn的约束
+    [TuiJianBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(TuiJianV).insets(UIEdgeInsetsMake(10, 10, 10, 10));
+    }];
     
   
     
@@ -179,11 +187,15 @@
                 
                 [cell.contentView addSubview:TuiJianV];
                 
-                
+               
             default:
                 break;
         }
     }
+//    //推荐V的约束
+//    [TuiJianV mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.edges.equalTo(cell.contentView).insets(UIEdgeInsetsMake(10, 10, 10, 10));
+//    }];
     
     return cell;
     

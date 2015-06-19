@@ -11,6 +11,7 @@
 #import "UIBarButtonItem+Extension.h"
 #import "PXDetailViewController.h"
 #import "PXSuccessViewController.h"
+#import "Masonry.h"
 
 
 
@@ -68,17 +69,12 @@
 
 -(void)setupFirstV
 {
-    UIView *FirstV = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, 49)];
+    UIView *FirstV = [[UIView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 49)];
     
     [FirstV setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"搜索栏Cell背景"]]];
     
-    //    UIImageView *backImage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"搜索栏Cell背景"]];
-    //    backImage.frame = CGRectMake(0, 64, 320, 48) ;
-    //
-    //    [FirstV addSubview:backImage];
-    
     //添加TextFiel
-    UITextField *TextField = [[UITextField alloc]initWithFrame:CGRectMake(10, 7, 300, 35)];
+    UITextField *TextField = [UITextField new];
     
     _TextField = TextField;
     
@@ -86,6 +82,11 @@
     [FirstV addSubview:TextField];
     
     [self.view addSubview:FirstV];
+    
+    //TextField约束
+    [TextField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(FirstV).insets(UIEdgeInsetsMake(7, 10, 7, 10));
+    }];
 }
 
 //设置TextField细节

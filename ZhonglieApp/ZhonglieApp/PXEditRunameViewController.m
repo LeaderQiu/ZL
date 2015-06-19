@@ -9,6 +9,7 @@
 #import "PXEditRunameViewController.h"
 #import "UIBarButtonItem+Extension.h"
 #import "UIColor+SYExtension.h"
+#import "Masonry.h"
 
 @interface PXEditRunameViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -40,7 +41,7 @@
 //加载tableView内容
 -(void)setupTableV
 {
-    UITableView *TableV = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 520) style:UITableViewStyleGrouped];
+    UITableView *TableV = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 620) style:UITableViewStyleGrouped];
     
     TableV.backgroundColor = [UIColor colorWithRGB:0xececec];
     
@@ -180,13 +181,14 @@
 -(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
     if (section == 3) {
-        UIView *footerV = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 80)];
+        UIView *footerV = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 49)];
         
-        UIButton *BaoCunBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 320, 49)];
+        UIButton *BaoCunBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 49)];
         
-        [BaoCunBtn setImage:[UIImage imageNamed:@"保存并推荐"] forState:UIControlStateNormal];
+        [BaoCunBtn setBackgroundImage:[UIImage imageNamed:@"保存并推荐"] forState:UIControlStateNormal];
         
         [footerV addSubview:BaoCunBtn];
+        
         return footerV;
     }
     
