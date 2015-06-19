@@ -9,6 +9,7 @@
 #import "PXSuccessViewController.h"
 #import "UIBarButtonItem+Extension.h"
 #import "PXRuname2ViewController.h"
+#import "Masonry.h"
 
 @interface PXSuccessViewController ()
 
@@ -66,9 +67,15 @@
 {
     UIImageView *SuccessImageV = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"推荐成功"]];
     
-    SuccessImageV.frame = CGRectMake(43, 100, 234, 336);
+//    SuccessImageV.frame = CGRectMake(43, 100, 234, 336);
     
     [self.view addSubview:SuccessImageV];
+    
+    //SuccessImageV约束
+    [SuccessImageV mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view);
+        make.top.equalTo(self.view.mas_top).offset(100);
+    }];
     
     
 }
@@ -78,7 +85,9 @@
 {
   
     //设置查看推荐记录按钮
-    UIButton *ChaKanBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, 500, 145,48)];
+//    UIButton *ChaKanBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, 500, 145,48)];
+    
+    UIButton *ChaKanBtn = [UIButton new];
     _ChaKanBtn = ChaKanBtn;
     
     [ChaKanBtn setBackgroundImage:[UIImage imageNamed:@"查看推荐记录"] forState:UIControlStateNormal];
@@ -88,7 +97,8 @@
     [ChaKanBtn addTarget:self action:@selector(ChaKanClick) forControlEvents:UIControlEventTouchUpInside];
 
     //设置继续推荐按钮
-    UIButton *JiXuBtn = [[UIButton alloc]initWithFrame:CGRectMake(165, 500, 145, 48)];
+//    UIButton *JiXuBtn = [[UIButton alloc]initWithFrame:CGRectMake(165, 500, 145, 48)];
+    UIButton *JiXuBtn = [UIButton new];
     _JiXuBtn = JiXuBtn;
     
     [JiXuBtn setBackgroundImage:[UIImage imageNamed:@"继续推荐"] forState:UIControlStateNormal];
@@ -99,6 +109,26 @@
     
     [self.view addSubview:ChaKanBtn];
     [self.view addSubview:JiXuBtn];
+    
+    //设置两个Btn约束
+    int padding1 = 20;
+    
+    [ChaKanBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view.mas_left).offset(padding1);
+        make.bottom.equalTo(self.view.mas_bottom).offset(-padding1);
+        make.right.equalTo(JiXuBtn.mas_left).offset(-padding1);
+        make.height.mas_equalTo(48);
+        make.width.equalTo(JiXuBtn);
+        
+    }];
+    
+    [JiXuBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self.view.mas_right).offset(-padding1);
+        make.bottom.equalTo(self.view.mas_bottom).offset(-padding1);
+        make.left.equalTo(ChaKanBtn.mas_right).offset(-padding1);
+        make.height.mas_equalTo(48);
+        
+    }];
 }
 
 //点击查看

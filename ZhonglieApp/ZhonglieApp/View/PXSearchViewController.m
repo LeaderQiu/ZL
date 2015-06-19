@@ -9,6 +9,8 @@
 #import "PXSearchViewController.h"
 #import "PXMainCell.h"
 #import "UIBarButtonItem+Extension.h"
+#import "Masonry.h"
+#import "PXCityViewController.h"
 
 @interface PXSearchViewController ()<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate>
 @property(nonatomic,strong) UITableView *SearchV;
@@ -22,7 +24,7 @@
     
     self.navigationController.navigationBarHidden = NO;
     
-    self.view.backgroundColor = [UIColor grayColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     
     //优化导航栏
     self.navigationController.navigationItem.title = @"";
@@ -50,25 +52,31 @@
 {
     UIView *FirstV = [[UIView alloc]initWithFrame:CGRectMake(0, 64, [UIScreen mainScreen].bounds.size.width, 49)];
     
-//    UIImageView *searchBackImage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"SearchHeaderV"]];
+//    FirstV.backgroundColor = [UIColor grayColor];
     
-    UIImageView *searchBackImage = [[UIImageView alloc]init];
+    [FirstV setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"line-拷贝"]]];
     
-    searchBackImage.backgroundColor = [UIColor yellowColor];
-
-    
-    [FirstV addSubview:searchBackImage];
     
     //加载搜索栏
-    UITextField *TextField = [[UITextField alloc]initWithFrame:CGRectMake(55, 12, 252, 33)];
+    UITextField *TextField = [UITextField new];
     
     _TextField = TextField;
     
-    TextField.background = [UIImage imageNamed:@"searchBarBack"];
+#warning TODO - TextField背景图问题
+//    TextField.background = [UIImage imageNamed:@"查看推荐记录"];
+    
+    TextField.backgroundColor = [UIColor blackColor];
+
+    
     
     [self setupTextFiel];
     
     [FirstV addSubview:TextField];
+    
+    //TextField约束
+    [TextField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(FirstV).insets(UIEdgeInsetsMake(10, 55, 10, 10));
+    }];
     
     //加载地区选择Btn
     UIButton *Diqu = [[UIButton alloc]initWithFrame:CGRectMake(10, 14, 40,25 )];
@@ -77,7 +85,7 @@
     [Diqu setTitle:@"北京" forState:UIControlStateNormal];
     [Diqu setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     
-    
+    [Diqu addTarget:self action:@selector(DiquBtnClick) forControlEvents:UIControlEventTouchUpInside];
     
     [FirstV addSubview:Diqu];
     
@@ -89,7 +97,13 @@
     
 }
 
-
+//点击地区选择
+-(void)DiquBtnClick
+{
+    PXCityViewController *VC = [[PXCityViewController alloc]init];
+    
+    [self.navigationController pushViewController:VC animated:YES];
+}
 
 //加载tableView数据
 -(void)setupTableV
@@ -158,32 +172,57 @@
 {
     UIView *headerV = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 20, 20)];
     
-    headerV.backgroundColor = [UIColor greenColor];
-    
     //创建三个筛选按钮
-    UIButton *ShiJian = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 107,44)];
+
+    UIButton *ShiJian = [UIButton new];
     
-    ShiJian.backgroundColor = [UIColor yellowColor];
-    
-    [ShiJian setImage:[UIImage imageNamed:@"发布时间"] forState:UIControlStateNormal];
+    [ShiJian setBackgroundImage:[UIImage imageNamed:@"发布时间"] forState:UIControlStateNormal];
     
     [headerV addSubview:ShiJian];
+      
+    UIButton *JinE = [UIButton new];
     
-    UIButton *JinE = [[UIButton alloc]initWithFrame:CGRectMake(107, 0, 107,44)];
-    
-    JinE.backgroundColor = [UIColor redColor];
-    
-    [JinE setImage:[UIImage imageNamed:@"奖励金额"] forState:UIControlStateNormal];
+    [JinE setBackgroundImage:[UIImage imageNamed:@"奖励金额"] forState:UIControlStateNormal];
     
     [headerV addSubview:JinE];
     
-    UIButton *ShaiXuan = [[UIButton alloc]initWithFrame:CGRectMake(214, 0, 107,44)];
+    UIButton *ShaiXuan = [UIButton new];
     
-    ShaiXuan.backgroundColor = [UIColor blueColor];
-    
-    [ShaiXuan setImage:[UIImage imageNamed:@"更多筛选"] forState:UIControlStateNormal];
+    [ShaiXuan setBackgroundImage:[UIImage imageNamed:@"更多筛选"] forState:UIControlStateNormal];
     
     [headerV addSubview:ShaiXuan];
+    
+    
+    //ShiJian约束
+    
+    int padding1 = [UIScreen mainScreen].bounds.size.width/3;
+    
+    [ShiJian mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(headerV);
+        make.height.equalTo(headerV);
+        make.left.equalTo(headerV);
+        make.right.equalTo(JinE.mas_left);
+        make.width.mas_equalTo(padding1);
+        
+    }];
+    
+    //JinE约束
+    [JinE mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(headerV);
+        make.left.equalTo(ShiJian.mas_right);
+        make.height.equalTo(headerV);
+        make.right.equalTo(ShaiXuan.mas_left);
+        make.width.mas_equalTo(padding1);
+    }];
+    
+    //ShaiXuan约束
+    [ShaiXuan mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(headerV);
+        make.left.equalTo(JinE.mas_right);
+        make.height.equalTo(headerV);
+        make.right.equalTo(headerV);
+        make.width.mas_equalTo(padding1);
+    }];
     
     return headerV;
     
