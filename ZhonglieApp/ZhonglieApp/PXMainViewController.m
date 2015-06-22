@@ -350,7 +350,7 @@
 //加载搜索历史
 -(void)setupSearchHistory
 {
-    UITableView *SearchHistory = [[UITableView alloc]initWithFrame:CGRectMake(0,170 ,self.view.bounds.size.width, 250)];
+    UITableView *SearchHistory = [[UITableView alloc]initWithFrame:CGRectMake(0,170 ,self.view.bounds.size.width, 251)];
     _SearchHistory = SearchHistory;
     
     SearchHistory.delegate = self;
