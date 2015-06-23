@@ -76,10 +76,9 @@
 		FD991CB41B258AC400E79F12 /* PXRunameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD991CB21B258AC400E79F12 /* PXRunameCell.xib */; };
 		FD991CB71B259F0200E79F12 /* PXRuname2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD991CB61B259F0200E79F12 /* PXRuname2ViewController.m */; };
 		FDC14BA21B3946FA00B9F34E /* PXWeChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC14BA11B3946FA00B9F34E /* PXWeChatViewController.m */; };
+		FDC14BA91B397ABA00B9F34E /* PXMiMaViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC14BA81B397ABA00B9F34E /* PXMiMaViewController3.m */; };
 		FDE764B61B2A7ABC00CF1F01 /* PXMiMaViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE764B51B2A7ABC00CF1F01 /* PXMiMaViewController1.m */; };
 		FDE764B91B2A7ACB00CF1F01 /* PXMiMaViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE764B81B2A7ACB00CF1F01 /* PXMiMaViewController2.m */; };
-		FDE764BF1B2A89B800CF1F01 /* PXMiMaView1.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE764BD1B2A89B800CF1F01 /* PXMiMaView1.m */; };
-		FDE764C01B2A89B800CF1F01 /* PXMiMaView1.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDE764BE1B2A89B800CF1F01 /* PXMiMaView1.xib */; };
 		FDE764C41B2A89CD00CF1F01 /* PXMiMaView2.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE764C21B2A89CD00CF1F01 /* PXMiMaView2.m */; };
 		FDE764C51B2A89CD00CF1F01 /* PXMiMaView2.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDE764C31B2A89CD00CF1F01 /* PXMiMaView2.xib */; };
 		FDE764C91B2ABFD600CF1F01 /* PXAddRunameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE764C71B2ABFD600CF1F01 /* PXAddRunameViewController.m */; };
@@ -97,7 +96,6 @@
 		FDFDBCA61B26FE00001C360A /* PXHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDFDBCA41B26FE00001C360A /* PXHistoryCell.xib */; };
 		FDFDBCAE1B282A3B001C360A /* PXUserCenterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDFDBCAC1B282A3B001C360A /* PXUserCenterView.xib */; };
 		FDFDBCB61B292705001C360A /* PXUserCenterView.m in Sources */ = {isa = PBXBuildFile; fileRef = FDFDBCB51B292705001C360A /* PXUserCenterView.m */; };
-		FDFDBCED1B295C11001C360A /* PXYanZhengViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDFDBCEC1B295C11001C360A /* PXYanZhengViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -249,13 +247,12 @@
 		FDC14B991B38FA6600B9F34E /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		FDC14BA01B3946FA00B9F34E /* PXWeChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXWeChatViewController.h; sourceTree = "<group>"; };
 		FDC14BA11B3946FA00B9F34E /* PXWeChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXWeChatViewController.m; sourceTree = "<group>"; };
+		FDC14BA71B397ABA00B9F34E /* PXMiMaViewController3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXMiMaViewController3.h; sourceTree = "<group>"; };
+		FDC14BA81B397ABA00B9F34E /* PXMiMaViewController3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXMiMaViewController3.m; sourceTree = "<group>"; };
 		FDE764B41B2A7ABC00CF1F01 /* PXMiMaViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXMiMaViewController1.h; sourceTree = "<group>"; };
 		FDE764B51B2A7ABC00CF1F01 /* PXMiMaViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXMiMaViewController1.m; sourceTree = "<group>"; };
 		FDE764B71B2A7ACB00CF1F01 /* PXMiMaViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXMiMaViewController2.h; sourceTree = "<group>"; };
 		FDE764B81B2A7ACB00CF1F01 /* PXMiMaViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXMiMaViewController2.m; sourceTree = "<group>"; };
-		FDE764BC1B2A89B800CF1F01 /* PXMiMaView1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXMiMaView1.h; sourceTree = "<group>"; };
-		FDE764BD1B2A89B800CF1F01 /* PXMiMaView1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXMiMaView1.m; sourceTree = "<group>"; };
-		FDE764BE1B2A89B800CF1F01 /* PXMiMaView1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PXMiMaView1.xib; sourceTree = "<group>"; };
 		FDE764C11B2A89CD00CF1F01 /* PXMiMaView2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXMiMaView2.h; sourceTree = "<group>"; };
 		FDE764C21B2A89CD00CF1F01 /* PXMiMaView2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXMiMaView2.m; sourceTree = "<group>"; };
 		FDE764C31B2A89CD00CF1F01 /* PXMiMaView2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PXMiMaView2.xib; sourceTree = "<group>"; };
@@ -286,8 +283,6 @@
 		FDFDBCAC1B282A3B001C360A /* PXUserCenterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PXUserCenterView.xib; sourceTree = "<group>"; };
 		FDFDBCB41B292705001C360A /* PXUserCenterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXUserCenterView.h; sourceTree = "<group>"; };
 		FDFDBCB51B292705001C360A /* PXUserCenterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXUserCenterView.m; sourceTree = "<group>"; };
-		FDFDBCEB1B295C11001C360A /* PXYanZhengViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXYanZhengViewController.h; sourceTree = "<group>"; };
-		FDFDBCEC1B295C11001C360A /* PXYanZhengViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXYanZhengViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -697,9 +692,6 @@
 				FDFDBCAC1B282A3B001C360A /* PXUserCenterView.xib */,
 				FDFDBCB41B292705001C360A /* PXUserCenterView.h */,
 				FDFDBCB51B292705001C360A /* PXUserCenterView.m */,
-				FDE764BC1B2A89B800CF1F01 /* PXMiMaView1.h */,
-				FDE764BD1B2A89B800CF1F01 /* PXMiMaView1.m */,
-				FDE764BE1B2A89B800CF1F01 /* PXMiMaView1.xib */,
 				FDE764C11B2A89CD00CF1F01 /* PXMiMaView2.h */,
 				FDE764C21B2A89CD00CF1F01 /* PXMiMaView2.m */,
 				FDE764C31B2A89CD00CF1F01 /* PXMiMaView2.xib */,
@@ -712,12 +704,12 @@
 			children = (
 				FDEAECDD1B134AD100D48EBE /* PXUserViewController.h */,
 				FDEAECDE1B134AD100D48EBE /* PXUserViewController.m */,
-				FDFDBCEB1B295C11001C360A /* PXYanZhengViewController.h */,
-				FDFDBCEC1B295C11001C360A /* PXYanZhengViewController.m */,
 				FDE764B41B2A7ABC00CF1F01 /* PXMiMaViewController1.h */,
 				FDE764B51B2A7ABC00CF1F01 /* PXMiMaViewController1.m */,
 				FDE764B71B2A7ACB00CF1F01 /* PXMiMaViewController2.h */,
 				FDE764B81B2A7ACB00CF1F01 /* PXMiMaViewController2.m */,
+				FDC14BA71B397ABA00B9F34E /* PXMiMaViewController3.h */,
+				FDC14BA81B397ABA00B9F34E /* PXMiMaViewController3.m */,
 				FDC14BA01B3946FA00B9F34E /* PXWeChatViewController.h */,
 				FDC14BA11B3946FA00B9F34E /* PXWeChatViewController.m */,
 			);
@@ -811,7 +803,6 @@
 				FD991CAF1B2586C100E79F12 /* PXRuname2Cell.xib in Resources */,
 				FDF061771B0EFC6E0075A5CB /* Main.storyboard in Resources */,
 				FD45190F1B21323500A49D88 /* PXSearchCell.xib in Resources */,
-				FDE764C01B2A89B800CF1F01 /* PXMiMaView1.xib in Resources */,
 				FDFDBCA61B26FE00001C360A /* PXHistoryCell.xib in Resources */,
 				FD3E260A1B12C6B200901E42 /* Images.xcassets in Resources */,
 				FD991CB41B258AC400E79F12 /* PXRunameCell.xib in Resources */,
@@ -872,6 +863,7 @@
 				FD8203341B32760700894743 /* MASLayoutConstraint.m in Sources */,
 				FDC14BA21B3946FA00B9F34E /* PXWeChatViewController.m in Sources */,
 				FD8203081B32757A00894743 /* NSData+ImageContentType.m in Sources */,
+				FDC14BA91B397ABA00B9F34E /* PXMiMaViewController3.m in Sources */,
 				FD8203141B32757A00894743 /* UIImageView+HighlightedWebCache.m in Sources */,
 				FD4518AD1B1EA15500A49D88 /* PXCityViewController.m in Sources */,
 				FD8203101B32757A00894743 /* UIButton+WebCache.m in Sources */,
@@ -879,7 +871,6 @@
 				FD8203151B32757A00894743 /* UIImageView+WebCache.m in Sources */,
 				FD3F89AF1B311FAF002210A6 /* AFURLResponseSerialization.m in Sources */,
 				FD991CAE1B2586C100E79F12 /* PXRuname2Cell.m in Sources */,
-				FDFDBCED1B295C11001C360A /* PXYanZhengViewController.m in Sources */,
 				FD3F89CC1B3179CF002210A6 /* NSObject+MJProperty.m in Sources */,
 				FD8203321B32760700894743 /* MASConstraint.m in Sources */,
 				FD3F89C81B3179CF002210A6 /* MJProperty.m in Sources */,
@@ -906,7 +897,6 @@
 				FD3F89C61B3179CF002210A6 /* MJConst.m in Sources */,
 				FDE764C41B2A89CD00CF1F01 /* PXMiMaView2.m in Sources */,
 				FD8203091B32757A00894743 /* SDImageCache.m in Sources */,
-				FDE764BF1B2A89B800CF1F01 /* PXMiMaView1.m in Sources */,
 				FD8203161B32757A00894743 /* UIView+WebCacheOperation.m in Sources */,
 				FD8203331B32760700894743 /* MASConstraintMaker.m in Sources */,
 				FDEAECDC1B134AB200D48EBE /* PXAlerayViewController.m in Sources */,

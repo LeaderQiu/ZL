@@ -1,42 +1,40 @@
 //
-//  PXMiMaViewController1.m
+//  PXMiMaViewController3.m
 //  ZhonglieApp
 //
-//  Created by 邱思雨 on 15/6/12.
+//  Created by 邱思雨 on 15/6/23.
 //  Copyright (c) 2015年 PX. All rights reserved.
 //
 
-#import "PXMiMaViewController1.h"
+#import "PXMiMaViewController3.h"
 #import "UIBarButtonItem+Extension.h"
-#import "PXMiMaViewController2.h"
 #import "Masonry.h"
 #import "UIColor+SYExtension.h"
-#import "PXUserViewController.h"
 
-@interface PXMiMaViewController1 ()<UITextFieldDelegate>
+@interface PXMiMaViewController3 ()
 
 @property(nonatomic,strong) UITextField *TextField1;
 
 @property(nonatomic,strong) UITextField *TextField2;
+
 @end
 
-@implementation PXMiMaViewController1
+@implementation PXMiMaViewController3
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    
     self.navigationController.navigationBarHidden = NO;
     
-    self.navigationItem.title = @"帐号登录";
+    self.navigationItem.title = @"修改密码";
     
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:@"返回键" highImage:@"返回键" target:self action:@selector(BackClickBtn)];
     
-    self.view.backgroundColor = [UIColor whiteColor];
 
-    
     [self setupData];
-    
-   
 }
 
 -(void)setupData
@@ -193,49 +191,16 @@
         make.bottom.equalTo(Image2);
     }];
     
-
-
-
-}
-
-//注册Btn点击
--(void)ZhuCeClick
-{
-    NSLog(@"点击了注册");
-}
-
-//忘记密码Btn点击
--(void)WangjiBtnClick
-{
-    NSLog(@"点击了忘记密码");
-}
-
-
-
-
-//登录按钮点击事件
--(void)NextBtnClick
-{
-    NSLog(@"点击了登录");
     
-    PXUserViewController *VC = [[PXUserViewController alloc]init];
     
-    [self.navigationController pushViewController:VC animated:YES];
+    
 }
 
-//导航栏返回键
+
+//点击返回键
 -(void)BackClickBtn
 {
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
-
-//点击空白收起键盘
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    [self.TextField1 resignFirstResponder];
-    
-    [self.TextField2 resignFirstResponder];
-}
-
 
 @end

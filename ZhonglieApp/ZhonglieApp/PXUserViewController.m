@@ -14,6 +14,7 @@
 #import "PXMiMaViewController1.h"
 #import "Masonry.h"
 #import "PXAlerayViewController.h"
+#import "PXMiMaViewController3.h"
 
 
 @interface PXUserViewController () <UITableViewDelegate,UITableViewDataSource>
@@ -201,11 +202,11 @@
 //密码中心点击事件
 -(void)MiMaClick
 {
-    PXMiMaViewController1 *MiMaV1 = [[PXMiMaViewController1 alloc]init];
+    PXMiMaViewController3 *VC = [[PXMiMaViewController3 alloc]init];
     
-    [self.navigationController pushViewController:MiMaV1 animated:YES];
+    [self.navigationController pushViewController:VC animated:YES];
     
-    NSLog(@"密码中心");
+    NSLog(@"点击了密码中心");
 }
 
 //推荐记录Btn点击事件
