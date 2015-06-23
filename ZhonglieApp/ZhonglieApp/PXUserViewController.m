@@ -148,36 +148,165 @@
     //加载dataV
     UIView *dataV = [UIView new];
     
-    dataV.backgroundColor = [UIColor yellowColor];
+    dataV.backgroundColor = [UIColor whiteColor];
     
     [TableV addSubview:dataV];
     
     [dataV mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.equalTo(TableV);
         make.height.mas_equalTo(250);
-        make.top.equalTo(TableV.mas_top).offset(-10);
+        make.top.equalTo(TableV.mas_top);
     }];
     
+    int padding1 = (250-(18*5))/10;
+    int padding2 = 250/5;
+    
+    //加载DataV内部控件
+    UIImageView *Image1 = [UIImageView new];
+    UIImageView *Image2 = [UIImageView new];
+    UIImageView *Image3 = [UIImageView new];
+    UIImageView *Image4 = [UIImageView new];
+    UIImageView *Image5 = [UIImageView new];
+    
+    [Image1 setImage:[UIImage imageNamed:@"star-100"]];
+    [Image2 setImage:[UIImage imageNamed:@"iphone-75"]];
+    [Image3 setImage:[UIImage imageNamed:@"message-75"]];
+    [Image4 setImage:[UIImage imageNamed:@"矩形-4"]];
+    [Image5 setImage:[UIImage imageNamed:@"apartment-100"]];
+    
+    [dataV addSubview:Image1];
+    [dataV addSubview:Image2];
+    [dataV addSubview:Image3];
+    [dataV addSubview:Image4];
+    [dataV addSubview:Image5];
+    
+    [Image1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(dataV.mas_top).offset(padding1);
+        make.left.mas_equalTo(10);
+    }];
+    
+    [Image2 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(Image1.mas_bottom).offset(padding1*2);
+        make.left.mas_equalTo(10);
+    }];
+    
+    [Image3 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(Image2.mas_bottom).offset(padding1*2);
+        make.left.mas_equalTo(10);
+    }];
+    
+    [Image4 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(Image3.mas_bottom).offset(padding1*2);
+        make.left.mas_equalTo(10);
+    }];
+    
+    [Image5 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(Image4.mas_bottom).offset(padding1*2);
+        make.left.mas_equalTo(10);
+    }];
+    
+    UILabel *Label1 = [UILabel new];
+    UILabel *Label2 = [UILabel new];
+    UILabel *Label3 = [UILabel new];
+    UILabel *Label4 = [UILabel new];
+    UILabel *Label5 = [UILabel new];
+    
+    Label1.text = @"真实姓名";
+    Label2.text = @"移动电话";
+    Label3.text = @"电子邮箱";
+    Label4.text = @"银行卡号";
+    Label5.text = @"开户行";
+    
+    [dataV addSubview:Label1];
+    [dataV addSubview:Label2];
+    [dataV addSubview:Label3];
+    [dataV addSubview:Label4];
+    [dataV addSubview:Label5];
+    
+    [Label1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(Image1).offset(2);
+        make.left.equalTo(Image1.mas_right).offset(10);
+        make.width.mas_equalTo(80);
+        
+    }];
+    
+    [Label2 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(Image2).offset(2);
+        make.left.equalTo(Image2.mas_right).offset(10);
+        make.width.mas_equalTo(80);
+        
+    }];
+    
+    [Label3 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(Image3).offset(2);
+        make.left.equalTo(Image3.mas_right).offset(10);
+        make.width.mas_equalTo(80);
+        
+    }];
+    
+    [Label4 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(Image4).offset(2);
+        make.left.equalTo(Image4.mas_right).offset(10);
+        make.width.mas_equalTo(80);
+        
+    }];
+    
+    [Label5 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(Image5).offset(2);
+        make.left.equalTo(Image5.mas_right).offset(10);
+        make.width.mas_equalTo(80);
+        
+    }];
+    
+    UIView *backV1 = [UIView new];
+    UIView *backV2 = [UIView new];
+    UIView *backV3 = [UIView new];
+    UIView *backV4 = [UIView new];
+   
+    
+    backV1.backgroundColor = [UIColor colorWithRGB:0xececec];
+    backV2.backgroundColor = [UIColor colorWithRGB:0xececec];
+    backV3.backgroundColor = [UIColor colorWithRGB:0xececec];
+    backV4.backgroundColor = [UIColor colorWithRGB:0xececec];
+    
+    
+    [dataV addSubview:backV1];
+    [dataV addSubview:backV2];
+    [dataV addSubview:backV3];
+    [dataV addSubview:backV4];
+  
+    [backV1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(1);
+        make.top.equalTo(dataV.mas_top).offset(padding2*1);
+        make.left.equalTo(dataV.mas_left).offset(30);
+        make.right.equalTo(dataV.mas_right).offset(-10);
+    }];
+    [backV2 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(1);
+        make.top.equalTo(dataV.mas_top).offset(padding2*2);
+        make.left.equalTo(dataV.mas_left).offset(30);
+        make.right.equalTo(dataV.mas_right).offset(-10);
+    }];
+
+    [backV3 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(1);
+        make.top.equalTo(dataV.mas_top).offset(padding2*3);
+        make.left.equalTo(dataV.mas_left).offset(30);
+        make.right.equalTo(dataV.mas_right).offset(-10);
+    }];
+
+    [backV4 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(1);
+        make.top.equalTo(dataV.mas_top).offset(padding2*4);
+        make.left.equalTo(dataV.mas_left).offset(30);
+        make.right.equalTo(dataV.mas_right).offset(-10);
+    }];
+
+
+
     
 
-////
-////    //加载dataV
-//    PXUserCenterView *dataV1= [[PXUserCenterView alloc]initWithFrame:CGRectMake(100, 300, [UIScreen mainScreen].bounds.size.width, 250)];
-//    [dataV addSubview:dataV1];
-//    
-//    [dataV1 mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.equalTo(TableV.mas_top).offset(200);
-//    }];
-//
-//    [TableV addSubview:dataV];
-//    
-//    [dataV mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.width.equalTo(TableV);
-//        make.height.mas_equalTo(250);
-//        make.left.equalTo(TableV);
-//        make.top.equalTo(TableV);
-//    }];
-////
+
 //    //加载MiMaV
     
     UIView *MiMaV = [[UIView alloc]initWithFrame:CGRectMake(0, 260, self.view.bounds.size.width, 51)];

@@ -79,8 +79,6 @@
 		FDC14BA91B397ABA00B9F34E /* PXMiMaViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC14BA81B397ABA00B9F34E /* PXMiMaViewController3.m */; };
 		FDE764B61B2A7ABC00CF1F01 /* PXMiMaViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE764B51B2A7ABC00CF1F01 /* PXMiMaViewController1.m */; };
 		FDE764B91B2A7ACB00CF1F01 /* PXMiMaViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE764B81B2A7ACB00CF1F01 /* PXMiMaViewController2.m */; };
-		FDE764C41B2A89CD00CF1F01 /* PXMiMaView2.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE764C21B2A89CD00CF1F01 /* PXMiMaView2.m */; };
-		FDE764C51B2A89CD00CF1F01 /* PXMiMaView2.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDE764C31B2A89CD00CF1F01 /* PXMiMaView2.xib */; };
 		FDE764C91B2ABFD600CF1F01 /* PXAddRunameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE764C71B2ABFD600CF1F01 /* PXAddRunameViewController.m */; };
 		FDE764CE1B2AEFC600CF1F01 /* PXEditRunameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE764CC1B2AEFC600CF1F01 /* PXEditRunameViewController.m */; };
 		FDEAECDC1B134AB200D48EBE /* PXAlerayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDEAECDB1B134AB200D48EBE /* PXAlerayViewController.m */; };
@@ -253,9 +251,6 @@
 		FDE764B51B2A7ABC00CF1F01 /* PXMiMaViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXMiMaViewController1.m; sourceTree = "<group>"; };
 		FDE764B71B2A7ACB00CF1F01 /* PXMiMaViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXMiMaViewController2.h; sourceTree = "<group>"; };
 		FDE764B81B2A7ACB00CF1F01 /* PXMiMaViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXMiMaViewController2.m; sourceTree = "<group>"; };
-		FDE764C11B2A89CD00CF1F01 /* PXMiMaView2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXMiMaView2.h; sourceTree = "<group>"; };
-		FDE764C21B2A89CD00CF1F01 /* PXMiMaView2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXMiMaView2.m; sourceTree = "<group>"; };
-		FDE764C31B2A89CD00CF1F01 /* PXMiMaView2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PXMiMaView2.xib; sourceTree = "<group>"; };
 		FDE764C61B2ABFD600CF1F01 /* PXAddRunameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXAddRunameViewController.h; sourceTree = "<group>"; };
 		FDE764C71B2ABFD600CF1F01 /* PXAddRunameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXAddRunameViewController.m; sourceTree = "<group>"; };
 		FDE764CB1B2AEFC500CF1F01 /* PXEditRunameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXEditRunameViewController.h; sourceTree = "<group>"; };
@@ -692,9 +687,6 @@
 				FDFDBCAC1B282A3B001C360A /* PXUserCenterView.xib */,
 				FDFDBCB41B292705001C360A /* PXUserCenterView.h */,
 				FDFDBCB51B292705001C360A /* PXUserCenterView.m */,
-				FDE764C11B2A89CD00CF1F01 /* PXMiMaView2.h */,
-				FDE764C21B2A89CD00CF1F01 /* PXMiMaView2.m */,
-				FDE764C31B2A89CD00CF1F01 /* PXMiMaView2.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -798,7 +790,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD8203301B32760700894743 /* Info.plist in Resources */,
-				FDE764C51B2A89CD00CF1F01 /* PXMiMaView2.xib in Resources */,
 				FD45190A1B204B2B00A49D88 /* PXSearchHistoryCell.xib in Resources */,
 				FD991CAF1B2586C100E79F12 /* PXRuname2Cell.xib in Resources */,
 				FDF061771B0EFC6E0075A5CB /* Main.storyboard in Resources */,
@@ -895,7 +886,6 @@
 				FD4518B01B1EAE3700A49D88 /* PXDataTools.m in Sources */,
 				FD8203121B32757A00894743 /* UIImage+MultiFormat.m in Sources */,
 				FD3F89C61B3179CF002210A6 /* MJConst.m in Sources */,
-				FDE764C41B2A89CD00CF1F01 /* PXMiMaView2.m in Sources */,
 				FD8203091B32757A00894743 /* SDImageCache.m in Sources */,
 				FD8203161B32757A00894743 /* UIView+WebCacheOperation.m in Sources */,
 				FD8203331B32760700894743 /* MASConstraintMaker.m in Sources */,

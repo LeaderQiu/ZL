@@ -9,7 +9,6 @@
 #import "PXMiMaViewController2.h"
 #import "UIBarButtonItem+Extension.h"
 #import "PXMiMaViewController1.h"
-#import "PXMiMaView2.h"
 #import "Masonry.h"
 #import "UIColor+SYExtension.h"
 #import "PXMiMaViewController3.h"
