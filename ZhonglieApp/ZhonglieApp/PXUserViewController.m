@@ -137,26 +137,47 @@
 {
     UIScrollView *TableV = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 220, [UIScreen mainScreen].bounds.size.width, 500)];
     
-    TableV.backgroundColor = [UIColor colorWithRGB:0xececec];
-
+    [self.view addSubview:TableV];
     
-    TableV.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, 430);
+    TableV.backgroundColor = [UIColor colorWithRGB:0xececec];
+  
+    TableV.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
     TableV.userInteractionEnabled = YES;
     TableV.scrollEnabled = YES;
     
-//    
     //加载dataV
-    PXUserCenterView *dataV = [[PXUserCenterView alloc]initWithFrame:CGRectMake(100, 300, [UIScreen mainScreen].bounds.size.width, 250)];
+    UIView *dataV = [UIView new];
+    
+    dataV.backgroundColor = [UIColor yellowColor];
     
     [TableV addSubview:dataV];
     
     [dataV mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.equalTo(TableV);
         make.height.mas_equalTo(250);
-        make.left.equalTo(TableV);
-        make.top.equalTo(TableV);
+        make.top.equalTo(TableV.mas_top).offset(-10);
     }];
+    
+    
+
+////
+////    //加载dataV
+//    PXUserCenterView *dataV1= [[PXUserCenterView alloc]initWithFrame:CGRectMake(100, 300, [UIScreen mainScreen].bounds.size.width, 250)];
+//    [dataV addSubview:dataV1];
+//    
+//    [dataV1 mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(TableV.mas_top).offset(200);
+//    }];
 //
+//    [TableV addSubview:dataV];
+//    
+//    [dataV mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.width.equalTo(TableV);
+//        make.height.mas_equalTo(250);
+//        make.left.equalTo(TableV);
+//        make.top.equalTo(TableV);
+//    }];
+////
 //    //加载MiMaV
     
     UIView *MiMaV = [[UIView alloc]initWithFrame:CGRectMake(0, 260, self.view.bounds.size.width, 51)];
@@ -180,7 +201,6 @@
     [MiMaV addSubview:MiMaImageV];
     [MiMaV addSubview:MiMaBtn];
     [TableV addSubview:MiMaV];
-//
     //加载用户登出按钮
     UIView *OutV = [[UIView alloc]initWithFrame:CGRectMake(0, 311, self.view.bounds.size.width, 300)];
     
