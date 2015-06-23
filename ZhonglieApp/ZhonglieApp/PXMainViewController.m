@@ -71,7 +71,7 @@
     _SearchHistory = SearchHistory;
 
     //网络请求数据
-//    [self setupHTTPData];
+    [self setupHTTPData];
     
 }
 
@@ -93,7 +93,7 @@
     
     NSDictionary *parameters = @{@"page":@"2"};
     
-    [manager POST:@"http://192.168.1.103/zhonglie/index.php/home/position/positionList" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager POST:@"http://123.57.147.235/index.php/home/position/positionList" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         //成功的回调
         NSLog(@"成功的回调==>%@",responseObject);
@@ -350,7 +350,7 @@
 //加载搜索历史
 -(void)setupSearchHistory
 {
-    UITableView *SearchHistory = [[UITableView alloc]initWithFrame:CGRectMake(0,170 ,self.view.bounds.size.width, 251)];
+    UITableView *SearchHistory = [[UITableView alloc]initWithFrame:CGRectMake(0,170 ,self.view.bounds.size.width, 250)];
     _SearchHistory = SearchHistory;
     
     SearchHistory.delegate = self;
