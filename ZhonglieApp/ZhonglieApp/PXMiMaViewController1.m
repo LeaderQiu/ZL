@@ -35,14 +35,18 @@
 
 -(void)setupXib
 {
-    PXMiMaView1 *MiMaV1 = [[PXMiMaView1 alloc]initWithFrame:CGRectMake(0, 200, [UIScreen mainScreen].bounds.size.width, 500) target:self action:@selector(NextBtnClick)];
+  
     
     UIView *backV = [[UIView alloc]initWithFrame:CGRectMake(0, 64, [UIScreen mainScreen].bounds.size.width, 500)];
     backV.backgroundColor = [UIColor yellowColor];
     
-    [backV addSubview:MiMaV1];
+    PXMiMaView1 *MiMaV1 = [[PXMiMaView1 alloc]initWithFrame:CGRectMake(0, 200, [UIScreen mainScreen].bounds.size.width, 500) target:self action:@selector(NextBtnClick)];
     
     [self.view addSubview:backV];
+    
+    [backV addSubview:MiMaV1];
+    
+    [self.view addSubview:MiMaV1];
     
     [backV mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.equalTo(self.view);
@@ -50,9 +54,9 @@
     }];
     
     [MiMaV1 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.equalTo(backV);
-        make.top.equalTo(backV);
-        make.left.equalTo(backV);
+        make.width.equalTo(self.view);
+        make.top.equalTo(self.view).offset(64);
+        make.left.equalTo(self.view);
     }];
 
 }

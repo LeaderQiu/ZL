@@ -75,6 +75,7 @@
 		FD991CB31B258AC400E79F12 /* PXRunameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FD991CB11B258AC400E79F12 /* PXRunameCell.m */; };
 		FD991CB41B258AC400E79F12 /* PXRunameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD991CB21B258AC400E79F12 /* PXRunameCell.xib */; };
 		FD991CB71B259F0200E79F12 /* PXRuname2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD991CB61B259F0200E79F12 /* PXRuname2ViewController.m */; };
+		FDC14BA21B3946FA00B9F34E /* PXWeChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC14BA11B3946FA00B9F34E /* PXWeChatViewController.m */; };
 		FDE764B61B2A7ABC00CF1F01 /* PXMiMaViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE764B51B2A7ABC00CF1F01 /* PXMiMaViewController1.m */; };
 		FDE764B91B2A7ACB00CF1F01 /* PXMiMaViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE764B81B2A7ACB00CF1F01 /* PXMiMaViewController2.m */; };
 		FDE764BF1B2A89B800CF1F01 /* PXMiMaView1.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE764BD1B2A89B800CF1F01 /* PXMiMaView1.m */; };
@@ -246,6 +247,8 @@
 		FD991CB21B258AC400E79F12 /* PXRunameCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PXRunameCell.xib; sourceTree = "<group>"; };
 		FD991CB61B259F0200E79F12 /* PXRuname2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXRuname2ViewController.m; sourceTree = "<group>"; };
 		FDC14B991B38FA6600B9F34E /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		FDC14BA01B3946FA00B9F34E /* PXWeChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXWeChatViewController.h; sourceTree = "<group>"; };
+		FDC14BA11B3946FA00B9F34E /* PXWeChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXWeChatViewController.m; sourceTree = "<group>"; };
 		FDE764B41B2A7ABC00CF1F01 /* PXMiMaViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXMiMaViewController1.h; sourceTree = "<group>"; };
 		FDE764B51B2A7ABC00CF1F01 /* PXMiMaViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXMiMaViewController1.m; sourceTree = "<group>"; };
 		FDE764B71B2A7ACB00CF1F01 /* PXMiMaViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXMiMaViewController2.h; sourceTree = "<group>"; };
@@ -715,6 +718,8 @@
 				FDE764B51B2A7ABC00CF1F01 /* PXMiMaViewController1.m */,
 				FDE764B71B2A7ACB00CF1F01 /* PXMiMaViewController2.h */,
 				FDE764B81B2A7ACB00CF1F01 /* PXMiMaViewController2.m */,
+				FDC14BA01B3946FA00B9F34E /* PXWeChatViewController.h */,
+				FDC14BA11B3946FA00B9F34E /* PXWeChatViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -865,6 +870,7 @@
 				FD3F89C71B3179CF002210A6 /* MJFoundation.m in Sources */,
 				FD3F89C91B3179CF002210A6 /* MJType.m in Sources */,
 				FD8203341B32760700894743 /* MASLayoutConstraint.m in Sources */,
+				FDC14BA21B3946FA00B9F34E /* PXWeChatViewController.m in Sources */,
 				FD8203081B32757A00894743 /* NSData+ImageContentType.m in Sources */,
 				FD8203141B32757A00894743 /* UIImageView+HighlightedWebCache.m in Sources */,
 				FD4518AD1B1EA15500A49D88 /* PXCityViewController.m in Sources */,

@@ -123,7 +123,7 @@
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="NextBtn" destination="WY8-qK-jeu" id="cA3-hO-uzu"/>
+                <outlet property="NextBtn" destination="WY8-qK-jeu" id="yHM-iq-aA5"/>
             </connections>
         </view>
     </objects>

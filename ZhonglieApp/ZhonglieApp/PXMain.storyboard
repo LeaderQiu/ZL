@@ -70,10 +70,10 @@
             </objects>
             <point key="canvasLocation" x="-848" y="1344"/>
         </scene>
-        <!--User View Controller-->
+        <!--We Chat View Controller-->
         <scene sceneID="Yja-Zt-huu">
             <objects>
-                <viewController id="8vQ-3d-1J0" customClass="PXUserViewController" sceneMemberID="viewController">
+                <viewController id="8vQ-3d-1J0" customClass="PXWeChatViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Pax-Tv-T7s"/>
                         <viewControllerLayoutGuide type="bottom" id="Icm-VK-yEF"/>
