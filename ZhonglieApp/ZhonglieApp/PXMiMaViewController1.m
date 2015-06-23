@@ -23,7 +23,7 @@
     
     self.navigationController.navigationBarHidden = NO;
     
-    self.navigationItem.title = @"找回密码";
+    self.navigationItem.title = @"帐号登录";
     
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:@"返回键" highImage:@"返回键" target:self action:@selector(BackClickBtn)];
     
@@ -36,28 +36,28 @@
 -(void)setupXib
 {
   
-    
+//    
     UIView *backV = [[UIView alloc]initWithFrame:CGRectMake(0, 64, [UIScreen mainScreen].bounds.size.width, 500)];
     backV.backgroundColor = [UIColor yellowColor];
     
-    PXMiMaView1 *MiMaV1 = [[PXMiMaView1 alloc]initWithFrame:CGRectMake(0, 200, [UIScreen mainScreen].bounds.size.width, 500) target:self action:@selector(NextBtnClick)];
+    PXMiMaView1 *MiMaV1 = [[PXMiMaView1 alloc]initWithFrame:CGRectMake(0, 400, [UIScreen mainScreen].bounds.size.width, 500) target:self action:@selector(NextBtnClick)];
     
     [self.view addSubview:backV];
     
     [backV addSubview:MiMaV1];
     
-    [self.view addSubview:MiMaV1];
+//    [self.view addSubview:MiMaV1];
     
-    [backV mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.equalTo(self.view);
-        make.top.equalTo(self.view.mas_top).offset(64);
-    }];
-    
-    [MiMaV1 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.equalTo(self.view);
-        make.top.equalTo(self.view).offset(64);
-        make.left.equalTo(self.view);
-    }];
+//    [backV mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.width.equalTo(self.view);
+//        make.top.equalTo(self.view.mas_top).offset(64);
+//    }];
+////    
+//    [MiMaV1 mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.width.equalTo(self.view);
+//        
+//       
+//    }];
 
 }
 

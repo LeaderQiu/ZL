@@ -10,6 +10,7 @@
 #import "UIBarButtonItem+Extension.h"
 #import "PXMiMaViewController1.h"
 #import "PXMiMaView2.h"
+#import "Masonry.h"
 
 @interface PXMiMaViewController2 ()
 
@@ -26,7 +27,7 @@
     
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:@"返回键" highImage:@"返回键" target:self action:@selector(BackClickBtn)];
     
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor blackColor];
     
     [self setupXib];
 }
@@ -35,12 +36,19 @@
 {
     PXMiMaView2 *MiMaV2 = [[PXMiMaView2 alloc]initWithFrame:CGRectMake(0, 200, 320, 500) target:self action:@selector(QueRen)];
     
-    UIView *backV = [[UIView alloc]initWithFrame:CGRectMake(0, 64, self.view.bounds.size.width, 500)];
-    backV.backgroundColor = [UIColor yellowColor];
+//    UIView *backV = [[UIView alloc]initWithFrame:CGRectMake(0, 64, self.view.bounds.size.width, 500)];
+//    backV.backgroundColor = [UIColor yellowColor];
     
-    [backV addSubview:MiMaV2];
+//    [backV addSubview:MiMaV2];
     
-    [self.view addSubview:backV];
+//    [self.view addSubview:backV];
+    
+    [self.view addSubview:MiMaV2];
+    
+    [MiMaV2 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.equalTo(self.view);
+        make.top.equalTo(self.view.mas_top).offset(64);
+    }];
     
 }
 

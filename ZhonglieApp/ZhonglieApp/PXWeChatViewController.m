@@ -10,6 +10,8 @@
 #import "UIBarButtonItem+Extension.h"
 #import "Masonry.h"
 #import "PXUserViewController.h"
+#import "PXMiMaViewController1.h"
+#import "PXMiMaViewController2.h"
 
 @interface PXWeChatViewController ()
 
@@ -131,6 +133,10 @@
 -(void)ZhangHaoClick
 {
 
+    PXMiMaViewController1 *VC = [[PXMiMaViewController1 alloc]init];
+    
+    [self.navigationController pushViewController:VC animated:YES];
+    
     NSLog(@"点击了帐号登录");
 }
 
