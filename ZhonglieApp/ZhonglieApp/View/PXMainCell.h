@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class PXZhiWei;
 @interface PXMainCell : UITableViewCell
+
+@property (nonatomic,strong) PXZhiWei *zhiWei;
 
 @end

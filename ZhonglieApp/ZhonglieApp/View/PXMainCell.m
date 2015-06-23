@@ -7,9 +7,20 @@
 //
 
 #import "PXMainCell.h"
+#import "PXZhiWei.h"
+
 @interface PXMainCell ()
 
-@property (strong, nonatomic) IBOutlet UILabel *ZhiWei;
+@property (strong, nonatomic) IBOutlet UILabel *positionTitle;
+
+@property (strong,nonatomic) IBOutlet UILabel *positionSalary;
+@property (weak, nonatomic) IBOutlet UILabel *positionAdvantage;
+@property (weak, nonatomic) IBOutlet UILabel *createdTime;
+@property (strong,nonatomic) IBOutlet UILabel *positionReward;
+
+
+/**存放的模型数组*/
+@property(nonatomic,strong) NSMutableArray *dataArray;
 
 @end
 
@@ -31,8 +42,7 @@
         //加载xib
         self = [[NSBundle mainBundle] loadNibNamed:@"PXMainCell" owner:nil options:nil].firstObject;
         
-        [self.ZhiWei sizeToFit];
-        [self setupData];
+        [self.positionTitle sizeToFit];
         
         
     }
@@ -40,27 +50,21 @@
     return self;
 }
 
-//加载Cell数据
--(void)setupData
+-(void)setZhiWei:(PXZhiWei *)zhiWei
 {
-    //加载职位信息
-  
+    _zhiWei = zhiWei;
     
+    self.positionTitle.text = zhiWei.position_title;
     
+    self.positionSalary.text = zhiWei.position_salary;
     
+    self.positionAdvantage.text = zhiWei.position_advantage;
     
+    self.createdTime.text = zhiWei.created_time;
     
-    
+    self.positionReward.text = zhiWei.position_reward;
 }
 
-- (void)awakeFromNib {
-    // Initialization code
-}
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
-}
 
 @end

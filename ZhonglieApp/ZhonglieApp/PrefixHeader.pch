@@ -1,0 +1,14 @@
+//
+//  PrefixHeader.pch
+//  ZhonglieApp
+//
+//  Created by 邱思雨 on 15/6/23.
+//  Copyright (c) 2015年 PX. All rights reserved.
+//
+
+#ifndef ZhonglieApp_PrefixHeader_pch
+#define ZhonglieApp_PrefixHeader_pch
+
+#define UrlStrPosition @"http://123.57.147.235/index.php/home/position/positionList" 
+
+#endif

@@ -91,9 +91,9 @@
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
-    NSDictionary *parameters = @{@"page":@"2"};
+    NSDictionary *parameters = @{@"page":@"0"};
     
-    [manager POST:@"http://123.57.147.235/index.php/home/position/positionList" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager POST:UrlStrPosition parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         //成功的回调
         NSLog(@"成功的回调==>%@",responseObject);
@@ -109,6 +109,8 @@
         }
         
         [self.dataArray addObjectsFromArray:tempArray];
+        
+        [_MainTableV reloadData];
         
         NSLog(@"<dataArray在这里==>%@",self.dataArray);
         
@@ -382,7 +384,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     if ([tableView isEqual:_MainTableV]) {
-        return 10;
+        return _dataArray.count;
     }else if ([tableView isEqual:self.SearchHistory]){
         return 5;
     }
@@ -479,9 +481,14 @@
         
         PXMainCell *cell = [tableView dequeueReusableCellWithIdentifier:mainID];
         
+        PXZhiWei *zhiWei = self.dataArray[indexPath.row];
+        
         if (cell == nil) {
             cell = [[PXMainCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:mainID];
         }
+        
+        cell.zhiWei = zhiWei;
+        
         return cell;
     }
     
