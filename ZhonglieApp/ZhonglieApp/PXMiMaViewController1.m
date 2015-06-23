@@ -13,6 +13,7 @@
 #import "UIColor+SYExtension.h"
 #import "PXUserViewController.h"
 
+
 @interface PXMiMaViewController1 ()<UITextFieldDelegate>
 
 @property(nonatomic,strong) UITextField *TextField1;
@@ -173,7 +174,7 @@
     [TextField1 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self.view);
         make.left.equalTo(Zhanghao.mas_right).offset(10);
-        make.top.equalTo(self.view.mas_top).offset(64);
+        make.height.mas_equalTo(40);
         make.bottom.equalTo(Image1);
     }];
     
@@ -189,7 +190,7 @@
     [TextField2 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self.view);
         make.left.equalTo(MiMa.mas_right).offset(10);
-        make.top.equalTo(Image1.mas_bottom);
+        make.height.mas_equalTo(40);
         make.bottom.equalTo(Image2);
     }];
     
@@ -201,6 +202,10 @@
 //注册Btn点击
 -(void)ZhuCeClick
 {
+    PXMiMaViewController2 *VC = [[PXMiMaViewController2 alloc]init];
+    
+    [self.navigationController pushViewController:VC animated:YES];
+    
     NSLog(@"点击了注册");
 }
 

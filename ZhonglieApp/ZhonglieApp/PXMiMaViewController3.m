@@ -10,8 +10,9 @@
 #import "UIBarButtonItem+Extension.h"
 #import "Masonry.h"
 #import "UIColor+SYExtension.h"
+#import "PXUserViewController.h"
 
-@interface PXMiMaViewController3 ()
+@interface PXMiMaViewController3 () <UITextFieldDelegate>
 
 @property(nonatomic,strong) UITextField *TextField1;
 
@@ -42,7 +43,7 @@
     //帐号Lable
     UILabel *Zhanghao = [UILabel new];
     
-    Zhanghao.text = @"帐号";
+    Zhanghao.text = @"输入密码";
     
     Zhanghao.textColor = [UIColor colorWithRGB:0x7f7f7f];
     
@@ -53,7 +54,7 @@
     [Zhanghao mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.view.mas_left).offset(10);
         make.top.equalTo(self.view.mas_top).offset(104);
-        make.width.mas_equalTo(40);
+        make.width.mas_equalTo(80);
     }];
     
     //下划线1
@@ -73,7 +74,7 @@
     //密码Lable
     UILabel *MiMa = [UILabel new];
     
-    MiMa.text = @"密码";
+    MiMa.text = @"确认密码";
     
     MiMa.textColor = [UIColor colorWithRGB:0x7f7f7f];
     
@@ -84,7 +85,7 @@
     [MiMa mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.view.mas_left).offset(10);
         make.top.equalTo(Image1.mas_bottom).offset(40);
-        make.width.mas_equalTo(40);
+        make.width.mas_equalTo(80);
         
     }];
     
@@ -102,38 +103,21 @@
         make.height.mas_equalTo(5);
     }];
     
-    //忘记密码Btn
-    UIButton *WangJinBtn = [UIButton new];
-    
-    [WangJinBtn setTitle:@"忘记密码" forState:UIControlStateNormal];
-    [WangJinBtn setTitleColor:[UIColor colorWithRGB:0x0d8dd1] forState:UIControlStateNormal];
-    
-    [WangJinBtn addTarget:self action:@selector(WangjiBtnClick) forControlEvents:UIControlEventTouchUpInside];
-    
-    [self.view addSubview:WangJinBtn];
-    
-    [WangJinBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.view).offset(9);
-        make.width.mas_equalTo(80);
-        make.height.mas_equalTo(20);
-        make.top.equalTo(Image2.mas_bottom).offset(10);
-        
-    }];
     
     //注册Btn
-    UIButton *ZhuCe = [UIButton new];
+    UILabel *ZhuCe = [UILabel new];
+
+    ZhuCe.text = @"密码太简单";
     
-    [ZhuCe setTitle:@"注册" forState:UIControlStateNormal];
-    [ZhuCe setTitleColor:[UIColor colorWithRGB:0x0d8dd1] forState:UIControlStateNormal];
-    [ZhuCe setContentHorizontalAlignment:UIControlContentHorizontalAlignmentRight]; //设置右对齐
+    ZhuCe.textColor = [UIColor colorWithRGB:0x7f7f7f];
     
-    [ZhuCe addTarget:self action:@selector(ZhuCeClick) forControlEvents:UIControlEventTouchUpInside];
+    ZhuCe.font = [UIFont systemFontOfSize:18];
     
     [self.view addSubview:ZhuCe];
     
     [ZhuCe mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self.view).offset(-10);
-        make.width.mas_equalTo(50);
+        make.width.mas_equalTo(100);
         make.height.mas_equalTo(20);
         make.top.equalTo(Image2.mas_bottom).offset(10);
         
@@ -143,7 +127,7 @@
     //登录Btn
     UIButton *LoginBtn = [UIButton new];
     
-    [LoginBtn setTitle:@"登录" forState:UIControlStateNormal];
+    [LoginBtn setTitle:@"确认修改" forState:UIControlStateNormal];
     
     [LoginBtn setBackgroundImage:[UIImage imageNamed:@"圆角矩形-4"] forState:UIControlStateNormal];
     
@@ -155,7 +139,7 @@
         make.left.equalTo(self.view).offset(10);
         make.right.equalTo(self.view).offset(-10);
         make.height.mas_equalTo(49);
-        make.top.equalTo(WangJinBtn.mas_bottom).offset(20);
+        make.top.equalTo(ZhuCe.mas_bottom).offset(20);
         
     }];
     
@@ -171,7 +155,7 @@
     [TextField1 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self.view);
         make.left.equalTo(Zhanghao.mas_right).offset(10);
-        make.top.equalTo(self.view.mas_top).offset(64);
+        make.height.mas_equalTo(40);
         make.bottom.equalTo(Image1);
     }];
     
@@ -187,13 +171,29 @@
     [TextField2 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self.view);
         make.left.equalTo(MiMa.mas_right).offset(10);
-        make.top.equalTo(Image1.mas_bottom);
+        make.height.mas_equalTo(40);
         make.bottom.equalTo(Image2);
     }];
     
     
     
     
+}
+
+//点击确认修改按钮
+-(void)NextBtnClick
+{
+    PXUserViewController *VC = [[PXUserViewController alloc]init];
+    
+    [self.navigationController pushViewController:VC animated:YES];
+}
+
+//点击空白收起键盘
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.TextField1 resignFirstResponder];
+    
+    [self.TextField2 resignFirstResponder];
 }
 
 
