@@ -113,10 +113,13 @@
             <connections>
                 <outlet property="createdTime" destination="VSP-lO-nzl" id="GrH-tf-bDf"/>
                 <outlet property="positionAdvantage" destination="Vb2-m4-oy4" id="MRQ-T2-0l8"/>
+                <outlet property="positionAuth" destination="AWb-cG-rSr" id="bLc-kQ-dyt"/>
                 <outlet property="positionReward" destination="HlT-xn-6gR" id="tuU-TD-OO2"/>
                 <outlet property="positionSalary" destination="gLd-wb-iSu" id="AUj-3p-wzd"/>
+                <outlet property="positionStatus" destination="s2F-cb-WSY" id="dYi-2U-Npx"/>
                 <outlet property="positionTitle" destination="3WD-XP-svR" id="4zh-tv-h68"/>
             </connections>
+            <point key="canvasLocation" x="79" y="231"/>
         </view>
     </objects>
     <resources>

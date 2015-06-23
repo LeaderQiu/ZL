@@ -17,6 +17,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *positionAdvantage;
 @property (weak, nonatomic) IBOutlet UILabel *createdTime;
 @property (strong,nonatomic) IBOutlet UILabel *positionReward;
+@property (weak, nonatomic) IBOutlet UIImageView *positionAuth;
+@property (weak, nonatomic) IBOutlet UIImageView *positionStatus;
 
 
 /**存放的模型数组*/
@@ -63,6 +65,10 @@
     self.createdTime.text = zhiWei.created_time;
     
     self.positionReward.text = zhiWei.position_reward;
+    
+    self.positionAuth.hidden = zhiWei.position_auth;
+    
+    self.positionStatus.hidden = !zhiWei.position_status;
 }
 
 

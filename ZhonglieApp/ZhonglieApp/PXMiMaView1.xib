@@ -83,31 +83,32 @@
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mUp-uK-YbD">
-                    <rect key="frame" x="10" y="154" width="354" height="49"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WY8-qK-jeu">
+                    <rect key="frame" x="10" y="154" width="300" height="49"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="49" id="Qkx-tv-1og"/>
+                        <constraint firstAttribute="height" constant="49" id="zVg-uh-qde"/>
                     </constraints>
-                    <state key="normal" title="下一步" image="下一步">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" title="下一步" backgroundImage="圆角矩形-4">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="vb9-2c-EKr" firstAttribute="top" secondItem="DMF-OL-crG" secondAttribute="bottom" constant="32" id="0PO-FA-XTO"/>
-                <constraint firstItem="mUp-uK-YbD" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="2bG-6B-utk"/>
                 <constraint firstItem="DMF-OL-crG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="3n4-5n-vAi"/>
                 <constraint firstItem="ar7-TZ-aVa" firstAttribute="leading" secondItem="vb9-2c-EKr" secondAttribute="trailing" constant="8" id="6Ij-P4-4m1"/>
                 <constraint firstItem="DMF-OL-crG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="50" id="6gY-7U-pbB"/>
+                <constraint firstAttribute="trailing" secondItem="WY8-qK-jeu" secondAttribute="trailing" constant="10" id="7PP-ys-7AH"/>
                 <constraint firstItem="vb9-2c-EKr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="Ikh-u0-JRD"/>
-                <constraint firstAttribute="trailing" secondItem="mUp-uK-YbD" secondAttribute="trailing" constant="8" id="P9l-ue-uKh"/>
                 <constraint firstItem="ar7-TZ-aVa" firstAttribute="top" secondItem="DMF-OL-crG" secondAttribute="bottom" constant="23" id="S1r-un-pQu"/>
                 <constraint firstAttribute="trailing" secondItem="ar7-TZ-aVa" secondAttribute="trailing" constant="10" id="WBy-Hl-ua0"/>
                 <constraint firstAttribute="trailing" secondItem="7DQ-Z1-Hrz" secondAttribute="trailing" constant="10" id="WyS-v0-foc"/>
+                <constraint firstItem="WY8-qK-jeu" firstAttribute="top" secondItem="FI4-9O-LoF" secondAttribute="bottom" constant="8" id="ZbI-Nm-Q37"/>
                 <constraint firstItem="8w0-1c-ilF" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="32" id="cmq-OC-uYF"/>
                 <constraint firstItem="T0g-i8-mWe" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="d1R-5W-9Qq"/>
-                <constraint firstItem="mUp-uK-YbD" firstAttribute="top" secondItem="FI4-9O-LoF" secondAttribute="bottom" constant="8" id="e1N-w7-fcz"/>
+                <constraint firstItem="WY8-qK-jeu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="eNX-Bm-m2g"/>
                 <constraint firstItem="T0g-i8-mWe" firstAttribute="top" secondItem="7DQ-Z1-Hrz" secondAttribute="bottom" constant="6" id="fvw-AA-J99"/>
                 <constraint firstAttribute="trailing" secondItem="Hzj-Cj-Yag" secondAttribute="trailing" constant="10" id="ife-t2-Tnh"/>
                 <constraint firstItem="7DQ-Z1-Hrz" firstAttribute="top" secondItem="DMF-OL-crG" secondAttribute="bottom" constant="50" id="qyt-dX-A9h"/>
@@ -122,12 +123,12 @@
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="NextBtn" destination="mUp-uK-YbD" id="BzA-5G-SaY"/>
+                <outlet property="NextBtn" destination="WY8-qK-jeu" id="cA3-hO-uzu"/>
             </connections>
         </view>
     </objects>
     <resources>
-        <image name="下一步" width="300" height="49"/>
         <image name="下划线" width="300" height="5"/>
+        <image name="圆角矩形-4" width="300" height="49"/>
     </resources>
 </document>
