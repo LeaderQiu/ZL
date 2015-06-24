@@ -15,6 +15,7 @@
 #import "Masonry.h"
 #import "PXAlerayViewController.h"
 #import "PXMiMaViewController3.h"
+#import "PXRunameViewController.h"
 
 
 @interface PXUserViewController () <UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
@@ -120,6 +121,8 @@
     [JJGLBtn setTitle:@"简历管理" forState:UIControlStateNormal];
     
     [JJGLBtn setTitleColor:[UIColor colorWithRGB:0x25a1db] forState:UIControlStateNormal];
+    
+    [JJGLBtn addTarget:self action:@selector(JJGLBtnClick) forControlEvents:UIControlEventTouchUpInside];
     
     [BtnV addSubview:JJGLBtn];
     [self.view addSubview:BtnV];
@@ -443,6 +446,15 @@
 -(void)TJJLBtnClick
 {
     PXAlerayViewController *VC = [[PXAlerayViewController alloc]init];
+    
+    [self.navigationController pushViewController:VC animated:YES];
+    
+}
+
+//点击简历管理按钮
+-(void)JJGLBtnClick
+{
+    PXRunameViewController *VC = [PXRunameViewController new];
     
     [self.navigationController pushViewController:VC animated:YES];
     

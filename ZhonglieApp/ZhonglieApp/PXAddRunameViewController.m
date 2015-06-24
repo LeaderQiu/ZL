@@ -31,7 +31,7 @@
     
 //    [self setupHeaderV];
     
-    [self setupScrollV];
+
     
     [self setupTableV];
 }
@@ -40,7 +40,7 @@
 //加载tableView内容
 -(void)setupTableV
 {
-    UITableView *TableV = [[UITableView alloc]initWithFrame:CGRectMake(0, 114, [UIScreen mainScreen].bounds.size.width, 500) style:UITableViewStyleGrouped];
+    UITableView *TableV = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 600) style:UITableViewStyleGrouped];
     
     TableV.backgroundColor = [UIColor colorWithRGB:0xececec];
     
@@ -50,11 +50,7 @@
     [self.view addSubview:TableV];
     
 }
-//加载ScrollView内容
--(void)setupScrollV
-{
-    
-}
+
 
 //加载头部搜索栏
 -(void)setupHeaderV

@@ -220,7 +220,7 @@
     UIButton *AddBtn = [UIButton new];
     
 #warning TODO - 图片需修改
-    [AddBtn setBackgroundImage:[UIImage imageNamed:@"添加简历"] forState:UIControlStateNormal];
+    [AddBtn setBackgroundImage:[UIImage imageNamed:@"矩形-3"] forState:UIControlStateNormal];
     
     [AddBtn setTitle:@"添加简历" forState:UIControlStateNormal];
     
