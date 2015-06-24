@@ -75,6 +75,7 @@
 		FD991CB31B258AC400E79F12 /* PXRunameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FD991CB11B258AC400E79F12 /* PXRunameCell.m */; };
 		FD991CB41B258AC400E79F12 /* PXRunameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD991CB21B258AC400E79F12 /* PXRunameCell.xib */; };
 		FD991CB71B259F0200E79F12 /* PXRuname2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD991CB61B259F0200E79F12 /* PXRuname2ViewController.m */; };
+		FDAE211E1B3A661E00B53328 /* PXWanShanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDAE211D1B3A661E00B53328 /* PXWanShanViewController.m */; };
 		FDC14BA21B3946FA00B9F34E /* PXWeChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC14BA11B3946FA00B9F34E /* PXWeChatViewController.m */; };
 		FDC14BA91B397ABA00B9F34E /* PXMiMaViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC14BA81B397ABA00B9F34E /* PXMiMaViewController3.m */; };
 		FDE764B61B2A7ABC00CF1F01 /* PXMiMaViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE764B51B2A7ABC00CF1F01 /* PXMiMaViewController1.m */; };
@@ -242,6 +243,8 @@
 		FD991CB11B258AC400E79F12 /* PXRunameCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXRunameCell.m; sourceTree = "<group>"; };
 		FD991CB21B258AC400E79F12 /* PXRunameCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PXRunameCell.xib; sourceTree = "<group>"; };
 		FD991CB61B259F0200E79F12 /* PXRuname2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXRuname2ViewController.m; sourceTree = "<group>"; };
+		FDAE211C1B3A661E00B53328 /* PXWanShanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXWanShanViewController.h; sourceTree = "<group>"; };
+		FDAE211D1B3A661E00B53328 /* PXWanShanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXWanShanViewController.m; sourceTree = "<group>"; };
 		FDC14B991B38FA6600B9F34E /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		FDC14BA01B3946FA00B9F34E /* PXWeChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXWeChatViewController.h; sourceTree = "<group>"; };
 		FDC14BA11B3946FA00B9F34E /* PXWeChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXWeChatViewController.m; sourceTree = "<group>"; };
@@ -548,12 +551,14 @@
 				FD3F893C1B3015AB002210A6 /* PXRunameViewController.m */,
 				FD3F893B1B30154F002210A6 /* PXRuname2ViewController.h */,
 				FD991CB61B259F0200E79F12 /* PXRuname2ViewController.m */,
-				FDFDBC9C1B26C495001C360A /* PXSuccessViewController.h */,
-				FDFDBC9D1B26C495001C360A /* PXSuccessViewController.m */,
 				FDE764C61B2ABFD600CF1F01 /* PXAddRunameViewController.h */,
 				FDE764C71B2ABFD600CF1F01 /* PXAddRunameViewController.m */,
 				FDE764CB1B2AEFC500CF1F01 /* PXEditRunameViewController.h */,
 				FDE764CC1B2AEFC600CF1F01 /* PXEditRunameViewController.m */,
+				FDAE211C1B3A661E00B53328 /* PXWanShanViewController.h */,
+				FDAE211D1B3A661E00B53328 /* PXWanShanViewController.m */,
+				FDFDBC9C1B26C495001C360A /* PXSuccessViewController.h */,
+				FDFDBC9D1B26C495001C360A /* PXSuccessViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -891,6 +896,7 @@
 				FD8203331B32760700894743 /* MASConstraintMaker.m in Sources */,
 				FDEAECDC1B134AB200D48EBE /* PXAlerayViewController.m in Sources */,
 				FDE764B91B2A7ACB00CF1F01 /* PXMiMaViewController2.m in Sources */,
+				FDAE211E1B3A661E00B53328 /* PXWanShanViewController.m in Sources */,
 				FD3E260D1B12EF1B00901E42 /* PXMainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
