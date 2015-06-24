@@ -17,7 +17,13 @@
 #import "PXMiMaViewController3.h"
 
 
-@interface PXUserViewController () <UITableViewDelegate,UITableViewDataSource>
+@interface PXUserViewController () <UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
+
+@property(nonatomic,strong) UITextField *TF1;
+@property(nonatomic,strong) UITextField *TF2;
+@property(nonatomic,strong) UITextField *TF3;
+@property(nonatomic,strong) UITextField *TF4;
+@property(nonatomic,strong) UITextField *TF5;
 
 @end
 
@@ -153,7 +159,7 @@
     [TableV addSubview:dataV];
     
     [dataV mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.equalTo(TableV);
+        make.width.equalTo(self.view);
         make.height.mas_equalTo(250);
         make.top.equalTo(TableV.mas_top);
     }];
@@ -183,26 +189,31 @@
     [Image1 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(dataV.mas_top).offset(padding1);
         make.left.mas_equalTo(10);
+        make.width.mas_equalTo(18);
     }];
     
     [Image2 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(Image1.mas_bottom).offset(padding1*2);
         make.left.mas_equalTo(10);
+        make.width.mas_equalTo(18);
     }];
     
     [Image3 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(Image2.mas_bottom).offset(padding1*2);
         make.left.mas_equalTo(10);
+        make.width.mas_equalTo(18);
     }];
     
     [Image4 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(Image3.mas_bottom).offset(padding1*2);
         make.left.mas_equalTo(10);
+        make.width.mas_equalTo(18);
     }];
     
     [Image5 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(Image4.mas_bottom).offset(padding1*2);
         make.left.mas_equalTo(10);
+        make.width.mas_equalTo(18);
     }];
     
     UILabel *Label1 = [UILabel new];
@@ -302,7 +313,77 @@
         make.right.equalTo(dataV.mas_right).offset(-10);
     }];
 
-
+    UITextField *TF1 = [UITextField new];
+    UITextField *TF2 = [UITextField new];
+    UITextField *TF3 = [UITextField new];
+    UITextField *TF4 = [UITextField new];
+    UITextField *TF5 = [UITextField new];
+    
+    
+    _TF1 = TF1;
+    _TF2 = TF2;
+    _TF3 = TF3;
+    _TF4 = TF4;
+    _TF5 = TF5;
+    
+    TF1.delegate = self;
+    TF2.delegate = self;
+    TF3.delegate = self;
+    TF4.delegate = self;
+    TF5.delegate = self;
+    
+    TF1.placeholder = @"冯明";
+    TF2.placeholder = @"18510086666";
+    TF3.placeholder = @"fengming@163.com";
+    TF4.placeholder = @"6217************821";
+    TF5.placeholder = @"中国建设银行";
+    
+    TF1.textAlignment = UITextAlignmentRight;
+    TF2.textAlignment = UITextAlignmentRight;
+    TF3.textAlignment = UITextAlignmentRight;
+    TF4.textAlignment = UITextAlignmentRight;
+    TF5.textAlignment = UITextAlignmentRight;
+    
+    [dataV addSubview:TF1];
+    [dataV addSubview:TF2];
+    [dataV addSubview:TF3];
+    [dataV addSubview:TF4];
+    [dataV addSubview:TF5];
+    
+    [TF1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(dataV).offset(-10);
+        make.bottom.equalTo(backV1).offset(-3);
+        make.left.equalTo(Label1.mas_right).offset(10);
+        make.height.mas_equalTo(40);
+    }];
+    
+    [TF2 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(dataV).offset(-10);
+        make.bottom.equalTo(backV2).offset(-3);
+        make.left.equalTo(Label2.mas_right).offset(10);
+        make.height.mas_equalTo(40);
+    }];
+    
+    [TF3 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(dataV).offset(-10);
+        make.bottom.equalTo(backV3).offset(-3);
+        make.left.equalTo(Label3.mas_right).offset(10);
+        make.height.mas_equalTo(40);
+    }];
+    
+    [TF4 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(dataV).offset(-10);
+        make.bottom.equalTo(backV4).offset(-3);
+        make.left.equalTo(Label4.mas_right).offset(10);
+        make.height.mas_equalTo(40);
+    }];
+    
+    [TF5 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(dataV).offset(-10);
+        make.bottom.equalTo(dataV).offset(-3);
+        make.left.equalTo(Label5.mas_right).offset(10);
+        make.height.mas_equalTo(40);
+    }];
 
     
 
@@ -379,5 +460,24 @@
     self.navigationController.navigationBarHidden = YES;
 }
 
+//点击空白收键盘
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [_TF1 resignFirstResponder];
+    [_TF2 resignFirstResponder];
+    [_TF3 resignFirstResponder];
+    [_TF4 resignFirstResponder];
+    [_TF5 resignFirstResponder];
+}
+//点击键盘搜索键手键盘
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [_TF1 resignFirstResponder];
+    [_TF2 resignFirstResponder];
+    [_TF3 resignFirstResponder];
+    [_TF4 resignFirstResponder];
+    [_TF5 resignFirstResponder];
+    return YES;
+}
 
 @end
