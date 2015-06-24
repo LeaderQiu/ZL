@@ -29,7 +29,7 @@
     
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:@"返回键" highImage:@"返回键" target:self action:@selector(BackBtnClick)];
     
-    [self setupHeaderV];
+//    [self setupHeaderV];
     
     [self setupScrollV];
     
@@ -149,9 +149,10 @@
     if (cell == nil) {
         
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellId];
-        
-        int section = indexPath.section;
-        int row = indexPath.row;
+    }
+    
+        NSInteger section = indexPath.section;
+        NSInteger row = indexPath.row;
         
         switch (section) {
             case 0:
@@ -192,17 +193,16 @@
                 if (row == 3) {
                     cell.textLabel.text = @"工作业绩及推荐内容：";
                 }
+                break;
             case 3:
                 if (row == 0) {
                     cell.textLabel.text = @"姓名+职位+时间";
                 }
+                break;
                 
             default:
                 break;
         }
-    }
-    
-    
 
     return cell;
 
