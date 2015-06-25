@@ -460,6 +460,7 @@
     
     [self.navigationController pushViewController:VC animated:YES];
     
+    
 }
 
 //点击简历管理按钮
