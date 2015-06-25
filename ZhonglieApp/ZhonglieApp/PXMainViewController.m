@@ -17,6 +17,7 @@
 #import "PXZhiWei.h"
 #import "MJExtension.h"
 #import "Masonry.h"
+#import "UIColor+SYExtension.h"
 
 
 
@@ -178,11 +179,37 @@
     //创建地区按钮
     UIButton *CityButton = [UIButton new];
 
-    [CityButton setImage:[UIImage imageNamed:@"城市"] forState:UIControlStateNormal];
     
     [CityButton addTarget:self action:@selector(btnClickAction) forControlEvents:UIControlEventTouchUpInside];
     
     [headerV addSubview:CityButton];
+    
+    
+    UILabel *CityLabel = [UILabel new];
+    
+    CityLabel.text = @"北京";
+    
+    CityLabel.textColor = [UIColor whiteColor];
+    
+    [CityButton addSubview:CityLabel];
+    
+    [CityLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(CityButton);
+        make.top.equalTo(CityButton.mas_top).offset(10);
+    }];
+    
+    UIImageView *ImageV = [UIImageView new];
+    
+    [ImageV setImage:[UIImage imageNamed:@"下三角白"]];
+    
+    [CityButton addSubview:ImageV];
+    
+    [ImageV mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(CityButton);
+        make.centerY.equalTo(CityLabel);
+        
+    }];
+    
     
     
     //约束的参数
@@ -210,9 +237,10 @@
     
     //CityButton约束
     [CityButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(headerV.mas_left).offset(20);
+        make.left.equalTo(headerV.mas_left).offset(10);
         make.bottom.equalTo(TextField);
-        make.size.mas_equalTo(CGSizeMake(45, 32));
+        make.size.mas_equalTo(CGSizeMake(50, 32));
+        make.centerY.equalTo(TextField).offset(-2);
         
     }];
     
@@ -277,7 +305,7 @@
     self.TextField.background = [UIImage imageNamed:@"searchBarBack"];
     
     
-    UIImageView *Searchimage=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"查找职位"]];
+    UIImageView *Searchimage=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"查找职位白"]];
     self.TextField.leftView=Searchimage;
     self.TextField.leftViewMode = UITextFieldViewModeUnlessEditing;
     

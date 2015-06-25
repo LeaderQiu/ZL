@@ -74,6 +74,7 @@
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="急" translatesAutoresizingMaskIntoConstraints="NO" id="s2F-cb-WSY">
                     <rect key="frame" x="133" y="14" width="12" height="12"/>
+                    <color key="backgroundColor" red="0.0" green="0.52941176470588236" blue="0.81568627450980391" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="12" id="Nmw-OL-VqY"/>
                         <constraint firstAttribute="height" constant="12" id="yHq-BK-yqd"/>

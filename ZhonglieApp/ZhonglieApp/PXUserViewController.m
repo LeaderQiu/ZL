@@ -61,7 +61,7 @@
     [BackImageV setImage:[UIImage imageNamed:@"形状-1"]];
     [LogoImageV setImage:[UIImage imageNamed:@"Logo形状-2"]];
     
-    [HeaderV addSubview:LogoImageV];
+    [BackImageV addSubview:LogoImageV];
     [HeaderV addSubview:BackImageV];
     [self.view addSubview:HeaderV];
     
@@ -83,7 +83,9 @@
     
     //LogoImageV约束
     [LogoImageV mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(HeaderV);
+        make.center.equalTo(BackImageV);
+        make.width.mas_equalTo(97);
+        make.height.mas_equalTo(97);
     }];
     
 }

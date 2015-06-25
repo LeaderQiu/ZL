@@ -11,6 +11,8 @@
 #import "UIBarButtonItem+Extension.h"
 #import "Masonry.h"
 #import "PXCityViewController.h"
+#import "UIColor+SYExtension.h"
+
 
 @interface PXSearchViewController ()<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate>
 @property(nonatomic,strong) UITableView *SearchV;
@@ -50,51 +52,87 @@
 //加载头部视图
 -(void)setupFirstV
 {
-    UIView *FirstV = [[UIView alloc]initWithFrame:CGRectMake(0, 64, [UIScreen mainScreen].bounds.size.width, 49)];
-    
-//    FirstV.backgroundColor = [UIColor grayColor];
-    
-    [FirstV setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"line-拷贝"]]];
-    
+    UIView *FirstV = [[UIView alloc]initWithFrame:CGRectMake(0, 64, [UIScreen mainScreen].bounds.size.width, 55)];
+
     
     //加载搜索栏
     UITextField *TextField = [UITextField new];
     
     _TextField = TextField;
     
-#warning TODO - TextField背景图问题
-//    TextField.background = [UIImage imageNamed:@"查看推荐记录"];
-    
-    TextField.backgroundColor = [UIColor blackColor];
-
-    
-    
     [self setupTextFiel];
     
     [FirstV addSubview:TextField];
     
-    //TextField约束
-    [TextField mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(FirstV).insets(UIEdgeInsetsMake(10, 55, 10, 10));
-    }];
+   
     
     //加载地区选择Btn
-    UIButton *Diqu = [[UIButton alloc]initWithFrame:CGRectMake(10, 14, 40,25 )];
-    
-    
-    [Diqu setTitle:@"北京" forState:UIControlStateNormal];
-    [Diqu setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    UIButton *Diqu = [UIButton new];
+
+    [Diqu setTitleColor:[UIColor colorWithRGB:0x419dd6] forState:UIControlStateNormal];
     
     [Diqu addTarget:self action:@selector(DiquBtnClick) forControlEvents:UIControlEventTouchUpInside];
     
     [FirstV addSubview:Diqu];
     
+    [Diqu mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(FirstV);
+        make.left.equalTo(FirstV.mas_left).offset(10);
+        make.width.mas_equalTo(70);
+        make.top.equalTo(FirstV.mas_top).offset(10);
+        make.bottom.equalTo(FirstV.mas_bottom).offset(-10);
+    }];
     
+    UILabel *Label1 = [UILabel new];
     
+    Label1.text = @"北京";
+    
+    Label1.textColor = [UIColor colorWithRGB:0x419dd6];
+    
+    [Diqu addSubview:Label1];
     
     [self.view addSubview:FirstV];
     
+    [Label1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(Diqu.mas_left);
+        make.top.equalTo(Diqu.mas_top).offset(10);
+        make.bottom.equalTo(Diqu.mas_bottom).offset(-10);
+    }];
     
+    UIImageView *Image = [UIImageView new];
+    
+    [Image setImage:[UIImage imageNamed:@"下三角1"]];
+    
+    [Diqu addSubview:Image];
+    
+    [Image mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo(10);
+        make.height.mas_equalTo(6);
+        make.left.equalTo(Label1.mas_right).offset(10);
+        make.centerY.equalTo(Label1);
+    }];
+    
+    
+    //TextField约束
+    [TextField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(Diqu.mas_right).offset(10);
+        make.right.equalTo(FirstV).offset(-10);
+        make.top.equalTo(FirstV.mas_top).offset(8);
+        make.bottom.equalTo(FirstV.mas_bottom).offset(-10);
+        
+    }];
+    
+    UIView *bottomV = [UIView new];
+    
+    bottomV.backgroundColor = [UIColor colorWithRGB:0xececec];
+    
+    [FirstV addSubview:bottomV];
+    
+    [bottomV mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(1);
+        make.width.equalTo(FirstV);
+        make.bottom.equalTo(FirstV.mas_bottom).offset(-3);
+    }];
 }
 
 //点击地区选择
@@ -176,19 +214,60 @@
 
     UIButton *ShiJian = [UIButton new];
     
-    [ShiJian setBackgroundImage:[UIImage imageNamed:@"发布时间"] forState:UIControlStateNormal];
+    [ShiJian setBackgroundImage:[UIImage imageNamed:@"筛选按钮"] forState:UIControlStateNormal];
+    UILabel *Label2 = [UILabel new];
+    
+    Label2.text = @"发布时间";
+    
+    Label2.textColor = [UIColor colorWithRGB:0x0087D0];
+    
+    [ShiJian addSubview:Label2];
+    
+    [Label2 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(ShiJian.mas_top).offset(10);
+        make.left.equalTo(ShiJian.mas_left).offset(20);
+        
+    }];
     
     [headerV addSubview:ShiJian];
       
     UIButton *JinE = [UIButton new];
     
-    [JinE setBackgroundImage:[UIImage imageNamed:@"奖励金额"] forState:UIControlStateNormal];
+    [JinE setBackgroundImage:[UIImage imageNamed:@"筛选按钮"] forState:UIControlStateNormal];
+
+    UILabel *Label1 = [UILabel new];
+    
+    Label1.text = @"奖励金额";
+    
+    Label1.textColor = [UIColor colorWithRGB:0x0087D0];
+    
+    [JinE addSubview:Label1];
+    
+    [Label1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(JinE.mas_top).offset(10);
+        make.left.equalTo(JinE.mas_left).offset(20);
+        
+    }];
     
     [headerV addSubview:JinE];
     
     UIButton *ShaiXuan = [UIButton new];
     
-    [ShaiXuan setBackgroundImage:[UIImage imageNamed:@"更多筛选"] forState:UIControlStateNormal];
+    [ShaiXuan setBackgroundImage:[UIImage imageNamed:@"筛选按钮"] forState:UIControlStateNormal];
+    
+    UILabel *Label3 = [UILabel new];
+    
+    Label3.text = @"更多筛选";
+    
+    Label3.textColor = [UIColor colorWithRGB:0x0087D0];
+    
+    [ShaiXuan addSubview:Label3];
+    
+    [Label3 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(ShaiXuan.mas_top).offset(10);
+        make.left.equalTo(ShaiXuan.mas_left).offset(20);
+        
+    }];
     
     [headerV addSubview:ShaiXuan];
     
@@ -242,7 +321,7 @@
     self.TextField.autocapitalizationType = UITextAutocapitalizationTypeNone;
     self.TextField.returnKeyType = UIReturnKeySearch;
     
-    self.TextField.background = [UIImage imageNamed:@"searchBarBack"];
+    self.TextField.background = [UIImage imageNamed:@"搜索栏背景"];
     
     
     UIImageView *Searchimage=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"查找职位"]];
@@ -278,11 +357,6 @@
     
     textField.text = @" ";
     
-//    PXSearchViewController *SearchVC = [[PXSearchViewController alloc] init] ;
-    
-    //    [self presentViewController:SearchVC animated:YES completion:nil];
-    
-//    [self.navigationController pushViewController:SearchVC animated:YES];
     
     [self updateViewConstraints];
     
@@ -296,8 +370,13 @@
     self.TextField.leftViewMode = UITextFieldViewModeUnlessEditing;
     
 }
-
-
+//点击空白收键盘
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [_TextField resignFirstResponder];
+    
+    _TextField.text = @" ";
+}
 
 
 @end

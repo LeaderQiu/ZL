@@ -63,6 +63,11 @@
     [SuccessImageV mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.view);
         make.top.equalTo(self.view.mas_top).offset(100);
+        make.bottom.equalTo(self.view.mas_bottom).offset(-100);
+        make.left.equalTo(self.view.mas_left).offset(20);
+        make.right.equalTo(self.view.mas_right).offset(-20);
+        
+        
     }];
     
     
