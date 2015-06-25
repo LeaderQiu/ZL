@@ -26,6 +26,8 @@
 @property(nonatomic,strong) UITextField *TF4;
 @property(nonatomic,strong) UITextField *TF5;
 
+@property(nonatomic,strong) UIView *OutV;
+
 @end
 
 @implementation PXUserViewController
@@ -157,7 +159,7 @@
     
     TableV.backgroundColor = [UIColor colorWithRGB:0xececec];
   
-    TableV.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
+    TableV.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, 800);
     TableV.userInteractionEnabled = YES;
     TableV.scrollEnabled = YES;
     
@@ -423,6 +425,8 @@
     [TableV addSubview:MiMaV];
     //加载用户登出按钮
     UIView *OutV = [[UIView alloc]initWithFrame:CGRectMake(0, 311, self.view.bounds.size.width, 300)];
+    
+    _OutV  = OutV;
     
     OutV.backgroundColor = [UIColor clearColor];
     
