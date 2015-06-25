@@ -52,16 +52,16 @@
 //设置头部数据
 -(void)setupHeaderV
 {
-//    UIView *HeaderV = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 159)];
     
     UIView *HeaderV = [UIView new];
     
-    
-//    UIImageView *BackImageV = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"我的背景"]];
     UIImageView *BackImageV = [UIImageView new];
+    UIImageView *LogoImageV = [UIImageView new];
     
-    [BackImageV setImage:[UIImage imageNamed:@"我的背景"]];
+    [BackImageV setImage:[UIImage imageNamed:@"形状-1"]];
+    [LogoImageV setImage:[UIImage imageNamed:@"Logo形状-2"]];
     
+    [HeaderV addSubview:LogoImageV];
     [HeaderV addSubview:BackImageV];
     [self.view addSubview:HeaderV];
     
@@ -79,6 +79,11 @@
         make.height.equalTo(HeaderV);
         make.top.equalTo(HeaderV);
         make.left.equalTo(HeaderV);
+    }];
+    
+    //LogoImageV约束
+    [LogoImageV mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(HeaderV);
     }];
     
 }
