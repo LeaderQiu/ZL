@@ -80,7 +80,7 @@
                         <constraint firstAttribute="height" constant="12" id="yHq-BK-yqd"/>
                     </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="验" translatesAutoresizingMaskIntoConstraints="NO" id="AWb-cG-rSr">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="证" translatesAutoresizingMaskIntoConstraints="NO" id="AWb-cG-rSr">
                     <rect key="frame" x="154" y="14" width="12" height="12"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="12" id="T3O-Ib-7bp"/>
@@ -124,8 +124,8 @@
         </view>
     </objects>
     <resources>
-        <image name="急" width="14" height="14"/>
+        <image name="急" width="15" height="15"/>
         <image name="推荐奖励" width="26" height="12"/>
-        <image name="验" width="14" height="14"/>
+        <image name="证" width="15" height="15"/>
     </resources>
 </document>
