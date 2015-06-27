@@ -19,9 +19,10 @@
 #import "Masonry.h"
 #import "UIColor+SYExtension.h"
 
+#import <CoreLocation/CoreLocation.h>
 
 
-@interface PXMainViewController () <UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
+@interface PXMainViewController () <UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,CLLocationManagerDelegate>
 @property(nonatomic,strong) UIImageView *LogoImageV;
 @property(nonatomic,strong) UIImage *LogoImage;
 
@@ -40,9 +41,100 @@
 
 /**存放的模型数组*/
 @property(nonatomic,strong) NSMutableArray *dataArray;
+
+@property(nonatomic,strong) CLLocationManager *mgr;
+
+@property(nonatomic,strong) NSString *myLatitude;
+@property(nonatomic,strong) NSString *myLongitude;
 @end
 
 @implementation PXMainViewController
+
+//在页面出现前进行地理定位
+-(void)viewWillAppear:(BOOL)animated
+{
+    [self setupDingWei];
+    
+    self.navigationController.navigationBarHidden = YES;
+
+}
+//地理定位
+-(void)setupDingWei
+{
+    //0,请求用户的许可
+    if ([self.mgr respondsToSelector:@selector(requestAlwaysAuthorization)]) {
+        [self.mgr requestAlwaysAuthorization];
+    }
+    
+    //1,开始定位
+    [self.mgr startUpdatingLocation];
+}
+#pragma mark - 懒加载mgr
+-(CLLocationManager *)mgr
+{
+    if (_mgr == nil) {
+        
+        //1,创建CLLocationManager
+        self.mgr = [[CLLocationManager alloc]init];
+        
+        //2,设置代理
+        self.mgr.delegate = self;
+        
+        //3，设置精确度
+        self.mgr.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
+        
+        //4,设置用户走了多少米之后重新获取位置
+        //        self.mgr.distanceFilter = 20;
+    }
+    return _mgr;
+}
+
+
+#pragma mark - 代理方法
+
+/**
+ *  当获取到用户的位置时会来到该代理方法
+ *
+ *  @param manager   <#manager description#>
+ *  @param locations 这个数组里存放这用户的位置信息
+ */
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    //1，从数组中取出用户的位置信息
+    CLLocation *location = [locations lastObject];
+    
+    //2,拿到用户的经纬度
+    CLLocationCoordinate2D coordinate = location.coordinate;
+    
+    //    self.myLatitude = coordinate.latitude;
+    //    self.myLongitude = &(coordinate.longitude);
+    
+    //    NSLog(@"用户当前位置：%f  %f",self.myLatitude,self.myLongitude);
+    
+    NSLog(@"用户当前位置：%f  %f",coordinate.latitude,coordinate.longitude);
+    
+    //3,停止获取
+    [self.mgr stopUpdatingLocation];
+    
+    //4,反地理编码
+    CLGeocoder *geocoder = [[CLGeocoder alloc]init];
+    
+    CLLocation *location1 = [[CLLocation alloc]initWithLatitude:coordinate.latitude longitude:coordinate.longitude];
+    
+    [geocoder reverseGeocodeLocation:location1 completionHandler:^(NSArray *placemarks, NSError *error) {
+        
+        if (placemarks.count == 0 || error ) return ;
+        
+        for (CLPlacemark *pm in placemarks) {
+            
+            NSLog(@"%@",pm.locality);
+        }
+        
+    }];
+    
+    
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -283,11 +375,11 @@
     return YES;
 }
 
-//跳转回来的页面再次隐藏状态栏
--(void)viewWillAppear:(BOOL)animated
-{
-    self.navigationController.navigationBarHidden = YES;
-}
+////跳转回来的页面再次隐藏状态栏
+//-(void)viewWillAppear:(BOOL)animated
+//{
+//    self.navigationController.navigationBarHidden = YES;
+//}
 
 
 //设置TextField细节
