@@ -42,6 +42,7 @@
 /**存放的模型数组*/
 @property(nonatomic,strong) NSMutableArray *dataArray;
 
+//定位相关
 @property(nonatomic,strong) CLLocationManager *mgr;
 
 @property(nonatomic,strong) NSString *myLatitude;
