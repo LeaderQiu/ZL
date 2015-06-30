@@ -129,12 +129,31 @@
 //点击微信登录
 -(void)WeiXinClick
 {
-    PXUserViewController *VC = [[PXUserViewController alloc]init];
-    
-    [self.navigationController pushViewController:VC animated:YES];
+//    PXUserViewController *VC = [[PXUserViewController alloc]init];
+//    
+//    [self.navigationController pushViewController:VC animated:YES];
     
     NSLog(@"点击了微信登录");
+    
+    //构造SendAuthReq结构体
+    SendAuthReq* req =[[SendAuthReq alloc ] init ];
+    req.scope = @"snsapi_userinfo" ;
+    req.state = @"123" ;
+    //第三方向微信终端发送一个SendAuthReq消息结构
+    [WXApi sendReq:req];
 }
+
+
+//-(void)sendAuthRequest
+//{
+//    //构造SendAuthReq结构体
+//    SendAuthReq* req =[[SendAuthReq alloc ] init ];
+//    req.scope = @"snsapi_userinfo" ;
+//    req.state = @"123" ;
+//    //第三方向微信终端发送一个SendAuthReq消息结构
+//    [WXApi sendReq:req];
+//}
+
 
 //点击帐号登录
 -(void)ZhangHaoClick
