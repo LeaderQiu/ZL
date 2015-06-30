@@ -12,8 +12,9 @@
 #import "PXUserViewController.h"
 #import "PXMiMaViewController1.h"
 #import "PXMiMaViewController2.h"
+#import "WXApi.h"
 
-@interface PXWeChatViewController ()
+@interface PXWeChatViewController ()<WXApiDelegate>
 
 @property(nonatomic,strong) UIButton *WeiXin;
 @property(nonatomic,strong) UIButton *ZhangHao;
@@ -38,6 +39,7 @@
     [self setupImage];
     
 }
+
 
 
 
