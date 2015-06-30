@@ -167,6 +167,11 @@
     //网络请求数据
     [self setupHTTPData];
     
+    //网络测试方法
+    [self setupNetText];
+    
+    
+    
 }
 
 /**
@@ -178,6 +183,28 @@
         _dataArray = [[NSMutableArray alloc]init];
     }
     return _dataArray;
+}
+//网络测试方法
+-(void)setupNetText
+{
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    NSDictionary *parameters = @{@"label":@"产品"};
+    
+    [manager POST:UrlStrPositionLabel parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        //成功的回调
+        NSLog(@"Label成功的回调==>%@",responseObject);
+        
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        //失败的回调
+        NSLog(@"失败的回调==>%@",error);
+        
+    }];
+
 }
 
 //网络请求数据
@@ -214,6 +241,12 @@
         NSLog(@"失败的回调==>%@",error);
         
     }];
+    
+    
+    
+    //热搜标签
+    
+    
 }
 //点击空白收起键盘、收起SearchHistoryView
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
