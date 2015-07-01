@@ -19,6 +19,8 @@
 @property(nonatomic,strong) UIView *AlertV1;
 @property(nonatomic,strong) UIView *AlertV2;
 @property(nonatomic,strong) UIView *AlertV3;
+
+//@property(nonatomic,strong) UITableView *tableV;
 @end
 
 @implementation PXAlerayViewController
@@ -31,10 +33,7 @@
 
     self.navigationItem.title = @"推荐记录";
     
-    
-    self.tableView.rowHeight = 101;
-    
-    
+    self.tableView.rowHeight = 101;  
 
 }
 
@@ -42,7 +41,7 @@
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
   
-    UIView *headerV = [UIView new];
+    UIView *headerV = [[UIView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 44)];
     
     UIImageView *backImageV = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"头部背景"]];
 
@@ -50,13 +49,7 @@
     
     [self.view addSubview:headerV];
     
-    //headerView约束
-    [headerV mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.equalTo(self.view);
-        make.height.mas_equalTo(44);
-        make.top.equalTo(self.view);
-        make.left.equalTo(self.view);
-    }];
+
     
     //backImageV约束
     [backImageV mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -132,7 +125,8 @@
     self.AlertV2.hidden = YES;
     self.AlertV3.hidden = YES;
     
-    UIView *AlertV1 = [[UIView alloc]initWithFrame:CGRectMake(10, 44, 300, 59)];
+    UIView *AlertV1 = [UIView new];
+    
     _AlertV1 = AlertV1;
     
     UIImageView *backImage1 = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"弹出框1"]];
@@ -140,6 +134,15 @@
     [AlertV1 addSubview:backImage1];
   
     [self.view addSubview:AlertV1];
+    
+    //AlertV1约束
+    
+    [AlertV1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view).offset(10);
+        make.top.equalTo(self.view.mas_top).offset(44);
+        make.right.equalTo(self.view).offset(-10);
+        make.height.mas_equalTo(59);
+    }];
 }
 
 //点击入职状态
@@ -233,5 +236,23 @@
     self.AlertV2.hidden = YES;
     self.AlertV3.hidden = YES;
    
+}
+
+//监听滑动 隐藏Alert
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    if (scrollView.contentOffset.y > 0) {
+        
+        self.AlertV1.hidden = YES;
+        self.AlertV2.hidden = YES;
+        self.AlertV3.hidden = YES;
+        
+    }else if(scrollView.contentOffset.y < 0){
+       
+        
+        self.AlertV1.hidden = YES;
+        self.AlertV2.hidden = YES;
+        self.AlertV3.hidden = YES;
+    }
 }
 @end

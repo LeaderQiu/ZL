@@ -208,66 +208,34 @@
 //设置headerView的属性
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    UIView *headerV = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 20, 20)];
+    UIView *headerV = [[UIView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 44)];
+    
+    UIImageView *backImageV = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"头部背景"]];
+    
+    [headerV addSubview:backImageV];
+    
+    [self.view addSubview:headerV];
+    
+//    UIView *headerV = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 20, 20)];
     
     //创建三个筛选按钮
 
     UIButton *ShiJian = [UIButton new];
     
-    [ShiJian setBackgroundImage:[UIImage imageNamed:@"筛选按钮"] forState:UIControlStateNormal];
-    UILabel *Label2 = [UILabel new];
-    
-    Label2.text = @"发布时间";
-    
-    Label2.textColor = [UIColor colorWithRGB:0x0087D0];
-    
-    [ShiJian addSubview:Label2];
-    
-    [Label2 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(ShiJian.mas_top).offset(10);
-        make.left.equalTo(ShiJian.mas_left).offset(20);
-        
-    }];
+    [ShiJian setBackgroundImage:[UIImage imageNamed:@"发布时间"] forState:UIControlStateNormal];
+
     
     [headerV addSubview:ShiJian];
       
     UIButton *JinE = [UIButton new];
     
-    [JinE setBackgroundImage:[UIImage imageNamed:@"筛选按钮"] forState:UIControlStateNormal];
+    [JinE setBackgroundImage:[UIImage imageNamed:@"奖励金额"] forState:UIControlStateNormal];
 
-    UILabel *Label1 = [UILabel new];
-    
-    Label1.text = @"奖励金额";
-    
-    Label1.textColor = [UIColor colorWithRGB:0x0087D0];
-    
-    [JinE addSubview:Label1];
-    
-    [Label1 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(JinE.mas_top).offset(10);
-        make.left.equalTo(JinE.mas_left).offset(20);
-        
-    }];
-    
     [headerV addSubview:JinE];
     
     UIButton *ShaiXuan = [UIButton new];
     
-    [ShaiXuan setBackgroundImage:[UIImage imageNamed:@"筛选按钮"] forState:UIControlStateNormal];
-    
-    UILabel *Label3 = [UILabel new];
-    
-    Label3.text = @"更多筛选";
-    
-    Label3.textColor = [UIColor colorWithRGB:0x0087D0];
-    
-    [ShaiXuan addSubview:Label3];
-    
-    [Label3 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(ShaiXuan.mas_top).offset(10);
-        make.left.equalTo(ShaiXuan.mas_left).offset(20);
-        
-    }];
+    [ShaiXuan setBackgroundImage:[UIImage imageNamed:@"更多筛选"] forState:UIControlStateNormal];
     
     [headerV addSubview:ShaiXuan];
     
@@ -305,6 +273,83 @@
     
     return headerV;
     
+    
+#pragma 
+    
+//    UIView *headerV = [[UIView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 44)];
+//    
+//    UIImageView *backImageV = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"头部背景"]];
+//    
+//    [headerV addSubview:backImageV];
+//    
+//    [self.view addSubview:headerV];
+//    
+//    
+//    
+//    //backImageV约束
+//    [backImageV mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.size.equalTo(headerV);
+//    }];
+//    
+//    //创建三个筛选按钮
+//    //    UIButton *ShiJian = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 107,44)];
+//    UIButton *ShiJian = [UIButton new];
+//    _ShiJian = ShiJian;
+//    
+//    [ShiJian setImage:[UIImage imageNamed:@"推荐时间"] forState:UIControlStateNormal];
+//    
+//    [ShiJian addTarget:self action:@selector(ShiJianClick) forControlEvents:UIControlEventTouchUpInside];
+//    
+//    [headerV addSubview:ShiJian];
+//    
+//    //    UIButton *ZhuangTai = [[UIButton alloc]initWithFrame:CGRectMake(107, 0, 107,44)];
+//    UIButton *ZhuangTai = [UIButton new];
+//    _ZhuangTai = ZhuangTai;
+//    
+//    [ZhuangTai setImage:[UIImage imageNamed:@"入职状态"] forState:UIControlStateNormal];
+//    
+//    [ZhuangTai addTarget:self action:@selector(ZhuangTaiClick) forControlEvents:UIControlEventTouchUpInside];
+//    
+//    [headerV addSubview:ZhuangTai];
+//    
+//    //    UIButton *DaiYu = [[UIButton alloc]initWithFrame:CGRectMake(214, 0, 107,44)];
+//    UIButton *DaiYu = [UIButton new];
+//    _DaiYu = DaiYu;
+//    
+//    [DaiYu setImage:[UIImage imageNamed:@"薪资待遇"] forState:UIControlStateNormal];
+//    
+//    [DaiYu addTarget:self action:@selector(DaiYuClick) forControlEvents:UIControlEventTouchUpInside];
+//    
+//    [headerV addSubview:DaiYu];
+//    
+//    //ShiJian约束
+//    
+//    int padding1 = ([UIScreen mainScreen].bounds.size.width/3);
+//    
+//    [ShiJian mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.width.mas_equalTo(padding1);
+//        make.height.equalTo(headerV);
+//        make.top.equalTo(headerV);
+//        make.left.equalTo(headerV);
+//    }];
+//    
+//    //ZhuangTai约束
+//    [ZhuangTai mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.width.mas_equalTo(padding1);
+//        make.height.equalTo(headerV);
+//        make.left.equalTo(ShiJian.mas_right);
+//        make.top.equalTo(headerV);
+//    }];
+//    
+//    //DaiYu约束
+//    [DaiYu mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.width.mas_equalTo(padding1);
+//        make.height.equalTo(headerV);
+//        make.right.equalTo(headerV);
+//        make.top.equalTo(headerV);
+//    }];
+//    
+
     
 }
 
