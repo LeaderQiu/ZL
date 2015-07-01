@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+@class PXSearchLabel;
 @interface PXSearchHistoryCell : UITableViewCell
+
+@property(nonatomic,strong) PXSearchLabel *searchLabel;
 
 @end

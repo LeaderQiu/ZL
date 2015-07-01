@@ -81,6 +81,7 @@
 		FDB4CD171B424BA600059FBF /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FDB4CD161B424BA600059FBF /* libsqlite3.dylib */; };
 		FDB4CD191B424BB900059FBF /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FDB4CD181B424BB900059FBF /* libz.1.dylib */; };
 		FDB4CD1B1B4261F400059FBF /* libc++.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FDB4CD1A1B4261F400059FBF /* libc++.1.dylib */; };
+		FDB4CD1E1B43DACD00059FBF /* PXSearchLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FDB4CD1D1B43DACD00059FBF /* PXSearchLabel.m */; };
 		FDC14BA21B3946FA00B9F34E /* PXWeChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC14BA11B3946FA00B9F34E /* PXWeChatViewController.m */; };
 		FDC14BA91B397ABA00B9F34E /* PXMiMaViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC14BA81B397ABA00B9F34E /* PXMiMaViewController3.m */; };
 		FDE764B61B2A7ABC00CF1F01 /* PXMiMaViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE764B51B2A7ABC00CF1F01 /* PXMiMaViewController1.m */; };
@@ -257,6 +258,8 @@
 		FDB4CD161B424BA600059FBF /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		FDB4CD181B424BB900059FBF /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = usr/lib/libz.1.dylib; sourceTree = SDKROOT; };
 		FDB4CD1A1B4261F400059FBF /* libc++.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.1.dylib"; path = "usr/lib/libc++.1.dylib"; sourceTree = SDKROOT; };
+		FDB4CD1C1B43DACD00059FBF /* PXSearchLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXSearchLabel.h; sourceTree = "<group>"; };
+		FDB4CD1D1B43DACD00059FBF /* PXSearchLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXSearchLabel.m; sourceTree = "<group>"; };
 		FDC14B991B38FA6600B9F34E /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		FDC14BA01B3946FA00B9F34E /* PXWeChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXWeChatViewController.h; sourceTree = "<group>"; };
 		FDC14BA11B3946FA00B9F34E /* PXWeChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXWeChatViewController.m; sourceTree = "<group>"; };
@@ -409,6 +412,8 @@
 				FD4518B61B1EAFF500A49D88 /* PXCity.m */,
 				FD3F89B11B317265002210A6 /* PXZhiWei.h */,
 				FD3F89B21B317265002210A6 /* PXZhiWei.m */,
+				FDB4CD1C1B43DACD00059FBF /* PXSearchLabel.h */,
+				FDB4CD1D1B43DACD00059FBF /* PXSearchLabel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -864,6 +869,7 @@
 				FD82030F1B32757A00894743 /* SDWebImagePrefetcher.m in Sources */,
 				FD8203311B32760700894743 /* MASCompositeConstraint.m in Sources */,
 				FD8203351B32760700894743 /* MASViewAttribute.m in Sources */,
+				FDB4CD1E1B43DACD00059FBF /* PXSearchLabel.m in Sources */,
 				FD45190E1B21323500A49D88 /* PXSearchCell.m in Sources */,
 				FD8203131B32757A00894743 /* UIImage+WebP.m in Sources */,
 				FD4519021B1EE82000A49D88 /* UIColor+SYExtension.m in Sources */,

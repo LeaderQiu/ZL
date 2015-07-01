@@ -18,6 +18,8 @@
 #import "MJExtension.h"
 #import "Masonry.h"
 #import "UIColor+SYExtension.h"
+#import "PXSearchLabel.h"
+#import "PXSearchHistoryCell.h"
 
 #import <CoreLocation/CoreLocation.h>
 
@@ -41,6 +43,9 @@
 
 /**存放的模型数组*/
 @property(nonatomic,strong) NSMutableArray *dataArray;
+
+/**存放的模型数组*/
+@property(nonatomic,strong) NSMutableArray *dataArray1;
 
 //定位相关
 @property(nonatomic,strong) CLLocationManager *mgr;
@@ -164,10 +169,10 @@
     UITableView *SearchHistory = [[UITableView alloc]initWithFrame:CGRectMake(0,170 ,self.view.bounds.size.width, 10)];
     _SearchHistory = SearchHistory;
 
-    //网络请求数据
+    //网络请求职位数据
     [self setupHTTPData];
     
-    //网络测试方法
+    //网络请求热搜数据
     [self setupNetText];
     
     
@@ -184,7 +189,7 @@
     }
     return _dataArray;
 }
-//网络测试方法
+//网络请求热搜数据
 -(void)setupNetText
 {
     
@@ -192,11 +197,22 @@
     
     NSDictionary *parameters = @{@"label":@"产品"};
     
-    [manager POST:UrlStrPositionLabel parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager POST:UrlStrPositionSearchLabel parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         //成功的回调
         NSLog(@"Label成功的回调==>%@",responseObject);
         
+        NSArray *dictArray = [responseObject objectForKey:@"data"];
+        NSMutableArray *tempArray = [NSMutableArray array];
+        
+        for (NSDictionary *dict in dictArray) {
+            PXSearchLabel *Label = [PXSearchLabel objectWithKeyValues:dict];
+            
+            [tempArray addObject:Label];
+        }
+        
+        [self.dataArray1 addObjectsFromArray:tempArray];
+        [_SearchHistory reloadData];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
@@ -243,8 +259,7 @@
     }];
     
     
-    
-    //热搜标签
+  
     
     
 }

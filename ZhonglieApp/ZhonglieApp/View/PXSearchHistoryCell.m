@@ -7,6 +7,23 @@
 //
 
 #import "PXSearchHistoryCell.h"
+#import "PXSearchLabel.h"
+
+@interface PXSearchHistoryCell ()
+@property (weak, nonatomic) IBOutlet UIButton *Btn1;
+@property (weak, nonatomic) IBOutlet UIButton *Btn2;
+@property (weak, nonatomic) IBOutlet UIButton *Btn3;
+@property (weak, nonatomic) IBOutlet UIButton *Btn4;
+@property (weak, nonatomic) IBOutlet UIButton *Btn5;
+@property (weak, nonatomic) IBOutlet UIButton *Btn6;
+
+/**存放的模型数组*/
+@property(nonatomic,strong) NSMutableArray *dataArray1;
+
+@end
+
+
+
 
 @implementation PXSearchHistoryCell
 
@@ -34,14 +51,9 @@
     return self;
 }
 
-- (void)awakeFromNib {
-    // Initialization code
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+-(void)setSearchLabel:(PXSearchLabel *)searchLabel
+{
+    [self.Btn1 setTitle:searchLabel.title forState:UIControlStateNormal];
 }
 
 @end
