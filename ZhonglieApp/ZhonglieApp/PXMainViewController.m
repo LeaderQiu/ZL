@@ -195,24 +195,24 @@
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
-    NSDictionary *parameters = @{@"label":@"产品"};
+    NSDictionary *parameters = @{@"page":@"0"};
     
-    [manager POST:UrlStrPositionSearchLabel parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager POST:UrlStrPositionSearchLabel  parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         //成功的回调
         NSLog(@"Label成功的回调==>%@",responseObject);
         
-        NSArray *dictArray = [responseObject objectForKey:@"data"];
-        NSMutableArray *tempArray = [NSMutableArray array];
-        
-        for (NSDictionary *dict in dictArray) {
-            PXSearchLabel *Label = [PXSearchLabel objectWithKeyValues:dict];
-            
-            [tempArray addObject:Label];
-        }
-        
-        [self.dataArray1 addObjectsFromArray:tempArray];
-        [_SearchHistory reloadData];
+//        NSArray *dictArray = [responseObject objectForKey:@"data"];
+//        NSMutableArray *tempArray = [NSMutableArray array];
+//        
+//        for (NSDictionary *dict in dictArray) {
+//            PXSearchLabel *Label = [PXSearchLabel objectWithKeyValues:dict];
+//            
+//            [tempArray addObject:Label];
+//        }
+//        
+//        [self.dataArray1 addObjectsFromArray:tempArray];
+//        [_SearchHistory reloadData];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
